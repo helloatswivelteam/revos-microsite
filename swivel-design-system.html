@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Swivel Design System Reference</title>
+<style>
+:root{
+  --green:#82c88a; --blue:#0196cd; --teal:#38aeb2; --orange:#eba343;
+  --ink:#3d4443; --ink2:#23252c; --muted:#666873; --line:rgba(34,34,34,.1);
+  --bg:#ffffff; --surface:#fbfcfd;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{display:grid;grid-template-columns:264px minmax(0,1fr);gap:0;max-width:1500px;margin:0 auto}
+/* nav */
+nav{position:sticky;top:0;height:100vh;overflow-y:auto;padding:28px 18px 40px;border-right:1px solid var(--line);background:linear-gradient(rgba(0,152,205,.05) 0%,#fff 18%,#fff 82%,rgba(112,196,151,.06) 100%)}
+nav h1{font-size:15px;letter-spacing:-.3px;margin:0 0 4px;line-height:1.25}
+nav .sub{font-size:11px;color:var(--muted);margin-bottom:18px;letter-spacing:.02em}
+nav a{display:block;font-size:12.5px;color:var(--ink);text-decoration:none;padding:5px 9px;border-radius:7px;margin-bottom:1px}
+nav a:hover{background:rgba(1,150,205,.08)}
+nav a.flag{color:#b0421f}
+main{padding:40px 46px 120px;min-width:0}
+/* hero */
+.hero{padding:14px 0 30px;border-bottom:1px solid var(--line);margin-bottom:34px}
+.hero h2{font-size:42px;line-height:1.05;letter-spacing:-1.6px;margin:0 0 12px;font-weight:700}
+.grad{background:linear-gradient(289deg,#82c88a 16%,#0196cd 88%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lede{font-size:16px;color:#555c5b;max-width:62ch;margin:0}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.stat{border:1px solid var(--line);border-radius:14px;padding:11px 15px;min-width:120px;background:#fff}
+.stat b{display:block;font-size:21px;letter-spacing:-.7px;line-height:1.15}
+.stat span{font-size:10.5px;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted)}
+/* sections */
+section{margin:0 0 58px;scroll-margin-top:20px}
+h3.sec{font-size:11px;text-transform:uppercase;letter-spacing:3px;color:var(--muted);margin:0 0 6px;font-weight:700}
+h3.sec span{color:var(--blue)}
+h4.t{font-size:27px;letter-spacing:-.9px;margin:0 0 16px;font-weight:700;line-height:1.2}
+h5{font-size:14px;margin:26px 0 10px;letter-spacing:-.2px;font-weight:700}
+p{max-width:78ch;font-size:14.5px}
+code{font-family:var(--mono);font-size:12.5px;background:rgba(1,150,205,.07);padding:1px 5px;border-radius:4px;color:#0c5f7d;word-break:break-word}
+.note{border-left:3px solid var(--blue);background:rgba(1,150,205,.05);padding:11px 15px;border-radius:0 10px 10px 0;font-size:13.5px;margin:16px 0;max-width:80ch}
+.warn{border-left:3px solid #d2691e;background:rgba(235,163,67,.11);padding:11px 15px;border-radius:0 10px 10px 0;font-size:13.5px;margin:16px 0;max-width:80ch}
+/* tables */
+table{border-collapse:collapse;width:100%;font-size:13px;margin:12px 0 6px}
+th,td{text-align:left;padding:8px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:10.5px;text-transform:uppercase;letter-spacing:1.1px;color:var(--muted);font-weight:700;border-bottom:1.5px solid var(--line)}
+tbody tr:hover{background:rgba(1,150,205,.035)}
+td.m,th.m{font-family:var(--mono);font-size:12px}
+/* swatches */
+.sw{display:grid;grid-template-columns:repeat(auto-fill,minmax(146px,1fr));gap:12px;margin:14px 0}
+.chip{border:1px solid var(--line);border-radius:13px;overflow:hidden;background:#fff}
+.chip .c{height:66px}
+.chip .b{padding:8px 10px 10px}
+.chip .n{font-size:12px;font-weight:700;letter-spacing:-.2px;line-height:1.25}
+.chip .v{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:2px}
+.chip .tag{display:inline-block;font-size:9px;letter-spacing:.7px;text-transform:uppercase;padding:1px 6px;border-radius:20px;margin-top:5px}
+.ok{background:rgba(130,200,138,.2);color:#31663a}
+.no{background:rgba(235,163,67,.25);color:#8a4c07}
+/* gradients */
+.gr{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin:14px 0}
+.gcard{border:1px solid var(--line);border-radius:13px;overflow:hidden}
+.gcard .g{height:74px}
+.gcard .l{padding:8px 10px;font-family:var(--mono);font-size:10.5px;color:#4a5150;word-break:break-all;line-height:1.45}
+/* type specimens */
+.spec{border-bottom:1px solid var(--line);padding:14px 0;display:grid;grid-template-columns:150px minmax(0,1fr);gap:20px;align-items:baseline}
+.spec .meta{font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1.6}
+.spec .meta b{display:block;font-family:var(--sans);font-size:12.5px;color:var(--ink);letter-spacing:-.2px}
+.spec .sample{letter-spacing:-.02em;overflow:hidden}
+/* buttons */
+.btns{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin:16px 0 6px}
+.pill{border:0;border-radius:999px;color:#2e3238;font-family:var(--sans);cursor:default;
+ box-shadow:rgba(0,0,0,.07) 0 .602187px 1.80656px -1.25px,rgba(0,0,0,.06) 0 2.28853px 6.8656px -2.5px,rgba(0,0,0,.03) 0 10px 30px -3.75px}
+.pL{padding:18px 40px;height:60px;font-size:20px;letter-spacing:-.6px}
+.pM{padding:12px 24px;height:43px;font-size:16px}
+.pS{padding:8px 24px;height:40px;font-size:14px;letter-spacing:-.3px}
+.demo{border:1px solid var(--line);border-radius:16px;padding:26px;margin:14px 0;background:#fff}
+.hoverdemo{display:inline-flex;align-items:center;justify-content:center;gap:0;width:212px;height:60px;border-radius:999px;background:var(--orange);color:#2e3238;font-size:20px;letter-spacing:-.6px;transition:width .35s cubic-bezier(.2,.7,.3,1);overflow:hidden;white-space:nowrap;cursor:pointer;
+ box-shadow:rgba(0,0,0,.07) 0 .602187px 1.80656px -1.25px,rgba(0,0,0,.06) 0 2.28853px 6.8656px -2.5px,rgba(0,0,0,.03) 0 10px 30px -3.75px}
+.hoverdemo .ar{width:0;opacity:0;transition:width .35s,opacity .3s;transform:translateX(4px)}
+.hoverdemo:hover{width:240px}
+.hoverdemo:hover .ar{width:22px;opacity:1}
+.navdemo{display:flex;gap:26px;align-items:center;font-size:16px}
+.navdemo a{color:var(--ink);text-decoration:none;font-weight:300}
+.navdemo a:hover{font-weight:700}
+/* shadows */
+.shs{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:18px;margin:16px 0}
+.shbox{height:96px;border-radius:24px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--muted);text-align:center;padding:8px}
+.shwrap{background:var(--surface);padding:20px;border-radius:16px;border:1px solid var(--line)}
+.shwrap .cap{font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:12px;line-height:1.5;word-break:break-all}
+/* radii */
+.rad{display:flex;flex-wrap:wrap;gap:14px;margin:14px 0}
+.rbox{width:92px;height:92px;background:linear-gradient(315deg,#82c88a,#0196cd);display:flex;align-items:flex-end;justify-content:center;color:#fff;font-family:var(--mono);font-size:11px;padding-bottom:7px}
+/* flow */
+.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:16px 0;font-size:12.5px}
+.step{border:1px solid var(--line);border-radius:999px;padding:7px 15px;background:#fff}
+.arw{color:var(--muted)}
+/* grammar rules */
+.rules{display:grid;gap:12px;margin:16px 0}
+.rule{border:1px solid var(--line);border-radius:14px;padding:15px 18px;background:#fff}
+.rule b{display:block;font-size:13.5px;margin-bottom:5px;letter-spacing:-.2px}
+.rule b em{font-style:normal;color:var(--blue);font-family:var(--mono);font-size:11.5px;margin-right:8px}
+.rule p{margin:0;font-size:13.5px;max-width:none}
+.skel{font-family:var(--mono);font-size:12px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;line-height:1.85;white-space:pre-wrap;margin:12px 0}
+/* open questions */
+.oq{counter-reset:oq;display:grid;gap:9px;margin:14px 0}
+.q{border:1px solid var(--line);border-left:3px solid #d2691e;border-radius:0 12px 12px 0;padding:12px 16px;background:#fff;font-size:13.5px}
+.q.gap{border-left-color:#0196cd}
+.q.cant{border-left-color:#9aa0a6}
+.q b{display:block;margin-bottom:3px}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);margin:8px 0 14px}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+/* responsive bars */
+.bp{display:grid;grid-template-columns:80px minmax(0,1fr);gap:14px;align-items:center;margin:8px 0;font-size:12.5px}
+.bar{height:26px;border-radius:6px;background:linear-gradient(90deg,rgba(1,150,205,.85),rgba(130,200,138,.85));display:flex;align-items:center;padding-left:9px;color:#fff;font-family:var(--mono);font-size:11px}
+footer{border-top:1px solid var(--line);padding-top:20px;margin-top:50px;font-size:12px;color:var(--muted);max-width:80ch}
+@media(max-width:900px){.wrap{grid-template-columns:1fr}nav{position:static;height:auto;border-right:0;border-bottom:1px solid var(--line)}main{padding:26px 20px 80px}.spec{grid-template-columns:1fr;gap:6px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav>
+  <h1>Swivel Design System</h1>
+  <div class="sub">swivelteam.com · ground truth · 3 Aug 2026</div>
+  <a href="#overview">Overview &amp; method</a>
+  <a href="#breakpoints">0 · Breakpoints</a>
+  <a href="#type">1 · Typography scale</a>
+  <a href="#color">2 · Colour tokens</a>
+  <a href="#gradient">2b · Gradients</a>
+  <a href="#space">3 · Spacing scale</a>
+  <a href="#shadow">4 · Shadows &amp; effects</a>
+  <a href="#buttons">5 · Buttons &amp; components</a>
+  <a href="#icons">6 · Icon system</a>
+  <a href="#imagery">7 · Imagery treatment</a>
+  <a href="#states">8 · Interactive states</a>
+  <a href="#motion">9 · Motion &amp; scroll</a>
+  <a href="#forms">10 · Forms &amp; inputs</a>
+  <a href="#taxonomy">11 · Block taxonomy</a>
+  <a href="#flow">12 · Content flow</a>
+  <a href="#grammar">13 · Compositional grammar</a>
+  <a href="#anatomy">14 · Page anatomy</a>
+  <a href="#responsive">15 · Responsive behaviour</a>
+  <a href="#open" class="flag">16 · Open questions</a>
+</nav>
+<main>
+
+<div class="hero" id="overview">
+  <h2>How swivelteam.com is <span class="grad">actually built</span></h2>
+  <p class="lede">Every value on this page was read from computed styles on the live published site, in a real browser, at three real viewport widths — then cross-referenced read-only against the Framer project. Nothing here is a recommendation; it is a measurement. Use §13 when designing something new.</p>
+  <div class="stats">
+    <div class="stat"><b>75</b><span>pages swept</span></div>
+    <div class="stat"><b>225</b><span>page × breakpoint</span></div>
+    <div class="stat"><b>0</b><span>extraction errors</span></div>
+    <div class="stat"><b>13</b><span>pages missing from sitemap</span></div>
+    <div class="stat"><b>25</b><span>open questions</span></div>
+  </div>
+  <div class="note"><b>Coverage.</b> 62 URLs from <code>sitemap.xml</code> plus 13 live pages found only in Framer's Pages panel. <code>/dashboard</code> and <code>/old-dashboard</code> excluded per brief. Measured at 1440 / 1024 / 390&nbsp;px.</div>
+  <div class="warn"><b>Font note.</b> This document renders in a system sans because <b>Museo Sans</b> is licensed and not available here. Type specimens below are correct in <i>size, line-height and tracking</i> — the letterforms are a stand-in.</div>
+</div>
+
+<section id="breakpoints">
+  <h3 class="sec">0 · <span>Breakpoints</span></h3>
+  <h4 class="t">Three ranges, confirmed twice</h4>
+  <p>Read from the live stylesheet and confirmed on the Framer canvas (labelled “Desktop 1200”, “Tablet 1199−”). Framer emits one variant per range, so any width inside a range renders the same variant with fluid widths.</p>
+  <table><thead><tr><th>Name</th><th>Range</th><th class="m">Media query</th><th>Measured at</th></tr></thead><tbody>
+  <tr><td><b>Desktop</b></td><td>≥ 1200px</td><td class="m">(min-width: 1200px)</td><td class="m">1440</td></tr>
+  <tr><td><b>Tablet</b></td><td>810 – 1199.98px</td><td class="m">(min-width: 810px) and (max-width: 1199.98px)</td><td class="m">1024</td></tr>
+  <tr><td><b>Mobile</b></td><td>≤ 809.98px</td><td class="m">(max-width: 809.98px)</td><td class="m">390</td></tr>
+  </tbody></table>
+</section>
+
+<section id="type">
+  <h3 class="sec">1 · <span>Typography scale</span></h3>
+  <h4 class="t">Museo Sans, loaded as four separate families</h4>
+  <div class="warn"><b>Critical.</b> Museo Sans is loaded as four <i>font families</i> — <code>Museo Sans 300</code>, <code>500</code>, <code>700</code>, <code>900</code> — not four weights of one family. A CSS <code>font-weight:600</code> on <code>Museo Sans 700</code> is the 700 face. <b>Always specify the family name, never the weight.</b></div>
+  <h5>Named Framer Text Styles — reference these by name</h5>
+  <div id="typeSpecs"></div>
+  <h5>Repeated patterns with <i>no</i> named style — candidates to formalise</h5>
+  <table><thead><tr><th>Measured (desktop)</th><th class="m">D → T → M</th><th>Use</th><th>Count</th></tr></thead><tbody id="unnamedType"></tbody></table>
+  <h5>Line-height convention</h5>
+  <table><thead><tr><th>Band</th><th>Ratio</th></tr></thead><tbody>
+  <tr><td>Display (54px+)</td><td class="m">0.9 – 1.1 — deliberately tight</td></tr>
+  <tr><td>Headings (22–46px)</td><td class="m">1.1 – 1.3</td></tr>
+  <tr><td>UI / labels</td><td class="m">1.0 – 1.2</td></tr>
+  <tr><td>Body</td><td class="m">1.5</td></tr>
+  <tr><td>Long-form blog body</td><td class="m">1.6 — the only place the site breathes</td></tr>
+  <tr><td>Nav dropdown descriptions</td><td class="m">2.0 — outlier</td></tr>
+  </tbody></table>
+  <div class="note"><b>Gradient text.</b> Headings use <code>background-clip:text</code> with the brand gradient — always on a <code>&lt;span&gt;</code> inside the heading, never the whole heading. Headlines read “plain words + <span class="grad">gradient words</span>”.</div>
+  <h5>Stray typefaces (not part of the system)</h5>
+  <p><code>Inter</code> 16px bold on one blog post · <code>Fragment Mono</code> in one code block · <code>Montserrat</code> 11px in the footer legal row · <code>ui-sans-serif</code>/<code>sans-serif</code> on <code>/login</code> and <code>/pathforward-dashboard</code> (React code components, expected).</p>
+</section>
+
+<section id="color">
+  <h3 class="sec">2 · <span>Colour tokens</span></h3>
+  <h4 class="t">24 named styles, 26 published variables</h4>
+  <p>Framer Colour Styles publish as <code>--token-*</code> CSS variables. Swatches below are the colours actually rendered on the site, with whether a token exists.</p>
+  <div class="sw" id="colorSw"></div>
+  <div class="warn"><b>Naming is the weakest part of the system.</b> Four styles are named <code>White</code> and two are named <code>Green</code>. Three parallel neutral schemes coexist: <code>Neutral 800/500</code>, <code>Neutral 01/03/04</code>, and <code>Gray</code>/<code>GrayDark2</code>/<code>Medium Grey</code>.</div>
+  <h5>Full-span vs contained</h5>
+  <table><thead><tr><th>Treatment</th><th>Behaviour</th></tr></thead><tbody>
+  <tr><td>Solid colours</td><td>Almost always <b>contained</b> (card/pill). Exceptions: <code>#0a0a0a</code> (n=201) and <code>#2e3238</code> used as full-bleed dark section beds.</td></tr>
+  <tr><td>Soft tint washes</td><td>Almost always <b>full-span</b> — this is the section-rhythm device.</td></tr>
+  <tr><td><code>#ffffff</code></td><td>Both — n≈1,228 contained (cards), n≈400 full-span (page bed).</td></tr>
+  </tbody></table>
+  <h5>Borders — only three exist site-wide</h5>
+  <table><thead><tr><th class="m">Value</th><th>Count</th><th>Use</th></tr></thead><tbody>
+  <tr><td class="m">1px solid rgba(34,34,34,0.1)</td><td>138</td><td><b>The hairline.</b> Dividers, card outlines, FAQ separators.</td></tr>
+  <tr><td class="m">1px solid rgba(255,255,255,0.16)</td><td>9</td><td>Hairline on dark beds</td></tr>
+  <tr><td class="m">1px solid #e4e8ec</td><td>6</td><td><code>/login</code> only — off-system</td></tr>
+  </tbody></table>
+</section>
+
+<section id="gradient">
+  <h3 class="sec">2b · <span>Gradients</span></h3>
+  <h4 class="t">One brand gradient, fifteen angles</h4>
+  <div class="warn"><b>The single biggest inconsistency.</b> <code>#82c88a → #0196cd</code> is rendered at ~15 different angles, with two stop patterns and a 3-stop variant. Same two colours, no canonical angle.</div>
+  <h5>The brand gradient, as actually rendered</h5>
+  <div class="gr" id="brandGr"></div>
+  <h5>Soft tint section washes — the rhythm device</h5>
+  <p>Full-span. Brand colours at <b>15–20% alpha</b> bleed in at the top and/or bottom edge; the middle stays pure white. This is how the site separates sections without rules or solid blocks.</p>
+  <div class="gr" id="washGr"></div>
+  <h5>Radial accent glows &amp; conic orb fills</h5>
+  <div class="gr" id="radGr"></div>
+  <h5>Hard-stop split backgrounds</h5>
+  <p>Used to sit a card half on a dark bed, half on a light one. <b>Mobile flattens the split</b> to a single charcoal.</p>
+  <div class="gr" id="splitGr"></div>
+</section>
+
+<section id="space">
+  <h3 class="sec">3 · <span>Spacing scale</span></h3>
+  <h4 class="t">Gutters are the responsive constant</h4>
+  <table><thead><tr><th>Context</th><th>Desktop</th><th>Tablet</th><th>Mobile</th></tr></thead><tbody>
+  <tr><td><b>Horizontal gutter</b></td><td class="m">40 (1360 rail) / 64 (1200 rail)</td><td class="m">64 uniform</td><td class="m">30 uniform</td></tr>
+  <tr><td>Hero top</td><td class="m">160</td><td class="m">120</td><td class="m">120</td></tr>
+  <tr><td>Standard section</td><td class="m">120 / 120</td><td class="m">120 / 80 · 80 / 80</td><td class="m">120 / 40</td></tr>
+  <tr><td>Compact section</td><td class="m">80 / 80 · 64 / 64</td><td class="m">64 / 64 · 90 / 90</td><td class="m">64 / 64 · 64 / 40</td></tr>
+  </tbody></table>
+  <h5>Most frequent full shorthands <span style="font-weight:400;color:var(--muted)">(top,right,bottom,left)</span></h5>
+  <table><thead><tr><th>Desktop</th><th>Tablet</th><th>Mobile</th></tr></thead><tbody><tr>
+  <td class="m">180,64,0,64 ×33<br>120,40,120,40 ×14<br>160,40,120,40 ×12<br>160,40,80,40 ×10<br>120,40,80,40 ×9</td>
+  <td class="m">120,64,0,64 ×36<br>120,64,80,64 ×23<br>80,64,80,64 ×13<br>64,64,64,64 ×10<br>90,64,90,64 ×8</td>
+  <td class="m">120,30,40,30 ×45<br>64,30,64,30 ×27<br>120,0,40,0 ×15<br>64,30,40,30 ×13<br>64,30,0,30 ×6</td>
+  </tr></tbody></table>
+  <h5>Vertical rhythm between typographic elements</h5>
+  <table><tbody>
+  <tr><td>Eyebrow → H2</td><td class="m">~16–24px</td></tr>
+  <tr><td>H1/H2 → subhead</td><td class="m">~24px (consistent)</td></tr>
+  <tr><td>Subhead → CTA</td><td class="m">~40px in heroes, ~32px in sections</td></tr>
+  <tr><td>Card padding</td><td class="m">40px default · 32px small · 64,30,40,30 testimonial</td></tr>
+  <tr><td>Section → section</td><td class="m">padding only — no margins, no horizontal rules</td></tr>
+  </tbody></table>
+  <div class="note"><b>The vocabulary.</b> <code>8 12 16 18 24 26 30 32 40 48 64 80 90 120 128 160 164 180</code> — close to an 8px grid, with <code>18 · 26 · 30 · 90 · 164</code> as the deviations.</div>
+</section>
+
+<section id="shadow">
+  <h3 class="sec">4 · <span>Shadows &amp; effects</span></h3>
+  <h4 class="t">Only five shadows exist — this part is tight</h4>
+  <div class="shs" id="shadowsBox"></div>
+  <h5>Radii</h5>
+  <div class="rad" id="radii"></div>
+  <p><code>24px 24px 0 0</code> and <code>40px 40px 0 0</code> (top-only) are a recurring device for panels sitting flush on a coloured bed. <b><code>backdrop-filter</code> is used nowhere</b> — glass effects come from <code>rgba(255,255,255,.12)</code>/<code>.3</code> fills over dark beds.</p>
+</section>
+
+<section id="buttons">
+  <h3 class="sec">5 · <span>Buttons &amp; components</span></h3>
+  <h4 class="t">One geometry, four sizes, no primary colour</h4>
+  <div class="demo">
+    <div class="btns">
+      <button class="pill pL" style="background:#eba343">See the System</button>
+      <button class="pill pM" style="background:#82c88a">Explore guides</button>
+      <button class="pill pS" style="background:#eba343">Book Call</button>
+      <button class="pill pS" style="background:#fff;border:1px solid var(--line)">Login</button>
+    </div>
+    <div class="btns">
+      <button class="pill pL" style="background:#82c88a">See Pricing</button>
+      <button class="pill pL" style="background:#38aeb2">Request Audit</button>
+      <button class="pill pL" style="background:#0196cd;color:#fff">Ask a Question</button>
+    </div>
+  </div>
+  <table><thead><tr><th>Size</th><th>Framer component</th><th class="m">Padding</th><th class="m">Height</th><th class="m">Label style</th><th>Where</th></tr></thead><tbody>
+  <tr><td><b>L</b></td><td class="m">⬛️ L Button Fill</td><td class="m">18 / 40</td><td class="m">60px</td><td class="m">MS500 20/24 −0.6</td><td>Hero + section CTAs (n=218, 10 pages)</td></tr>
+  <tr><td><b>M</b></td><td class="m">⬛️ M Button Fill</td><td class="m">12 / 24</td><td class="m">43px</td><td class="m">MS500 16px</td><td>Card CTAs (n=16, 7 pages)</td></tr>
+  <tr><td><b>S</b></td><td class="m">⬛️ S Button Fill</td><td class="m">8 / 24</td><td class="m">40px</td><td class="m">MS500 14/16.8 −0.3</td><td>Nav Book Call / Login (n=128)</td></tr>
+  <tr><td><b>XS</b></td><td class="m">(unnamed)</td><td class="m">8 / 24</td><td class="m">33px</td><td class="m">MS500 14px</td><td>“Read Now” on blog cards</td></tr>
+  </tbody></table>
+  <div class="warn"><b>There is no single primary button colour.</b> The same L component appears in orange, green, teal and blue — three of them on the same page, each n=183. Semantic, decorative, or accidental? See §16.</div>
+  <p>All buttons: <code>border-radius:999px</code>, <code>border:0</code>, and the shared 3-layer ambient shadow. The white “Login” outline is a <code>1px rgba(34,34,34,.1)</code> border on a child, not on the button.</p>
+  <h5>Cards</h5>
+  <table><thead><tr><th>Pattern</th><th class="m">Radius</th><th class="m">Background</th><th>Shadow</th><th class="m">Padding</th><th class="m">Width</th></tr></thead><tbody id="cards"></tbody></table>
+</section>
+
+<section id="icons">
+  <h3 class="sec">6 · <span>Icon system</span></h3>
+  <h4 class="t">Phosphor is the house set</h4>
+  <p>Identified by <code>viewBox</code> signature — different viewBox conventions mean different icon libraries.</p>
+  <table><thead><tr><th class="m">viewBox</th><th>Family</th><th>Distinct</th><th class="m">Sizes</th><th>Construction</th></tr></thead><tbody>
+  <tr><td class="m">0 0 256 256</td><td><b>Phosphor Icons</b> — the house set</td><td>11</td><td class="m">16 · 30 · 35 · 39 · 47</td><td>single filled <code>&lt;path&gt;</code></td></tr>
+  <tr><td class="m">0 0 24 24</td><td>Lucide / Feather-style</td><td>3</td><td class="m">16 · 20 · 24</td><td>shape primitives</td></tr>
+  <tr><td class="m">0 0 512 512</td><td>Font Awesome-style</td><td>1</td><td class="m">20</td><td>LinkedIn social, <code>#fff</code></td></tr>
+  <tr><td class="m">(none)</td><td>Inline decorative marks</td><td>1</td><td class="m">14</td><td>n≈339 — small check/bullet</td></tr>
+  </tbody></table>
+  <h5>Context rules — which icon appears next to what</h5>
+  <table><thead><tr><th>Context</th><th>Treatment</th></tr></thead><tbody id="iconctx"></tbody></table>
+  <div class="note"><b>The most distinctive icon behaviour in the system:</b> when sibling items each take an icon, they don't share a colour — they <b>walk the brand gradient</b>: <span style="color:#82c88a">■</span> <code>#82c88a</code> → <span style="color:#62bc9b">■</span> <code>#62bc9b</code> → <span style="color:#42afac">■</span> <code>#42afac</code> → <span style="color:#21a3bc">■</span> <code>#21a3bc</code> → <span style="color:#0196cd">■</span> <code>#0196cd</code>.</div>
+</section>
+
+<section id="imagery">
+  <h3 class="sec">7 · <span>Imagery treatment</span></h3>
+  <h4 class="t">Illustrations are never cropped; people are always round</h4>
+  <table><thead><tr><th class="m">Ratio</th><th class="m">Fit</th><th class="m">Radius</th><th>Meaning</th></tr></thead><tbody id="imgtbl"></tbody></table>
+  <h5>The seven rules</h5>
+  <div class="rules" id="imgrules"></div>
+</section>
+
+<section id="states">
+  <h3 class="sec">8 · <span>Interactive states</span></h3>
+  <h4 class="t">Captured by driving a real mouse</h4>
+  <p>Every state below was produced by genuinely hovering the element and re-reading computed styles — not inferred from static CSS.</p>
+
+  <h5>Primary CTA — <code>⬛️ L Button Fill</code></h5>
+  <div class="demo">
+    <div class="hoverdemo">See the System<span class="ar">→</span></div>
+    <p style="font-size:13px;color:var(--muted);margin-top:14px">Hover it. Width animates <b>212 → 240px</b> and an arrow slides in. <b>No</b> colour change, <b>no</b> shadow change, <b>no</b> scale. Settles in ~1s. This is <i>the</i> signature interaction of the site.</p>
+  </div>
+
+  <h5>Nav link</h5>
+  <div class="demo">
+    <div class="navdemo"><a href="#states">How It Works</a><a href="#states">Results</a><a href="#states">Pricing</a></div>
+    <p style="font-size:13px;color:var(--muted);margin-top:14px">Hover: font-family swaps <code>Museo Sans 300 → 700</code>. No colour change, no underline. <b>Side effect:</b> the bold face is wider, so siblings shift up to <code>translateX(2.41px)</code> — the nav visibly reflows. A real layout shift, reproduced above.</p>
+  </div>
+
+  <h5>Nav dropdown</h5>
+  <table><tbody>
+  <tr><td>Trigger</td><td class="m">hover — no click needed</td></tr>
+  <tr><td>Label</td><td class="m">same 300 → 700 swap; chevron rotates ~180°</td></tr>
+  <tr><td>Panel</td><td class="m">#fff · radius ~20px · ambient shadow · ~268px wide · ~44px below nav</td></tr>
+  <tr><td>Rows</td><td class="m">~80px tall · duotone Phosphor icon (~24px) + label</td></tr>
+  <tr><td>Divider</td><td class="m">1px rgba(34,34,34,.1) BETWEEN rows only — none top or bottom</td></tr>
+  <tr><td>Label colour</td><td class="m">two-tone — leading words #0196cd, trailing word green/dark<br>e.g. “For Sales” (blue) + “Leaders” (green)</td></tr>
+  <tr><td>Close</td><td class="m">latches open; closes on pointer leaving trigger + panel</td></tr>
+  </tbody></table>
+
+  <div class="warn"><b><code>⬛️ S Button Fill</code> — the nav “Book Call” CTA — has no hover state at all.</b> Verified by full-subtree computed-style diff while <code>:hover</code> was confirmed on the element. The site's most prominent conversion CTA is completely inert.</div>
+
+  <h5>FAQ block</h5>
+  <p><b>Not an accordion</b> on <code>/</code> or <code>/audit</code> — questions and answers are always expanded, stacked, separated by the standard hairline. Question <code>22px/28.6</code> MS700 in the brand gradient; answer <code>16–18px</code> MS300. (The <code>Closed</code>/<code>Open</code> named variants belong to the nav, not this block.)</p>
+
+  <h5>Focus states</h5>
+  <p>No custom <code>:focus-visible</code> styling was found on buttons or nav links — keyboard users get the browser default. Only <code>/login</code> inputs have a designed focus treatment. An accessibility gap.</p>
+</section>
+
+<section id="motion">
+  <h3 class="sec">9 · <span>Motion &amp; scroll</span></h3>
+  <h4 class="t">All JS-driven; almost nothing is in CSS</h4>
+  <table><thead><tr><th>Mechanism</th><th>Detail</th></tr></thead><tbody>
+  <tr><td><b>Entrance (“Appear”)</b></td><td>5 elements per page carry <code>data-framer-appear-id</code>; 79 instances site-wide. They render at <code>opacity:0.001</code> with <code>will-change:transform</code> until triggered, then fade/translate to <code>opacity:1</code>.</td></tr>
+  <tr><td><b>Scroll-linked fades</b></td><td>Other sections (e.g. the homepage FAQ) fade in progressively as they enter the viewport — opacity tracks scroll position rather than firing once.</td></tr>
+  <tr><td><b>Transitions</b></td><td><code>transition:all</code> on ~32,700 elements (Framer default). Real durations/easings are <b>framer-motion in JS and not readable from CSS</b>. The only explicit CSS transition is <code>opacity 0.2s</code> on carousel controls.</td></tr>
+  <tr><td><b>Keyframes</b></td><td>Exactly one exists site-wide: <code>__framer-loading-spin</code> (Framer's internal loader). No custom keyframe animation.</td></tr>
+  <tr><td><b>Stagger</b></td><td>Multi-item grids show no measurable per-item stagger in the DOM; items share one appear group.</td></tr>
+  <tr><td><b>Video</b></td><td>The homepage carries a full-bleed autoplaying background video section (<code>Video Background</code>, 781px) directly beneath the hero.</td></tr>
+  </tbody></table>
+</section>
+
+<section id="forms">
+  <h3 class="sec">10 · <span>Forms &amp; inputs</span></h3>
+  <h4 class="t">The system has no form pattern</h4>
+  <div class="warn"><b>Across 75 pages, native <code>&lt;input&gt;</code> elements exist on exactly two.</b> Every real conversion form — <code>/audit</code>, <code>/contact</code>, <code>/newsletter</code>, <code>/schedule-meeting-calendar</code>, <code>/gtm-audit-start</code>, <code>/gtm-audit</code> — is a <b>third-party embed</b> (HubSpot / scheduler). Its fields, validation and error states are not controlled by this design system.</div>
+  <table><thead><tr><th>Page</th><th>Fields</th><th class="m">Styling</th></tr></thead><tbody>
+  <tr><td class="m">/login</td><td class="m">email, password</td><td class="m">40px · bg rgba(10,15,30,.5) · border 1px rgba(255,255,255,.16) · radius 12px · pad 12/14 · 12px · caret #82c88a · label 13/15.6 MS700 #fff · submit #82c88a r12 h38</td></tr>
+  <tr><td class="m">/pathforward-dashboard</td><td class="m">password</td><td class="m">38px · bg #fff · border 1px #e4e8ec · radius 8px · pad 10/12 · 14px · submit #0d9488 r8 h36</td></tr>
+  </tbody></table>
+  <p>Both are React code components (<code>PasswordGateLogin.tsx</code>, <code>Client_Dashboard.tsx</code>), not Framer forms — which is why they use <code>ui-sans-serif</code>, <code>#0d9488</code> and <code>#e4e8ec</code>, none of which exist in the design system.</p>
+  <div class="note"><b>Consequence.</b> There is no design-system answer to “what does a text input look like?”, “what does a validation error look like?”, or “what does a multi-step form look like?” If a new page needs a native form, that pattern must be designed — it does not exist.</div>
+</section>
+
+<section id="taxonomy">
+  <h3 class="sec">11 · <span>Block taxonomy</span></h3>
+  <h4 class="t">Shared vocabulary</h4>
+  <p><b>Bold</b> names are real Framer layer names. <i>Italic</i> names are proposed for recurring blocks that are currently unnamed.</p>
+  <table><thead><tr><th>Block</th><th class="m">Framer name</th><th>Appears on</th><th>Notes</th></tr></thead><tbody id="tax"></tbody></table>
+  <h5>Static vs CMS-driven — the operational finding</h5>
+  <table><thead><tr><th>Content</th><th>Source</th></tr></thead><tbody>
+  <tr><td>Blog posts (33) + blog cards</td><td><b>Framer CMS</b> — one template. Add a post as a CMS entry, never a hand-built page.</td></tr>
+  <tr><td>Guides on <code>/resources</code></td><td>Appears CMS-driven (uniform card grid)</td></tr>
+  <tr><td><b>Testimonials</b></td><td><b>Hard-coded per section.</b> Avatars, names, quotes are literal layers, not a collection.</td></tr>
+  <tr><td><b>Case studies</b> on <code>/results</code></td><td><b>Hard-coded</b> — one named section per client. A new case study means duplicating a ~1,750px section.</td></tr>
+  <tr><td>Client logos (~20)</td><td>Hard-coded components, one per client</td></tr>
+  <tr><td>Professional-services pages (6)</td><td>Hand-built from one shared structure, not CMS</td></tr>
+  </tbody></table>
+  <div class="note"><b>In short: adding a blog post is a CMS action; adding a testimonial or case study is a design action.</b></div>
+</section>
+
+<section id="flow">
+  <h3 class="sec">12 · <span>Content flow</span></h3>
+  <h4 class="t">The narrative arc</h4>
+  <div class="flow">
+    <span class="step">credibility</span><span class="arw">→</span>
+    <span class="step">problem <i>(named as their pain)</i></span><span class="arw">→</span>
+    <span class="step">system <i>(named as Swivel's)</i></span><span class="arw">→</span>
+    <span class="step">proof <i>(named clients, real numbers)</i></span><span class="arw">→</span>
+    <span class="step">objections</span><span class="arw">→</span>
+    <span class="step">one next action</span>
+  </div>
+  <p>Proof is deployed <b>twice</b> — once early for credibility, once late to close objections. Objections are handled explicitly and by name (“Does this actually work?”, “We know what you're thinking”, “The major drawbacks of BDRs”). <b>The site argues rather than asserts.</b></p>
+  <h5>Where each block type sits</h5>
+  <table><thead><tr><th>Position</th><th>Blocks</th></tr></thead><tbody id="flowtbl"></tbody></table>
+  <h5>What each page type ends with</h5>
+  <table><thead><tr><th>Page type</th><th>Ends with</th></tr></thead><tbody id="endtbl"></tbody></table>
+</section>
+
+<section id="grammar">
+  <h3 class="sec">13 · <span>Compositional grammar</span></h3>
+  <h4 class="t">How to build something that doesn't exist yet</h4>
+  <p>The rules a never-before-seen block must follow to feel native. <b>This is the section to use when designing new work.</b></p>
+  <h5>R1 — Section skeleton</h5>
+  <div class="skel">EYEBROW      Heading 5 · 16px · +8px tracking · UPPERCASE · #666873 or a brand colour
+      ↓  ~16–24px
+H2           Heading 2 · 54px desktop — with ONE gradient &lt;span&gt; on the emphatic phrase
+      ↓  ~24px
+SUPPORT      1–2 sentences · Body Large 20px · max ~75 characters per line
+      ↓  ~32–40px
+ACTION       ONE L button — OR a proof point. Never both.</div>
+  <p>Not every element is required, but <b>the order never changes</b>, and nothing else may be inserted between them.</p>
+  <div class="rules" id="rules"></div>
+  <h5>R10 — Copy length constraints <span style="font-weight:400;color:var(--muted)">(measured against where components actually break)</span></h5>
+  <table><thead><tr><th>Element</th><th>Desktop</th><th>Mobile</th></tr></thead><tbody id="copylen"></tbody></table>
+</section>
+
+<section id="anatomy">
+  <h3 class="sec">14 · <span>Page anatomy</span></h3>
+  <h4 class="t">Six template families + 17 unique pages</h4>
+  <table><thead><tr><th>Family</th><th>Count</th><th class="m">Structure</th></tr></thead><tbody id="fam"></tbody></table>
+  <h5>Content rails (desktop)</h5>
+  <p>Two primary rails carry almost everything: <b>1360</b> (with 40px gutters — FAQs, testimonials, features, card grids) and <b>1200</b> (with 64px gutters — heroes, Why Swivel, case studies). Anything narrower is a deliberate measure-constrained block: <code>1400 · 1320 · 1272 · 1120 · 1100 · 1080 · 1072 · 1043 · 1040 · 1000 · 960 · 944 · 886 · 835 · 745 · 739 · 662 · 596</code>.</p>
+  <h5>Reference anatomies (desktop, heights in px)</h5>
+  <table><thead><tr><th>Page</th><th class="m">Sections</th></tr></thead><tbody id="anat"></tbody></table>
+</section>
+
+<section id="responsive">
+  <h3 class="sec">15 · <span>Responsive behaviour</span></h3>
+  <h4 class="t">Only desktop has a max-width system</h4>
+  <div class="bp"><div><b>Desktop</b><br><span style="font-size:11px;color:var(--muted)">1440</span></div><div class="bar" style="width:100%">rail 1360 / 1200 / 1072 · gutter 40 or 64 · <b style="margin-left:6px">fixed rails</b></div></div>
+  <div class="bp"><div><b>Tablet</b><br><span style="font-size:11px;color:var(--muted)">1024</span></div><div class="bar" style="width:71%">rail 896 uniform · gutter 64 · viewport − 128</div></div>
+  <div class="bp"><div><b>Mobile</b><br><span style="font-size:11px;color:var(--muted)">390</span></div><div class="bar" style="width:27%">rail 330 · gutter 30 · viewport − 60</div></div>
+  <p>Tablet and mobile <b>abandon fixed rails entirely</b> and become fully fluid.</p>
+  <h5>Type scaling</h5>
+  <table><thead><tr><th>Style</th><th class="m">1440 → 1024 → 390</th></tr></thead><tbody id="scale"></tbody></table>
+  <div class="note"><b>Does not scale at all:</b> the eyebrow (<code>Heading 5</code> 16px/+8px), <code>Heading 6b</code> (22px FAQ questions), <code>Heading 2b</code> (54px stat numerals), <code>Heading 4</code> at 24px, the 26px/26 heading, and every button label size. Letter-spacing loosens as size drops — hero tracking goes <code>−3.5px → −2px → −1px</code>.</div>
+  <h5>Structural changes</h5>
+  <ul id="structchg" style="font-size:14px;max-width:80ch"></ul>
+</section>
+
+<section id="open">
+  <h3 class="sec">16 · <span>Open questions</span></h3>
+  <h4 class="t">25 things that need a human decision</h4>
+  <div class="legend">
+    <span><i style="background:#d2691e"></i>Inconsistent — needs a decision</span>
+    <span><i style="background:#0196cd"></i>Gap — the pattern doesn't exist</span>
+    <span><i style="background:#9aa0a6"></i>Could not be fully inspected</span>
+  </div>
+  <div class="oq" id="oq"></div>
+</section>
+
+<footer>
+  Extracted from the live published swivelteam.com by reading computed styles in a real browser at 1440 / 1024 / 390&nbsp;px, with real mouse-driven interaction capture, cross-referenced read-only against the Framer project “Swivel”. 75 pages × 3 breakpoints, 0 errors. 3 August 2026.
+</footer>
+
+</main>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const rows=(el,data)=>{$(el).innerHTML=data.map(r=>'<tr>'+r.map((c,i)=>`<td${/^(\d|[#.\d]|\d+px|rgba|linear|\/)/.test(String(c))&&i>0?' class="m"':''}>${c}</td>`).join('')+'</tr>').join('')};
+
+/* ---------- typography specimens ---------- */
+const T=[
+["Heading 1","h1",90,90,-3.5,"90 → 72 → 40","Homepage hero only"],
+["Heading 1b","h1",72,72,-2.5,"72 → 46 → 28","Page heroes"],
+["Heading 2","h2",54,59.4,-2.5,"54 → 46 → 36","Standard section heading"],
+["Heading 2b","h2",54,48.6,-2.5,"54 → 54 → 54","Big stat numerals — does not scale"],
+["Heading 3","h3",36,39.6,-1.5,"36 → 28 → 28","Sub-section / card heading"],
+["Heading 6","h6",32,35.2,-1.5,"32 → 24 → 21","Comparison “faded” headings"],
+["Heading Long","h4",28,33.6,0,"28 → 21 → 21","Pull-quotes, long headings"],
+["Heading 4","h4",26,31.2,-0.6,"26 → 20 → 20","Card titles, feature titles"],
+["Heading 6b","h6",22,26.4,-0.6,"22 → 22 → 22","FAQ questions — does not scale"],
+["Body Large","p",20,26,0,"20 → 18 → 16","Hero subhead, lead paragraphs"],
+["Body Medium","p",16,24,0,"16 → 14 → 14","Standard body"],
+["Strong Medium","p",16,19.2,0,"constant","Most-used style on the site (n≈2,091)"],
+["Body","p",16,16,0,"constant","Attribution, tight meta (n≈2,334)"],
+["Body Small","p",14,18.2,-0.2,"constant","Footer, timestamps, meta"],
+["Heading 5","h5",16,24,8,"constant","THE EYEBROW — uppercase, never scales"],
+["Navigation","p",18,18,0,"—","Declared; rarely matched in the wild"],
+["Nav Small","p",13,14.3,-0.2,"—","Declared 13/1.1, rendered 13/16.9"]
+];
+$("typeSpecs").innerHTML=T.map(([n,tag,sz,lh,ls,sc,use])=>{
+  const up=n==="Heading 5";
+  const disp=Math.min(sz,54);
+  return `<div class="spec">
+   <div class="meta"><b>${n}</b>${tag} · ${sz}px / ${lh}px<br>tracking ${ls===0?'normal':ls+'px'}<br><span style="color:#0196cd">${sc}</span><br><span style="font-size:10px">${use}</span></div>
+   <div class="sample" style="font-size:${disp}px;line-height:${(lh/sz).toFixed(2)};letter-spacing:${ls}px;${up?'text-transform:uppercase;color:#666873;':''}font-weight:${sz>=22?700:400}">${up?'The Revenue Operating System':'Revenue growth made easy'}</div>
+  </div>`}).join('');
+
+rows("unnamedType",[
+["46px / 50.6px · −1.5px · MS700","46 → 38 → 30","Blog post H1","n≈40"],
+["30px / 37.5px · −0.5px · MS700","30 → 26 → 22","Blog body H2","n≈307"],
+["22px / 28.6px · −0.3px · MS700","22 → 20 → 18","Blog body H3","n≈272"],
+["18px / 28.8px · MS300","18 → 17 → 16","Blog body copy (1.6 lh)","n≈1,126"],
+["18px / 28.8px · MS500","as above","Bold run inside blog body","n≈393"],
+["20px / 24px · −0.6px · MS500","constant","Large button label","n≈603"],
+["14px / 16.8px · −0.3px · MS500","constant","Small button label","n≈292"],
+["15px / 30px · −0.15px · MS300","constant","Nav dropdown description (2.0 lh)","n≈756"],
+["27px / 27px · MS700","constant","The “vs” divider on compare pages","n≈60"],
+["13px / 16.9px · −0.2px · UPPERCASE","desktop + tablet only","Breadcrumb","n≈291"],
+["14px / 18.2px · +3px · UPPERCASE","constant","“DOWNSIDES” label, #f53434","n≈6"]
+]);
+
+/* ---------- colours ---------- */
+const C=[
+["#82c88a","Brand green",1],["#0196cd","Brand blue",1],["#eba343","Primary CTA orange",0],
+["#38aeb2","Teal (secondary CTA)",1],["#2ca7b7","Teal-blue",1],["#57b7a0","Green-teal",1],
+["#3d4443","Primary text",1],["#23252c","Blog body text",1],["#2e3238","Dark text / surface",1],
+["#666873","Muted / eyebrow",1],["#fefffe","Off-white on dark",1],["#0a0a0a","Near-black section bed",1],
+["#5b5b5b","Grey",1],["#646464","Grey",1],["#0d0d0d","Near-black",1],
+["#f53434","Error / negative red",0],["#373b40","Split-bed charcoal",0],
+["#071330","Orphan token",1],["#122e76","Orphan token",1],["#b3bcff","Orphan token",1],
+["#f7cb2d","Orphan token",1],["#1f514c","Orphan token",1],
+["#f3f5f8","/login only — off-system",0],["#0d9488","/login only — off-system",0]
+];
+$("colorSw").innerHTML=C.map(([hex,name,tok])=>`<div class="chip"><div class="c" style="background:${hex}"></div><div class="b"><div class="n">${name}</div><div class="v">${hex}</div><span class="tag ${tok?'ok':'no'}">${tok?'token':'no token'}</span></div></div>`).join('');
+
+/* ---------- gradients ---------- */
+const G=(id,arr)=>$(id).innerHTML=arr.map(([css,label])=>`<div class="gcard"><div class="g" style="background:${css}"></div><div class="l">${label}</div></div>`).join('');
+G("brandGr",[
+["linear-gradient(#82c88a 0%,#0196cd 100%)","vertical (no angle) — n=246 FULL"],
+["linear-gradient(315deg,#82c88a 0%,#0196cd 100%)","315deg — n=220"],
+["linear-gradient(82deg,#0196cd 0%,#82c88a 100%)","82deg (reversed) — n=216"],
+["linear-gradient(275deg,#82c88a 0%,#0196cd 100%)","275deg — n=192"],
+["linear-gradient(270deg,#82c88a 0%,#0196cd 100%)","270deg — n=186"],
+["linear-gradient(283deg,#82c88a 0%,#0196cd 100%)","283deg — n=105"],
+["linear-gradient(284deg,#82c88a 0%,#0196cd 100%)","284deg — n=36"],
+["linear-gradient(288deg,#0196cd 0%,#82c88a 100%)","288deg REVERSED — n=30"],
+["linear-gradient(289deg,#82c88a 16%,#0196cd 88%)","289deg, stops 16%/88% — n=18"],
+["linear-gradient(294deg,#82c88a 0%,#45a6bd 71.9888%,#0196cd 100%)","294deg 3-stop — n=21"],
+["linear-gradient(111deg,#82c88a 0%,#0196cd 100%)","111deg — n=9"],
+["linear-gradient(135deg,#82c88a 0%,#0196cd 100%)","135deg — n=3"]
+]);
+G("washGr",[
+["linear-gradient(rgba(0,152,205,.15) -5%,#fff 10%,#fff 90%,rgba(112,196,151,.15) 100%)","top+bottom bleed — n=30"],
+["linear-gradient(rgba(0,152,205,.15) -5%,#fff 10%,#fff 90%,rgba(112,196,151,0) 100%)","top bleed only — n=27 (all bp)"],
+["linear-gradient(#fff 43.2133%,rgba(112,196,151,.15) 100%)","bottom bleed — n=27"],
+["linear-gradient(rgba(0,152,205,.15) 0%,#fff 10%,#fff 90%)","top bleed — n=18 (all bp)"],
+["linear-gradient(rgba(0,152,205,.16) 0%,rgba(112,196,151,0) 100%)","blue fade-out — n=19"],
+["linear-gradient(rgba(112,196,151,.2) 0%,#fff 50%,rgba(1,150,205,.2) 101.629%)","green→white→blue — n=9"],
+["linear-gradient(#e6f6fc -5%,#fff 10%,#fff 90%,#fff 100%)","pale blue top — n=3"],
+["linear-gradient(#82c88a 10%,#0098cd 100%)","full saturation bed — n=6 FULL"]
+]);
+G("radGr",[
+["radial-gradient(circle at 50% 50%,#fff 0%,rgba(130,200,138,.16) 100%)","radial 50% 50% green — n=21"],
+["radial-gradient(circle at 50% 50%,rgba(255,255,255,.16) 0%,rgba(56,174,178,.16) 100%)","radial teal — n=21"],
+["radial-gradient(circle at 50% 50%,#fff 0%,rgba(1,150,205,.16) 100%)","radial blue — n=21"],
+["radial-gradient(86% 124% at 19% 57.1%,#4e4e4e 0%,#000 57.5838%)","dark bed — DESKTOP"],
+["radial-gradient(86% 67% at 50% 43.9%,#4e4e4e 0%,#000 57.5838%)","dark bed — MOBILE (re-aimed, centred)"],
+["conic-gradient(from 66deg at 38.5% 37.4%,#82c88a 93.6deg,#209e5b 219.6deg)","conic orb green — n=6"],
+["conic-gradient(from 66deg at 38.5% 37.4%,#0196cd 93.6deg,#00678c 219.6deg)","conic orb blue — n=6"],
+["conic-gradient(from 225deg at 83% 63.6%,#1a777a 3.6deg,#38aeb2 151.2deg)","conic orb teal — n=6"]
+]);
+G("splitGr",[
+["linear-gradient(#373b40 50%,#82c88a 50%)","hard 50% split — n=60 (desktop+tablet)"],
+["linear-gradient(#2e3238 49.9701%,#82c88a 50%,#0196cd 100%)","split + gradient — DESKTOP only"],
+["linear-gradient(#2e3238 49.9701%,#2e3238 50%,#2e3238 100%)","MOBILE flattens to flat charcoal"],
+["linear-gradient(#000 0%,#545454 100%)","black → grey — n=21"]
+]);
+
+/* ---------- shadows ---------- */
+const S=[
+["Button / ambient","rgba(0,0,0,.07) 0 .602187px 1.80656px -1.25px, rgba(0,0,0,.06) 0 2.28853px 6.8656px -2.5px, rgba(0,0,0,.03) 0 10px 30px -3.75px","Every pill button. Unchanged on hover."],
+["Card lift","rgba(0,0,0,.08) 0 10px 15px 0","Standard raised card"],
+["Deep soft (5-layer, diagonal)","rgba(20,15,15,.06) .59px .59px .84px -.5px, rgba(20,15,15,.06) 1.61px 1.61px 2.28px -1px, rgba(20,15,15,.06) 3.54px 3.54px 5.01px -1.5px, rgba(20,15,15,.06) 7.87px 7.87px 11.13px -2px, rgba(20,15,15,.06) 20px 20px 28.28px -2.5px","Feature cards — x = y, diagonal"],
+["Hard drop","rgba(0,0,0,.25) 10px 10px 2px 0","One card only. Off-system."],
+["Brand glow","rgb(1,150,205) 0 0 60px 0","The dark #0a0a0a chart panel"]
+];
+$("shadowsBox").innerHTML=S.map(([n,css,use])=>`<div class="shwrap"><div class="shbox" style="box-shadow:${css}"><b>${n}</b></div><div class="cap">${use}<br><br>${css}</div></div>`).join('');
+
+/* ---------- radii ---------- */
+$("radii").innerHTML=[["999px","buttons, avatars"],["40px","large feature card"],["24px","default card"],["20px","secondary / dropdown"],["12px","/login input"],["8px","/login submit"],["50%","carousel dot"]]
+ .map(([r,u])=>`<div style="text-align:center"><div class="rbox" style="border-radius:${r}">${r}</div><div style="font-size:10.5px;color:var(--muted);margin-top:5px">${u}</div></div>`).join('');
+
+/* ---------- cards ---------- */
+rows("cards",[
+["Top-rounded stat panel","40px 40px 0 0","#fff","none","40,24,40,24","~313px (n=220)"],
+["Dark chart panel","24px","#0a0a0a","brand glow","40 all","~1000px"],
+["Standard content card","24px","#fff","none","0 (padding on child)","~373px"],
+["Lifted feature card","20px","#fff","card lift","40 all","~397px"],
+["Testimonial card","24px","#fff","card lift","64,30,40,30","~536px"],
+["Split-bed card","24px 24px 0 0","#373b40","none","0,0,32,0","~896px (tablet/mobile)"]
+]);
+
+rows("iconctx",[
+["Nav dropdown items","Phosphor duotone ~24px, brand blue/green — one per menu entry"],
+["FAQ / list rows","Phosphor 30px, colour-stepped across the gradient ramp to sequence sibling rows"],
+["Nav trigger (Closed/Open)","Phosphor 35px / 39px #3d4443; 16px #000 on the compact desktop variant"],
+["Feature blocks","Phosphor 47px #82c88a"],
+["On dark beds","Phosphor 30px #fefffe"],
+["Carousel arrows","24×24 set, 20px, #000"],
+["Footer social","512-viewBox, 20px, #ffffff"],
+["Hero proof points","Large outlined check circles (~60px), white on the gradient bed"]
+]);
+
+rows("imgtbl",[
+["1.00","cover","999px","<b>Testimonial avatar</b>, 42×42 (n=99) — the most repeated image treatment on the site"],
+["1.00","cover","100%","Team headshot, 90×90 / 92×92"],
+["1.00","cover","999px","Large round portrait, 330×330 / 352×352"],
+["1.00","contain","0","Icon-like SVG, 50×50 / 65×65"],
+["0.97","cover","0","Client logo, 58×60 (n=24) — near-square, uncropped"],
+["0.5 – 1.16","contain","0","<b>Illustration SVGs</b>, 330–816px — the dominant hero/feature image type"],
+["1.15","cover","0","Photography, 667×579 / 768×667"],
+["0.68","cover","0","Portrait-crop photography, 270×400"]
+]);
+
+const IR=[
+["Illustrations are SVG and <code>object-fit:contain</code>","They are never cropped. Natural aspect ratio is preserved and the container flexes around them. Widths cluster at 330px (mobile/card), 436, 533, 816."],
+["Photography is raster and <code>object-fit:cover</code>","Always cropped to the container."],
+["People are always round","Every human image is <code>border-radius:999px</code> or <code>100%</code>. There is no square headshot anywhere on the site."],
+["Logos are never cropped and never rounded","<code>border-radius:0</code>, near-1:1, presented in a row with white edge-fade scrims at the ends of the marquee."],
+["Photography is candid, human, and washed out","The homepage hero is a real person mid-laugh held at very low contrast behind the headline — the image is a texture, not a subject. Where photography sits behind type it is washed toward white so the type carries all contrast."],
+["No image ever carries a drop shadow","Depth comes from the container, never the picture."],
+["Overlays are the soft tint washes, not flat scrims","The same 15–20% alpha brand washes from §2b are applied over imagery."]
+];
+$("imgrules").innerHTML=IR.map(([t,d],i)=>`<div class="rule"><b><em>${i+1}</em>${t}</b><p>${d}</p></div>`).join('');
+
+/* ---------- taxonomy ---------- */
+rows("tax",[
+["<b>Hero</b>","Hero, Section - Hero","/, /results, /about, /resources","160px top padding, 1200/1272 rail"],
+["<b>Video Background</b>","Video Background","/","Full-bleed autoplay video, 781px"],
+["<i>Trusted-By Logo Bar</i>","Logos","/, /newsletter, /results","313px, 1400 rail, edge-fade scrims, ~20 logo components"],
+["<i>Objection Banner</i>","—","/","“Does this actually work?” — 678px"],
+["<i>Problem/Solution Split</i>","Challenge/Solution","/, /how-it-works","“Stop managing chaos, start running a system”"],
+["<b>Stat Banner</b>","—","/, /how-it-works","Heading 2b numerals (54/48.6) + gradient"],
+["<b>Why Swivel</b>","Why Swivel","/, /how-it-works, /why-swivel/for-ceos","Soft-tint full-span wash, 1200 rail, 120/64"],
+["<b>Chart</b>","Chart","/","Dark #0a0a0a panel, r24, brand glow, 1400 rail"],
+["<b>Just Exploring 2-Across</b>","Just Exploring 2-Across","/","Two-up card grid"],
+["<b>FAQs</b>","FAQs, FAQ","/, /audit, all 5 compare, all 3 persona","Always-open Q&amp;A, hairline dividers, 1360 rail"],
+["<b>Testimonials</b>","Testimonials","/how-it-works, /pricing, compare + persona","Also (mis)used as the generic section wrapper"],
+["<b>Quote</b>","Quote","/how-it-works","Single large pull-quote, 1072 rail"],
+["<b>Case Studies</b>","Case Studies","/newsletter, persona pages","Card row"],
+["<i>Case Study Spotlight</i>","AGI, Buckhorn, Transportant, Leasecake, Abre, Conger, Dysinger","/results","7 near-identical 1,700–1,830px sections, 1200 rail"],
+["<b>Features</b>","Features","25+ pages","Generic section wrapper; also page hero on /pricing, /audit, /blog, /contact, all thank-you pages"],
+["<b>Easy Button</b>","Easy Button","all 5 compare pages + /resources/hire-a-bdr…","Closing CTA block, 561px, 739 rail"],
+["<b>Downsides</b>","Downsides","compare pages","Red #f53434 uppercase label"],
+["<i>Versus Divider</i>","—","compare pages","The literal “vs” glyph, 27px/27 MS700, 59px rail"],
+["<b>Guides</b>","Guides","/resources","2,294px card grid"],
+["<b>Blog — Home / Articles</b>","Blog - Home, Blog Articles, Blog","/, /resources, /blog","CMS-driven"],
+["<b>Meet the Team</b>","Meet the Team, Team About","/about","Used twice — team grid (2,684px) AND core values (676px)"],
+["<b>Swivel Promise</b>","Swivel Promise","/about","“Our story”"],
+["<b>3 Values</b>","3 Values","/about","—"],
+["<b>Our experts</b>","Our experts","/resources","—"],
+["<b>Getting Started</b>","Getting Started with Swivel","/resources","—"],
+["<b>Positioned to Win</b>","Positioned to Win","/audit","—"],
+["<b>Timeline</b>","Timeline","/how-it-works","—"],
+["<b>Carousel</b>","Carousel Controls, Slide Dots, Arrow Controls","testimonial / case-study rows","rgba(0,0,0,.3) dots, 50% radius, opacity .2s"],
+["<i>Footer</i>","Logo/Address, Nav Links, Links, Company, Compare","every page","Dark gradient bed; Montserrat 11px legal row"],
+["<i>Utility Strip</i>","—","every page, last child","64px tall, 1043 rail"]
+]);
+
+rows("flowtbl",[
+["<b>Opening (always)</b>","Hero — 160px top padding, H1 with a gradient span, 1–3 line subhead, one L button"],
+["<b>Immediately after hero</b>","Trust signal — logo bar or stat banner. <b>Credibility comes before explanation.</b>"],
+["Early-middle","Problem framing — “Stop managing chaos”, “The major drawbacks of…”, “What you're juggling…”. Named negatively."],
+["Middle","Solution / system — Why Swivel, Features, Chart, Timeline"],
+["Late-middle","Proof, again — Testimonials, Case Studies, Quote. <b>Trust appears twice.</b>"],
+["Penultimate","Objection handling — FAQs, “We know what you're thinking”, Downsides"],
+["<b>Closing (always)</b>","CTA block — Easy Button (compare), “Ready to begin?” (funnel), Just Exploring 2-Across (home)"],
+["Always last","Footer + 64px utility strip"]
+]);
+rows("endtbl",[
+["Homepage","FAQs → footer"],["Compare (/vs-*)","FAQs → footer (Easy Button sits mid-page)"],
+["Persona (/why-swivel/*)","FAQs → footer"],["Blog post","Related / CTA blocks → footer"],
+["Funnel (/audit, /newsletter, /gtm-audit-start)","“Ready to begin?” CTA → footer"],
+["Thank-you","Single content section → footer, nothing else"],
+["Case-study index (/results)","Last client spotlight → footer — <b>no closing CTA</b>"]
+]);
+
+/* ---------- grammar rules ---------- */
+const R=[
+["R2","Background rhythm","Alternate <code>white → soft-tint wash → white</code>. Never place two tinted sections adjacent. Use a solid dark bed (<code>#0a0a0a</code>/<code>#2e3238</code>) at most <b>once per page</b>, for the single highest-impact block. Tints are always full-span; solid colours are always contained."],
+["R3","The rails","Pick one and hold it for the whole section. <b>1360</b> + 40px gutters for wide content (FAQs, testimonials, card grids). <b>1200</b> + 64px gutters for standard content (heroes, features, case studies). <b>≤1072</b> for measure-constrained prose and single-column CTAs. Tablet collapses to 896/64; mobile to 330/30."],
+["R4","Emphasis hierarchy","Emphasis is created by <b>size first, then colour, then weight</b> — in that order. Size carries the hierarchy (90 → 54 → 36 → 26 → 20 → 16). Colour marks the <i>one</i> important phrase, not whole headings. Weight is used sparingly. <b>Never all three at once on the same element.</b>"],
+["R5","The gradient is a highlighter, not a fill","It goes on <b>one phrase per heading</b> — never the full heading, never body copy. On backgrounds it appears only as a 15–20% alpha wash, never at full saturation behind text."],
+["R6","One CTA per section","Exactly one L button per section. The nav's S button is the only always-present second CTA. Ghost/transparent buttons are for <b>selection</b> (tabs, personas), never for a primary action."],
+["R7","Cards","<code>radius 24px</code> · <code>background #fff</code> · <code>padding 40px</code> · <b>no border</b>. Add the card-lift shadow only when the card sits on a white bed and needs separation; on a tinted bed use no shadow. Top-only radius when the card is flush to a coloured bed."],
+["R8","Icons","Phosphor (<code>viewBox 0 0 256 256</code>), filled, 30px in content and 47px in feature blocks. When sibling items each take an icon, <b>walk them across the gradient ramp</b> rather than giving them all one colour."],
+["R9","Imagery","Illustrations: SVG, contain, uncropped, 330–816px. Photography: raster, cover, washed toward white if type sits over it. People: always <code>border-radius:999px</code>. Logos: never cropped, never rounded. No image gets a shadow."],
+["R11","CTA copy","Verb-led: “See the System”, “See Pricing”, “Request Audit”, “Ask a Question”, “Explore guides”, “Read Now”, “Book Call”. Benefit-led only when the offer needs qualifying: “Get a Free Growth Audit”. <b>Never “Learn more”. Never “Submit”.</b>"],
+["R12","Interaction","New interactive elements should adopt the <b>width-expand + arrow-reveal</b> for primary buttons and the <b>weight-swap</b> for text links. Do not invent hover colour shifts — the system has none."]
+];
+$("rules").innerHTML=R.map(([id,t,d])=>`<div class="rule"><b><em>${id}</em>${t}</b><p>${d}</p></div>`).join('');
+
+rows("copylen",[
+["H1 hero","<b>3–5 words</b>, 2 lines at 90px","3 lines at 40px — 5 words is the ceiling"],
+["H2 section","<b>4–8 words</b>, ideally 2 lines","wraps to 3 lines at 36px"],
+["Eyebrow","<b>2–5 words</b> — +8px tracking eats width fast","same"],
+["Support copy","<b>15–30 words</b> (~2 lines at 1360, 3 at 1200)","4–5 lines"],
+["Card title","<b>3–6 words</b> at 26px","at 20px"],
+["Button label","<b>2–4 words</b> — the L button starts at 212px and grows 28px on hover; a long label makes the arrow reveal look broken","same"],
+["FAQ question","<b>5–10 words</b> at 22px","same — 22px does not scale down"]
+]);
+
+rows("fam",[
+["<b>Blog post</b>","33","[60px bar] → [article 3,400–5,400px] → [720px] → [490px]"],
+["<b>Professional services</b>","6","[main 2,590–4,570px] → [720] → [490] → [60]"],
+["<b>Compare (/vs-*)</b>","6","Testimonials → Testimonials → “vs” → Testimonials → Easy Button → ? → ? → FAQs → [64]"],
+["<b>Persona (/why-swivel/*)</b>","3","Features(hero) → Why Swivel → Features → ? → Features → Testimonials → FAQs"],
+["<b>Guide thank-you</b>","6","Features (1360 rail, 160/40/120/40, H1 “Your guide is here!”) → [64] — six are byte-identical"],
+["<b>Simple thank-you</b>","4","Same shape, shorter (H≈2,692)"],
+["<b>Unique</b>","17","/, /how-it-works, /pricing, /results, /about, /resources, /blog, /audit, /contact, /newsletter, /schedule-meeting-calendar, /gtm-audit-start, /gtm-audit, /privacy, /login, /pathforward-dashboard, /404"]
+]);
+
+rows("anat",[
+["<b>/</b> — 12,641px","Hero 900 · Video Background 781 · Logo bar 313 · Objection 678 · Problem/Solution 973 · Stat 510 · Why Swivel 1099 · Chart 876 · Just Exploring 2-Across 893 · FAQs 1826 · strip 64"],
+["<b>/how-it-works</b> — 9,420px","Hero 625 · Why Swivel 370 · “Relief.” 758 · Testimonials 892 · Features 309 · Why Swivel 769 · “One partner. One hour a week.” 709 · Quote 962 · strip 64"],
+["<b>/results</b> — 15,623px","Hero 354 · Logos 246 · seven client spotlights (1,691–1,831 each, all 1200 rail, 160/64/120/64) · strip 64"],
+["<b>/vs-bdrs</b> — 6,469px","Drawbacks 1038 · “See how systems win” 219 · “vs” 712 · “We know what you're thinking” 758 · Easy Button 561 · 487 · 592 · FAQs 899 · strip 64"],
+["<b>/about</b> — 7,403px","Hero 644 · Swivel Promise 1101 · Meet the Team 2684 · Meet the Team (core values) 676 · strip 64"],
+["<b>/privacy</b> — 7,598px","Single Features section, 6,396px, 1120 rail"]
+]);
+
+rows("scale",[
+["Heading 1","90 → 72 → 40"],["Heading 1b","72 → 46 → 28"],["Heading 2","54 → 46 → 36"],
+["Heading 3","36 → 28 → 28  (tablet and mobile identical)"],["Heading 6","32 → 24 → 21"],
+["Body Large","20 → 18 → 16"],["Blog H1","46 → 38 → 30"],["Blog H2","30 → 26 → 22"],
+["Blog body","18 → 17 → 16   (line-height 28.8 → 27.2 → 24.8)"]
+]);
+
+$("structchg").innerHTML=[
+"<b>Nav:</b> full horizontal nav + Book Call + Login on desktop → <b>hamburger only</b> on mobile. Both nav CTAs disappear.",
+"<b>Hero proof points:</b> 3-across with vertical dividers → <b>stacked vertically</b> on mobile.",
+"<b>Split backgrounds flatten:</b> <code>linear-gradient(#2e3238 50%,#82c88a 50%,#0196cd 100%)</code> becomes flat <code>#2e3238</code>.",
+"<b>Radial glows re-aim:</b> <code>86% 124% at 19% 57.1%</code> → <code>86% 67% at 50% 43.9%</code> — off-centre on desktop, centred on mobile.",
+"<b>Mobile-only scrim:</b> <code>linear-gradient(to top,#fefffe,transparent)</code> appears only at 390px.",
+"<b>72px stat numerals vanish</b> on mobile — the stat banner reflows to a different treatment.",
+"<b>Breadcrumb (13px) and the Montserrat 11px footer legal row are absent</b> on mobile.",
+"<b>New style at tablet/mobile only:</b> <code>16px/24 +8px MS900 uppercase #fefffe</code> (n=80) has no desktop equivalent."
+].map(s=>`<li style="margin-bottom:7px">${s}</li>`).join('');
+
+/* ---------- open questions ---------- */
+const Q=[
+["","The brand gradient has ~15 different angles","Same two hex values (<code>#82c88a → #0196cd</code>) at 0 · 82 · 111 · 135 · 270 · 275 · 277 · 283 · 284 · 288(reversed) · 289 · 291 · 294 · 315 degrees, plus a no-angle vertical, two stop patterns (0→100% and 16→88%) and a 3-stop variant. <b>Should there be one canonical text gradient and one canonical fill gradient?</b>"],
+["","The primary CTA orange <code>#eba343</code> is not a Colour Style","A raw hex used ~195 times — the most important conversion colour in the system is untokenised. So is the error red <code>#f53434</code>."],
+["","There is no single primary button colour","The same <code>⬛️ L Button Fill</code> appears in orange, green, teal and blue with no discernible rule — “See Pricing” green, “Request Audit” teal, “Ask a Question” blue, “See the System” orange, three of them on one page at n=183 each. Semantic, decorative, or accidental?"],
+["","Four Colour Styles are named <code>White</code>; two are named <code>Green</code>","Three parallel neutral schemes coexist: <code>Neutral 800/500</code>, <code>Neutral 01/03/04</code>, and <code>Gray</code>/<code>GrayDark2</code>/<code>Medium Grey</code>. Two Text Styles in the <code>Audit</code> folder are both named <code>Body</code>."],
+["","<code>⬛️ S Button Fill</code> — the nav “Book Call” CTA — has no hover state whatsoever","Verified by real hover. Intentional, or an oversight on the site's most prominent conversion element?"],
+["","Nav links reflow the nav on hover","The <code>Museo Sans 300 → 700</code> swap changes text width, pushing siblings sideways by up to 2.4px. Reserve the bold width, or accept it?"],
+["","The blog post template is not uniform","7 of 33 posts are missing the two trailing sections the other 26 have: <code>what-is-a-revenue-operating-system</code>, <code>hire-a-bdr-vs-build-a-bd-system</code>, <code>improve-warm-lead-connect-rate</code>, <code>more-meetings-from-inbound</code>, <code>calculate-cpql-google-meta</code>, <code>best-b2b-sales-agencies</code>, <code>best-hubspot-revops-agencies</code>."],
+["","<code>/vs-sales-coaches</code> has a different structure","It uniquely carries trailing 720px + 490px blocks the other five compare pages lack."],
+["","Persona pages vary structurally","<code>/why-swivel/for-ceos</code> has 9 sections, <code>/for-marketers/</code> has 7, <code>/for-sales-leaders</code> has 13. Same page type, three different shapes."],
+["","Duplicate content","<code>/resources/hire-a-bdr-vs-build-a-bd-system</code> and <code>/blog/hire-a-bdr-vs-build-a-bd-system</code> are the same article at two URLs."],
+["","<code>/why-swivel/for-marketers/</code> has a trailing slash","Its two siblings do not."],
+["","Stray typefaces","<code>Inter</code> (one blog post), <code>Fragment Mono</code> (one code block), <code>Montserrat 11px</code> (footer legal). None belong to the system."],
+["","<code>Testimonials</code> is used as a generic section wrapper","Three of the four sections on <code>/vs-bdrs</code> are named <code>Testimonials</code> but contain drawbacks, comparisons and objections. The name no longer describes the content."],
+["","<code>Meet the Team</code> names two different blocks","On <code>/about</code> it is both the team grid and the core-values block."],
+["","Shadow #4 matches nothing else","<code>rgba(0,0,0,.25) 10px 10px 2px 0</code> appears on exactly one card."],
+["","Spacing deviates from an 8px grid","At <code>18 · 26 · 30 · 90 · 164</code>."],
+["","Orphan Colour Styles","<code>#071330</code>, <code>#122e76</code>, <code>#b3bcff</code>, <code>#f7cb2d</code>, <code>#1f514c</code> are defined but effectively unused on the public site."],
+["gap","There is no form design pattern","Every real conversion form is a third-party embed. The system has no input, no label, no validation state, no error state, no multi-step pattern. A new page needing a native form must have one designed from scratch."],
+["gap","There is no designed focus state","Buttons and links fall back to the browser default outline. An accessibility gap."],
+["gap","Semantic heading hierarchy diverges from visual hierarchy","Visual size is chosen before semantic level. <code>/why-swivel/for-ceos</code> uses <code>&lt;h1&gt;</code> for “Objections &amp; testimonials” mid-page (a second H1); <code>/</code> uses <code>&lt;h3&gt;</code> for “Trusted by Service, Tech, &amp; MFG Companies” ahead of any <code>&lt;h2&gt;</code>; <code>/results</code> uses <code>&lt;h3&gt;</code> for all seven case-study titles under one <code>&lt;h1&gt;</code>."],
+["cant","Motion durations and easings are not measurable from CSS","<code>transition:all</code> on ~32,700 elements; timing is framer-motion in JS. Exact durations, easing curves and stagger delays need the Framer animation panel or frame-by-frame capture."],
+["cant","The <code>Blog</code> Text-Style folder was not expanded","Blog typography <i>is</i> bound to named styles, but those names were not read. The measured values are in §1."],
+["cant","Appear animations do not fire inside an iframe","Per-breakpoint screenshots required overriding opacity to capture. Measurements are unaffected."],
+["cant","<code>/pathforward-dashboard</code> and <code>/login</code> are React code components","Measured, but they should be treated as outside this design system."],
+["cant","A security observation, not a design one","<code>SwivelDash.tsx</code> in the Framer project contains a hard-coded API URL, sync secret and dashboard password as client-side constants. Worth a separate review."]
+];
+$("oq").innerHTML=Q.map(([cls,t,d],i)=>`<div class="q ${cls}"><b>${i+1}. ${t}</b>${d}</div>`).join('');
+</script>
+</body>
+</html>

@@ -2,148 +2,198 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Position to Win — RevOS by Swivel</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" href="MuseoSans_500.otf" as="font" type="font/otf" crossorigin>
+<link rel="preload" href="MuseoSans_700.otf" as="font" type="font/otf" crossorigin>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
 <style>
-:root{--ink:#0B0F1E;--bg:#F5F7FC;--tx:#0F172A;--mut:#5A6478;--line:#E5E9F3;--brand:#4F46E5;--brand2:#06B6D4;--good:#16A34A;}
+@font-face{font-family:'Museo Sans';src:url('MuseoSans-100.otf') format('opentype');font-weight:100;font-style:normal;font-display:swap}
+@font-face{font-family:'Museo Sans';src:url('MuseoSans-100Italic.otf') format('opentype');font-weight:100;font-style:italic;font-display:swap}
+@font-face{font-family:'Museo Sans';src:url('MuseoSans-300.otf') format('opentype');font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:'Museo Sans';src:url('MuseoSans-300Italic.otf') format('opentype');font-weight:300;font-style:italic;font-display:swap}
+@font-face{font-family:'Museo Sans';src:url('MuseoSans_500.otf') format('opentype');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Museo Sans';src:url('MuseoSans_500_Italic.otf') format('opentype');font-weight:500;font-style:italic;font-display:swap}
+@font-face{font-family:'Museo Sans';src:url('MuseoSans_700.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Museo Sans';src:url('MuseoSans-700Italic.otf') format('opentype');font-weight:700;font-style:italic;font-display:swap}
+@font-face{font-family:'Museo Sans';src:url('MuseoSans_900.otf') format('opentype');font-weight:900;font-style:normal;font-display:swap}
+@font-face{font-family:'Museo Sans';src:url('MuseoSans-900Italic.otf') format('opentype');font-weight:900;font-style:italic;font-display:swap}
+
+.ph-fill,.ph{line-height:1;display:inline-block;vertical-align:-.08em}
+
+:root{--ink:#0A0A0A;--bg:#F7F8FA;--tx:#3D4443;--mut:#666873;--line:rgba(34,34,34,.1);--brand:#0196CD;--brand2:#38AEB2;--good:#57B7A0;}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--tx);background:#fff;-webkit-font-smoothing:antialiased;line-height:1.55}
-a{text-decoration:none;color:inherit}.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
-.btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;border-radius:11px;padding:13px 22px;border:1px solid transparent}
-.btn.p{color:#fff;box-shadow:0 8px 22px rgba(79,70,229,.35)}.btn.g{background:rgba(255,255,255,.06);color:#fff;border-color:rgba(255,255,255,.18)}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+body{font-family:'Museo Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--tx);background:#fff;-webkit-font-smoothing:antialiased;font-synthesis:none;line-height:1.55}
+a{text-decoration:none;color:inherit}.wrap{max-width:1200px;margin:0 auto;padding:0 64px}
+.hero .in{max-width:1280px}
+@media(max-width:809px){.hero .in{padding-left:30px;padding-right:30px}.wrap{padding:0 30px}section{padding:64px 0}}
+
+
 .gt{-webkit-background-clip:text;background-clip:text;color:transparent}
-.nav{position:sticky;top:0;z-index:50;background:rgba(11,15,30,.72);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.07)}
-.nav .in{display:flex;align-items:center;gap:14px;height:64px}
-.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;color:#fff}
-.logo .m{width:30px;height:30px;border-radius:9px;background:linear-gradient(120deg,#6366F1,#06B6D4);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800}
-.logo span{color:#7DD3FC}.nav .links{display:flex;gap:22px;margin-left:24px}.nav .links a{font-size:14px;font-weight:500;color:#AEB7CE}.nav .links a:hover{color:#fff}.nav .links a.on{color:#fff;font-weight:700}
-.nav .act{margin-left:auto}
-.hero{position:relative;background-color:#0B0F1E;color:#fff;overflow:hidden}
-.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 72%,#0B0F1E)}
-.hero .in{position:relative;z-index:2;padding:64px 0 40px;text-align:center}
-.hero h1{font-size:52px;line-height:1.05;font-weight:800;letter-spacing:-1.4px;margin:16px auto 0;max-width:900px}
-.hero p.sub{font-size:18.5px;line-height:1.55;color:#C3CBE0;max-width:740px;margin:20px auto 0}
+.nav{position:sticky;top:0;z-index:50;background:#0A0A0A;border-bottom:1px solid rgba(255,255,255,.07)}
+.nav .in{display:flex;align-items:center;gap:14px;height:72px}
+.nav .links{display:flex;gap:26px;margin-left:26px}.nav .links a{font-size:14.5px;font-weight:500;color:#AEB7CE}.nav .links a:hover{color:#fff}.nav .links a.on{color:#fff;font-weight:700}
+.nav .act{margin-left:auto;display:flex;align-items:center;gap:14px}.nav .act a.li{font-size:14.5px;font-weight:500;color:#DCE2F0}
+.hero{position:relative;background-color:#0A0A0A;color:#fff;overflow:hidden}
+.hero:before{content:"";position:absolute;top:0;left:0;right:0;height:220px;z-index:1;background:linear-gradient(180deg,#0A0A0A 0,#0A0A0A 108px,transparent 100%)}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 72%,#0A0A0A)}
+.hero .in{position:relative;z-index:2;padding:88px 64px 40px;text-align:center}
+.hero h1{font-size:clamp(30px,4.2vw,56px);line-height:1.02;font-weight:700;letter-spacing:-2px;margin:14px auto 0;max-width:1100px}
+.hero p.sub{font-size:20px;line-height:1.55;color:#C3CBE0;max-width:1080px;margin:22px auto 0}
 .hero .cta{display:flex;gap:14px;justify-content:center;margin-top:28px;flex-wrap:wrap}
-.hero .trust{margin-top:20px;font-size:13.5px;color:#AEB7CE;display:flex;gap:18px;justify-content:center;flex-wrap:wrap}.hero .trust b{color:#E5E9FF;font-weight:600}
+.hero .trust{margin-top:20px;font-size:13.5px;color:#AEB7CE;display:flex;gap:18px;justify-content:center;flex-wrap:wrap}.hero .trust b{color:#E6F4FA;font-weight:500}
 .shot{position:relative;z-index:2;max-width:1000px;margin:42px auto 0}
-.browser{border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.14);box-shadow:0 40px 100px rgba(0,0,0,.55);background:#0E1220}
-.browser .bar{height:34px;background:#171C2E;display:flex;align-items:center;gap:7px;padding:0 14px}.browser .bar i{width:11px;height:11px;border-radius:50%}.browser img{display:block;width:100%}
-.glow{position:absolute;z-index:1;width:66%;height:200px;left:17%;top:70px;filter:blur(90px);opacity:.55;border-radius:50%}
-section{padding:80px 0}.sec-head{text-align:center;max-width:720px;margin:0 auto 44px}
-.sec-head h2{font-size:37px;font-weight:800;letter-spacing:-1px;line-height:1.12;margin-top:12px}.sec-head p{font-size:17.5px;color:var(--mut);margin-top:14px}
-.problem{background:var(--bg)}.prob{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
-.probrow{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 22px}
-.probrow .x{width:26px;height:26px;flex:0 0 26px;border-radius:8px;background:#FDE9EE;color:#E11D48;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px}
+.browser{border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.14);box-shadow:0 40px 100px rgba(0,0,0,.55);background:#141414}
+.browser .bar{height:34px;background:#2E3238;display:flex;align-items:center;gap:7px;padding:0 14px}.browser .bar i{width:11px;height:11px;border-radius:50%}.browser img{display:block;width:100%}
+.glow{position:absolute;z-index:1;width:66%;height:200px;left:17%;top:120px;filter:blur(90px);opacity:.55;border-radius:50%}
+section{padding:120px 0}.sec-head{text-align:center;max-width:720px;margin:0 auto 44px}
+.sec-head h2{font-size:54px;font-weight:700;letter-spacing:-2.5px;line-height:1.1;margin-top:12px}.sec-head p{font-size:20px;color:var(--mut);margin-top:14px}
+.problem{background:linear-gradient(rgba(0,152,205,.15) -5%,#fff 10%,#fff 90%,rgba(112,196,151,.15) 100%)}.prob{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+.probrow{display:flex;gap:14px;align-items:flex-start;background:#fff;border-radius:24px;box-shadow:rgba(0,0,0,.08) 0 10px 15px 0;padding:18px 22px}
+.probrow .x{width:26px;height:26px;flex:0 0 26px;border-radius:999px;background:#FEECEC;color:#F53434;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px}
 .probrow p{font-size:15.5px;color:#334155}
 /* AI SYSTEM LAYERS */
 .sys{background:var(--ink);color:#fff}.sys .sec-head h2{color:#fff}.sys .sec-head p{color:#C3CBE0}
 .stack{max-width:920px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
 .bookend{border:1px dashed rgba(255,255,255,.28);border-radius:12px;padding:13px 20px;display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.03)}
-.bookend .bk{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#a5b4fc;flex:0 0 auto}
+.bookend .bk{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#82C88A;flex:0 0 auto}
 .bookend p{font-size:13.5px;color:#C3CBE0}
-.layer{position:relative;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.11);border-radius:14px;padding:18px 20px;display:flex;gap:16px;align-items:flex-start}
-.layer .ic{width:44px;height:44px;flex:0 0 44px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:19px;font-weight:800;color:#fff}
-.layer h4{font-size:20px;font-weight:800;letter-spacing:-.3px}
-.layer .lsub{font-size:12px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#8EC9FF;margin-top:3px}
-.layer .lstep{position:absolute;top:16px;right:18px;font-size:13px;font-weight:800;color:#46507A}
+.layer{position:relative;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.11);border-radius:24px;padding:18px 20px;display:flex;gap:16px;align-items:flex-start}
+.layer .ic{width:56px;height:56px;flex:0 0 56px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:19px;font-weight:700;color:#fff}
+.layer h4{font-size:20px;font-weight:700;letter-spacing:-.3px}
+.layer .lsub{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#82C88A;margin-top:3px}
+.layer .lstep{position:absolute;top:16px;right:18px;font-size:13px;font-weight:700;color:#82C88A}
 .layer p{font-size:14px;color:#C3CBE0;margin-top:7px;line-height:1.55}
 .layer .lg{display:flex;gap:7px;flex-wrap:wrap;margin-top:11px}
-.lgc{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:4px 9px 4px 5px;font-size:11.5px;font-weight:600;color:#dbe2f2}
-.lgc .b{width:20px;height:20px;border-radius:5px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:10px}
-.conn{text-align:center;color:#5566a0;font-size:15px;line-height:.4;margin:-2px 0}
+.lgc{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:4px 9px 4px 5px;font-size:11.5px;font-weight:500;color:#DCE6EE}
+.lgc .b{width:20px;height:20px;border-radius:999px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:10px}
+.conn{text-align:center;color:#4A6E8C;font-size:15px;line-height:.4;margin:-2px 0}
 /* integrations */
 .integ .intgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:900px;margin:0 auto}
-.intpill{border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:flex;align-items:center;gap:12px;background:#fff}
-.intpill .l{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:13px;flex:0 0 38px}
-.intpill .n{font-size:14px;font-weight:800}.intpill .r{font-size:11.5px;color:var(--mut)}
+.intpill{border-radius:24px;box-shadow:rgba(0,0,0,.08) 0 10px 15px 0;padding:14px 16px;display:flex;align-items:center;gap:12px;background:#fff}
+.intpill .l{width:38px;height:38px;border-radius:999px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:13px;flex:0 0 38px}
+.intpill .n{font-size:14px;font-weight:700}.intpill .r{font-size:11.5px;color:var(--mut)}
 /* feature rows */
 .feat{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center;margin-bottom:70px}.feat:last-child{margin-bottom:0}.feat.rev .txt{order:2}
-.feat .tag{font-size:12.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
-.feat h3{font-size:26px;font-weight:800;letter-spacing:-.5px;margin-top:10px;line-height:1.16}.feat p{font-size:15.5px;color:var(--mut);margin-top:12px;line-height:1.6}
-.fshot{border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:0 24px 60px rgba(15,23,42,.14)}
-.fshot .bar{height:30px;background:#171C2E;display:flex;align-items:center;gap:6px;padding:0 12px}.fshot .bar i{width:9px;height:9px;border-radius:50%}.fshot img{display:block;width:100%}
+.feat .tag{font-size:16px;line-height:24px;font-weight:700;letter-spacing:8px;text-transform:uppercase;color:#666873}
+.feat h3{font-size:36px;font-weight:700;letter-spacing:-1.5px;margin-top:10px;line-height:1.16}.feat p{font-size:15.5px;color:var(--mut);margin-top:12px;line-height:1.6}
+.fshot{border-radius:24px;overflow:hidden;border:1px solid var(--line);box-shadow:0 24px 60px rgba(15,23,42,.14)}
+.fshot .bar{height:30px;background:#2E3238;display:flex;align-items:center;gap:6px;padding:0 12px}.fshot .bar i{width:9px;height:9px;border-radius:50%}.fshot img{display:block;width:100%}
 .fcap{font-size:12.5px;color:var(--mut);margin-top:10px;font-style:italic;text-align:center}
 /* outcomes */
-.out{background:var(--bg)}.outgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.outc{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;display:flex;gap:12px;align-items:flex-start}
-.outc .ck{width:26px;height:26px;flex:0 0 26px;border-radius:8px;background:#E7F6ED;color:#0d7a3a;display:flex;align-items:center;justify-content:center;font-weight:800}
-.outc p{font-size:15px;color:#27324A;font-weight:600;line-height:1.45}
+.out{background:linear-gradient(rgba(0,152,205,.15) -5%,#fff 10%,#fff 90%,rgba(112,196,151,.15) 100%)}.outgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.outc{background:#fff;border-radius:24px;box-shadow:rgba(0,0,0,.08) 0 10px 15px 0;padding:40px;display:flex;gap:12px;align-items:flex-start}
+.outc .ck{width:26px;height:26px;flex:0 0 26px;border-radius:999px;background:#E9F6F1;color:#57B7A0;display:flex;align-items:center;justify-content:center;font-weight:700}
+.outc p{font-size:15px;color:#233246;font-weight:500;line-height:1.45}
 /* other pillars */
-.opil{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.opilc{border:1px solid var(--line);border-radius:14px;padding:20px;transition:.15s}.opilc:hover{border-color:#c7cee0;transform:translateY(-2px);box-shadow:0 12px 26px rgba(15,23,42,.08)}
-.opilc .n{width:40px;height:40px;border-radius:11px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:17px}
-.opilc h4{font-size:17px;font-weight:800;margin-top:12px}.opilc p{font-size:13.5px;color:var(--mut);margin-top:5px}.opilc .go{font-size:13px;font-weight:700;color:var(--brand);margin-top:10px}
-.final{background:radial-gradient(900px 400px at 50% 0%,rgba(79,70,229,.5),transparent 60%),#0B0F1E;color:#fff;text-align:center}
-.final h2{font-size:40px;font-weight:800;letter-spacing:-1.1px;max-width:800px;margin:0 auto}.final p{font-size:18px;color:#C3CBE0;margin-top:16px}.final .cta{margin-top:26px}
-footer{background:#080B16;color:#8C97B4;padding:44px 0 34px;text-align:center;font-size:13px}
-footer .logo{justify-content:center;margin-bottom:12px}footer .fb{font-size:12px;color:#5A6478;margin-top:10px}
-@media(max-width:900px){.nav .links{display:none}.hero h1{font-size:36px}.intgrid,.outgrid,.opil{grid-template-columns:1fr}.feat{grid-template-columns:1fr;gap:22px;margin-bottom:48px}.feat.rev .txt{order:0}.sec-head h2{font-size:28px}.final h2{font-size:28px}}
+.final{background:radial-gradient(900px 400px at 50% 0%,rgba(130,200,138,.5),transparent 60%),#0A0A0A;color:#fff;text-align:center}
+.final h2{font-size:54px;font-weight:700;letter-spacing:-2.5px;line-height:.94;max-width:800px;margin:0 auto}.final p{font-size:18px;color:#C3CBE0;margin-top:16px}.final .cta{margin-top:26px}
+footer{background:#000;color:#8C97B4;padding:44px 0 34px;text-align:center;font-size:13px}
+footer .logo{justify-content:center;margin-bottom:12px}footer .fb{font-size:12px;color:#7C8798;margin-top:10px}
+@media(max-width:1100px){.nav .links{display:none}}
+@media(max-width:900px){.hero h1{font-size:36px}.intgrid,.outgrid,.opil{grid-template-columns:1fr}.feat{grid-template-columns:1fr;gap:22px;margin-bottom:48px}.feat.rev .txt{order:0}.sec-head h2{font-size:28px}.final h2{font-size:28px}}
+
+.btn{display:inline-flex;align-items:center;gap:0;font-weight:500;font-size:20px;line-height:24px;letter-spacing:-.6px;border-radius:999px;padding:18px 40px;border:0;cursor:pointer;box-shadow:rgba(0,0,0,.07) 0 .602187px 1.80656px -1.25px,rgba(0,0,0,.06) 0 2.28853px 6.8656px -2.5px,rgba(0,0,0,.03) 0 10px 30px -3.75px;transition:padding .28s cubic-bezier(.22,.61,.36,1)}
+.btn i.ph-fill,.btn i.ph{max-width:0;opacity:0;overflow:hidden;transition:max-width .28s cubic-bezier(.22,.61,.36,1),opacity .2s,margin-left .28s}
+.btn:hover i.ph-fill,.btn:hover i.ph{max-width:1.1em;opacity:1;margin-left:10px}
+.btn.p{background:#EBA343;color:#2E3238}
+.btn.g{background:rgba(255,255,255,.12);color:#fff}
+.btn.o{background:#fff;color:var(--tx);box-shadow:rgba(0,0,0,.07) 0 .602187px 1.80656px -1.25px,rgba(0,0,0,.06) 0 2.28853px 6.8656px -2.5px,rgba(0,0,0,.03) 0 10px 30px -3.75px,inset 0 0 0 1px rgba(34,34,34,.1)}
+.nav .btn{font-size:14px;line-height:16.8px;letter-spacing:-.3px;padding:8px 24px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:16px;line-height:24px;font-weight:700;letter-spacing:8px;text-transform:uppercase}
+
+.logo{display:flex;align-items:center;gap:12px;color:#fff}
+.logo .m{position:relative;width:36px;height:36px;flex:0 0 36px;border-radius:999px;background:conic-gradient(from 66deg at 38.5% 37.4%,#82C88A 93.6deg,#0196CD 219.6deg)}
+.logo .m::after{content:"";position:absolute;inset:9.5px;border-radius:999px;background:#0A0A0A}
+.logo .m::before{content:"";position:absolute;top:-2px;left:14px;width:8px;height:8px;border-radius:999px;background:#AAFFB3;box-shadow:0 0 10px rgba(170,255,179,.9)}
+.logo .lk{display:flex;flex-direction:column;gap:5px}
+.logo .wm{font-size:21px;line-height:21px;font-weight:700;letter-spacing:-.6px}
+.logo .wm span{background:linear-gradient(275deg,#82C88A 0%,#0196CD 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.logo .pb{font-size:9.5px;line-height:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#7C8798}
+
+.opil{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.opilc{position:relative;display:block;border-radius:24px;background:#fff;box-shadow:rgba(0,0,0,.08) 0 10px 15px 0;padding:28px 24px;transition:box-shadow .22s cubic-bezier(.22,.61,.36,1),transform .22s cubic-bezier(.22,.61,.36,1)}
+.opilc:hover{transform:translateY(-2px);background:var(--pc);box-shadow:rgba(0,0,0,.14) 0 16px 26px 0}
+.opilc .ic{width:52px;height:52px;border-radius:999px;background:rgba(34,34,34,.06);display:flex;align-items:center;justify-content:center;font-size:26px}
+.opilc .st{position:absolute;top:30px;right:24px;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase}
+.opilc h4{font-size:20px;line-height:24px;letter-spacing:-.6px;font-weight:700;margin-top:18px}
+.opilc p{font-size:15px;line-height:1.5;color:var(--mut);margin-top:8px;min-height:66px}
+.opilc .go{font-size:14px;font-weight:700;margin-top:4px;display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+.opilc.here{background:var(--pc);pointer-events:none}
+.opilc.here .hp{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border-radius:999px;padding:6px 12px;color:#fff;margin-top:4px}
+@media(max-width:900px){.opil{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.opil{grid-template-columns:1fr}.opilc p{min-height:0}}
+.heroic{display:block;font-size:72px;line-height:1;margin:18px 0 6px;color:#82C88A}
+
+.logo .m{position:relative;width:auto;height:auto;flex:0 0 auto;border-radius:0;background:none;font-size:34px;line-height:1;background-image:linear-gradient(275deg,#0196CD 0%,#82C88A 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 12px rgba(1,150,205,.45))}
+.logo .m::before,.logo .m::after{content:none}
+.logo .wm .tm{-webkit-text-fill-color:#7C8798;color:#7C8798;background:none;font-size:9px;font-weight:700;vertical-align:super;letter-spacing:0;margin-left:1px}
+.nav .wrap{max-width:1360px}
+@media(min-width:1500px){.nav .wrap{max-width:1500px}}
 </style></head><body>
 <div class="nav"><div class="wrap in">
- <a class="logo" target="_top" href="/"><span class="m">R</span><span>Rev<span>OS</span></span></a>
- <div class="links"><a class="on" target="_top" href="/position-to-win">Position to Win</a><a class="" target="_top" href="/drive-warm-leads">Drive Warm Leads</a><a class="" target="_top" href="/set-meetings">Set Meetings</a><a class="" target="_top" href="/close-deals">Close Deals</a><a target="_top" href="/#pricing">Pricing</a></div>
- <div class="act"><a class="btn p" style="background:#7C3AED" href="#start">Get your audit</a></div>
+ <a class="logo" href="index.html"><span class="m"><i class="ph-fill ph-sparkle"></i></span><span class="lk"><span class="wm">Rev<span>OS</span><span class="tm">™</span></span><span class="pb">Powered by Swivel</span></span></a>
+ <div class="links"><a class="on" href="position-to-win.html">Position to Win</a><a class="" href="drive-warm-leads.html">Drive Warm Leads</a><a class="" href="set-meetings.html">Set Meetings</a><a class="" href="close-deals.html">Close Deals</a><a href="index.html#pricing">Pricing</a></div>
+ <div class="act"><a class="li" href="https://swivelteam.com/login">Log in</a><a class="btn p" href="https://swivelteam.com/gtm-audit">Get your audit</a></div>
 </div></div>
 
-<header class="hero" id="top" style="background:radial-gradient(1200px 600px at 70% -10%,#7C3AED66,transparent 60%),radial-gradient(900px 500px at 10% 10%,#A855F733,transparent 55%),#0B0F1E"><div class="wrap in">
- <span class="eyebrow" style="color:#a5b4fc">✦ &nbsp;The four pillars · 1 of 4</span>
- <h1>Position to Win<br><span class="gt" style="background:linear-gradient(120deg,#7C3AED,#A855F7);-webkit-background-clip:text;background-clip:text">Win the right accounts — before the pitch.</span></h1>
+<header class="hero" id="top" style="background:radial-gradient(1200px 600px at 70% 14%,#82C88A33,transparent 60%),radial-gradient(900px 500px at 10% 30%,#82C88A33,transparent 55%),#0A0A0A"><div class="wrap in">
+ <span class="eyebrow" style="color:#82C88A">Pillar 1</span><div class="heroic"><i class="ph-fill ph-crosshair"></i></div><h1>Position to Win<br><span class="gt" style="background:linear-gradient(275deg,#57B7A0 0%,#AAFFB3 100%);-webkit-background-clip:text;background-clip:text">Win the right accounts — before the pitch.</span></h1>
  <p class="sub">Sharpen your ICP, positioning, and reputation so the market sees you as the obvious choice. RevOS reads how you show up — in search, in AI answers, and in the reviews buyers check — and builds the positioning that wins.</p>
- <div class="cta"><a class="btn p" style="background:#7C3AED" href="#start">Get your audit →</a><a class="btn g" href="#system">See the AI system</a></div>
- <div class="trust"><span>✓ <b>Win right-fit accounts</b></span><span>✓ <b>Rank in search & AI answers</b></span><span>✓ <b>A reputation that closes</b></span></div>
- <div class="shot"><div class="glow" style="background:linear-gradient(120deg,#7C3AED,#A855F7)"></div><div class="browser"><div class="bar"><i style="background:#FF5F57"></i><i style="background:#FEBC2E"></i><i style="background:#28C840"></i></div><img src="swivel-image-3.png"></div></div>
+ <div class="cta"><a class="btn p" href="https://swivelteam.com/gtm-audit">Get your audit <i class="ph ph-arrow-right"></i></a><a class="btn g" href="#system">See the AI system</a></div>
+ <div class="trust"><span><i class="ph ph-check"></i> <b>Win right-fit accounts</b></span><span><i class="ph ph-check"></i> <b>Rank in search & AI answers</b></span><span><i class="ph ph-check"></i> <b>A reputation that closes</b></span></div>
+ <div class="shot"><div class="glow" style="background:linear-gradient(275deg,#57B7A0 0%,#AAFFB3 100%)"></div><div class="browser"><div class="bar"><i style="background:#FF5F57"></i><i style="background:#FEBC2E"></i><i style="background:#28C840"></i></div><img src="swivel-image-3.png"></div></div>
 </div></header>
 
 <section class="problem"><div class="wrap">
- <div class="sec-head"><span class="eyebrow" style="color:#7C3AED">The problem</span><h2>You compete on price because buyers don’t see why you’re different.</h2></div>
- <div class="prob"><div class="probrow"><div class="x">✕</div><p>Right-fit and enterprise deals stall while price shoppers fill the pipe.</p></div><div class="probrow"><div class="x">✕</div><p>You’re invisible in organic and AI search when buyers go looking.</p></div><div class="probrow"><div class="x">✕</div><p>Your reputation isn’t doing any selling for you.</p></div></div>
+ <div class="sec-head"><span class="eyebrow" style="color:#666873">The problem</span><h2>You compete on price because buyers don’t see why you’re different.</h2></div>
+ <div class="prob"><div class="probrow"><div class="x"><i class="ph-fill ph-x"></i></div><p>Right-fit and enterprise deals stall while price shoppers fill the pipe.</p></div><div class="probrow"><div class="x"><i class="ph-fill ph-x"></i></div><p>You’re invisible in organic and AI search when buyers go looking.</p></div><div class="probrow"><div class="x"><i class="ph-fill ph-x"></i></div><p>Your reputation isn’t doing any selling for you.</p></div></div>
 </div></section>
 
 <section class="sys" id="system"><div class="wrap">
- <div class="sec-head"><span class="eyebrow" style="color:#a5b4fc">The AI system, unwrapped</span><h2>How RevOS runs Position to Win</h2><p>Four layers of a proven, AI-powered system — with your Swivel experts in the loop at every step, steering the direction and checking the work. That’s what you can’t get from AI alone.</p></div>
+ <div class="sec-head"><span class="eyebrow" style="color:#82C88A">The AI system, unwrapped</span><h2>How RevOS runs Position to Win</h2><p>Four layers of a proven, AI-powered system — with your Swivel experts in the loop at every step, steering the direction and checking the work. That’s what you can’t get from AI alone.</p></div>
  <div class="stack">
   <div class="bookend"><span class="bk">Humans in the loop · Direction</span><p>Swivel strategists set the goal, the ICP, and the direction — so the system solves the right problem.</p></div>
-  <div class="conn">↓</div>
-  <div class="layer"><div class="ic" style="background:#7C3AED">◐</div><div><div class="lstep">01</div><h4>Signal</h4><div class="lsub">Reads what’s happening</div><p>Reads win/loss patterns, ICP-fit quality, organic rank movement, AI-assisted traffic, and your reputation across the sites buyers check.</p><div class="lg"><span class="lgc"><span class="b" style="background:#FF7A59">H</span>HubSpot</span><span class="lgc"><span class="b" style="background:#E8710A">GA</span>GA4</span><span class="lgc"><span class="b" style="background:#4285F4">GS</span>Search Console</span><span class="lgc"><span class="b" style="background:#FF492C">G2</span>G2</span><span class="lgc"><span class="b" style="background:#4285F4">G</span>Google</span></div></div></div>
-  <div class="conn">↓</div>
-  <div class="layer"><div class="ic" style="background:#7C3AED">◎</div><div><div class="lstep">02</div><h4>Intelligence</h4><div class="lsub">Decides what it means</div><p>Applies positioning & product-market-fit playbooks, messaging frameworks, and SEO/AEO standards to spot exactly where you’re mispositioned.</p></div></div>
-  <div class="conn">↓</div>
-  <div class="layer"><div class="ic" style="background:#7C3AED">◈</div><div><div class="lstep">03</div><h4>Orchestration</h4><div class="lsub">Builds the plan</div><p>Ranks the moves — re-test enterprise messaging, fix a losing page, respond to reviews — into a focused 30-day plan.</p></div></div>
-  <div class="conn">↓</div>
-  <div class="layer"><div class="ic" style="background:#7C3AED">✦</div><div><div class="lstep">04</div><h4>Activation</h4><div class="lsub">Does the work in your tools</div><p>Agents draft positioning assets, messaging variants, and review responses. Your team approves and ships.</p><div class="lg"><span class="lgc"><span class="b" style="background:#FF7A59">H</span>HubSpot</span><span class="lgc"><span class="b" style="background:#0055FF">Fr</span>Framer / CMS</span><span class="lgc"><span class="b" style="background:#4285F4">GS</span>Search Console</span></div></div></div>
-  <div class="conn">↓</div>
+  <div class="conn"><i class="ph ph-arrow-down"></i></div>
+  <div class="layer"><div class="ic" style="background:#82C88A2E;color:#82C88A"><i class="ph-fill ph-broadcast"></i></div><div><div class="lstep">Step 1</div><h4>Signal</h4><div class="lsub">Reads what’s happening</div><p>Reads win/loss patterns, ICP-fit quality, organic rank movement, AI-assisted traffic, and your reputation across the sites buyers check.</p><div class="lg"><span class="lgc"><span class="b" style="background:#FF7A59">H</span>HubSpot</span><span class="lgc"><span class="b" style="background:#E8710A">GA</span>GA4</span><span class="lgc"><span class="b" style="background:#4285F4">GS</span>Search Console</span><span class="lgc"><span class="b" style="background:#FF492C">G2</span>G2</span><span class="lgc"><span class="b" style="background:#4285F4">G</span>Google</span></div></div></div>
+  <div class="conn"><i class="ph ph-arrow-down"></i></div>
+  <div class="layer"><div class="ic" style="background:#82C88A2E;color:#82C88A"><i class="ph-fill ph-brain"></i></div><div><div class="lstep">Step 2</div><h4>Intelligence</h4><div class="lsub">Decides what it means</div><p>Applies positioning & product-market-fit playbooks, messaging frameworks, and SEO/AEO standards to spot exactly where you’re mispositioned.</p></div></div>
+  <div class="conn"><i class="ph ph-arrow-down"></i></div>
+  <div class="layer"><div class="ic" style="background:#82C88A2E;color:#82C88A"><i class="ph-fill ph-flow-arrow"></i></div><div><div class="lstep">Step 3</div><h4>Orchestration</h4><div class="lsub">Builds the plan</div><p>Ranks the moves — re-test enterprise messaging, fix a losing page, respond to reviews — into a focused 30-day plan.</p></div></div>
+  <div class="conn"><i class="ph ph-arrow-down"></i></div>
+  <div class="layer"><div class="ic" style="background:#82C88A2E;color:#82C88A"><i class="ph-fill ph-sparkle"></i></div><div><div class="lstep">Step 4</div><h4>Activation</h4><div class="lsub">Does the work in your tools</div><p>Agents draft positioning assets, messaging variants, and review responses. Your team approves and ships.</p><div class="lg"><span class="lgc"><span class="b" style="background:#FF7A59">H</span>HubSpot</span><span class="lgc"><span class="b" style="background:#0055FF">Fr</span>Framer / CMS</span><span class="lgc"><span class="b" style="background:#4285F4">GS</span>Search Console</span></div></div></div>
+  <div class="conn"><i class="ph ph-arrow-down"></i></div>
   <div class="bookend"><span class="bk">Humans in the loop · Quality</span><p>Your Swivel experts steer and approve at every layer — the AI-powered system does the heavy lifting to move faster, but humans own the judgment.</p></div>
  </div>
 </div></section>
 
 <section class="integ"><div class="wrap">
- <div class="sec-head"><span class="eyebrow" style="color:#7C3AED">Integrations</span><h2>Plugged into the tools you already run</h2><p>RevOS reads from and acts inside your stack — no rip-and-replace.</p></div>
+ <div class="sec-head"><span class="eyebrow" style="color:#666873">Integrations</span><h2>Plugged into the tools you already run</h2><p>RevOS reads from and acts inside your stack — no rip-and-replace.</p></div>
  <div class="intgrid"><div class="intpill"><div class="l" style="background:#FF7A59">H</div><div class="n">HubSpot</div></div><div class="intpill"><div class="l" style="background:#E8710A">GA</div><div class="n">GA4</div></div><div class="intpill"><div class="l" style="background:#4285F4">GS</div><div class="n">Search Console</div></div><div class="intpill"><div class="l" style="background:#FF492C">G2</div><div class="n">G2</div></div><div class="intpill"><div class="l" style="background:#4285F4">G</div><div class="n">Google</div></div><div class="intpill"><div class="l" style="background:#0055FF">Fr</div><div class="n">Framer / CMS</div></div></div>
 </div></section>
 
 <section><div class="wrap">
- <div class="sec-head"><span class="eyebrow" style="color:#7C3AED">The product</span><h2>Position to Win, made real</h2></div>
- <div class="feat "><div class="txt"><div class="tag" style="color:#7C3AED">Inside the product</div><h3>Position to Win</h3><p>reputation, organic rank movement & the pages AI is citing</p></div><div><div class="fshot"><div class="bar"><i style="background:#FF5F57"></i><i style="background:#FEBC2E"></i><i style="background:#28C840"></i></div><img src="swivel-image-3.png"></div><div class="fcap">Position to Win — reputation, organic rank movement & the pages AI is citing</div></div></div>
+ <div class="sec-head"><span class="eyebrow" style="color:#666873">The product</span><h2>Position to Win, made real</h2></div>
+ <div class="feat "><div class="txt"><div class="tag" style="color:#666873">Inside the product</div><h3>Position to Win</h3><p>reputation, organic rank movement & the pages AI is citing</p></div><div><div class="fshot"><div class="bar"><i style="background:#FF5F57"></i><i style="background:#FEBC2E"></i><i style="background:#28C840"></i></div><img src="swivel-image-3.png"></div><div class="fcap">Position to Win — reputation, organic rank movement & the pages AI is citing</div></div></div>
 </div></section>
 
 <section class="out"><div class="wrap">
- <div class="sec-head"><span class="eyebrow" style="color:#7C3AED">What it delivers</span><h2>The outcome you’re paying for</h2></div>
- <div class="outgrid"><div class="outc"><div class="ck">✓</div><p>You win the right-fit accounts, not the price shoppers.</p></div><div class="outc"><div class="ck">✓</div><p>You show up where buyers and AI assistants search.</p></div><div class="outc"><div class="ck">✓</div><p>Your reputation becomes a reason to buy.</p></div></div>
+ <div class="sec-head"><span class="eyebrow" style="color:#666873">What it delivers</span><h2>The outcome you’re paying for</h2></div>
+ <div class="outgrid"><div class="outc"><div class="ck"><i class="ph ph-check"></i></div><p>You win the right-fit accounts, not the price shoppers.</p></div><div class="outc"><div class="ck"><i class="ph ph-check"></i></div><p>You show up where buyers and AI assistants search.</p></div><div class="outc"><div class="ck"><i class="ph ph-check"></i></div><p>Your reputation becomes a reason to buy.</p></div></div>
 </div></section>
 
 <section><div class="wrap">
- <div class="sec-head"><span class="eyebrow" style="color:#7C3AED">One system</span><h2>Position to Win is one of four pillars</h2><p>RevOS builds all four as a single system — that’s the difference between random acts of AI and predictable pipeline.</p></div>
- <div class="opil"><a class="opilc" target="_top" href="/drive-warm-leads"><div class="n" style="background:linear-gradient(135deg,#4F46E5,#06B6D4)">2</div><h4>Drive Warm Leads</h4><p>Fill the funnel with buyers who are ready.</p><div class="go">Explore this pillar →</div></a><a class="opilc" target="_top" href="/set-meetings"><div class="n" style="background:linear-gradient(135deg,#B45309,#F59E0B)">3</div><h4>Set Meetings</h4><p>Turn interest into booked meetings — fast.</p><div class="go">Explore this pillar →</div></a><a class="opilc" target="_top" href="/close-deals"><div class="n" style="background:linear-gradient(135deg,#0E7490,#06B6D4)">4</div><h4>Close Deals</h4><p>Convert pipeline into revenue — faster.</p><div class="go">Explore this pillar →</div></a></div>
+ <div class="sec-head"><span class="eyebrow" style="color:#666873">One system</span><h2>Position to Win is one of four pillars</h2><p>RevOS builds all four as a single system — that’s the difference between random acts of AI and predictable pipeline.</p></div>
+ <div class="opil"><div class="opilc here" style="--pc:#82C88A1F;box-shadow:inset 0 0 0 1px #82C88A"><div class="ic" style="background:#82C88A24;color:#82C88A"><i class="ph-fill ph-crosshair"></i></div><div class="st" style="color:#666873">Pillar 1</div><h4>Position to Win</h4><p>Win the right accounts — before the pitch.</p><span class="hp" style="background:#82C88A;color:#0A0A0A">You’re here</span></div><a class="opilc" href="drive-warm-leads.html" style="--pc:#57B7A01F"><div class="ic" style="background:#57B7A024;color:#1A777A"><i class="ph-fill ph-funnel"></i></div><div class="st" style="color:#1A777A">Pillar 2</div><h4>Drive Warm Leads</h4><p>Fill the funnel with buyers who are ready.</p><div class="go" style="color:#1A777A">Explore this pillar <i class="ph ph-arrow-right"></i></div></a><a class="opilc" href="set-meetings.html" style="--pc:#2CA7B71F"><div class="ic" style="background:#2CA7B724;color:#0077A3"><i class="ph-fill ph-calendar-check"></i></div><div class="st" style="color:#0077A3">Pillar 3</div><h4>Set Meetings</h4><p>Turn interest into booked meetings — fast.</p><div class="go" style="color:#0077A3">Explore this pillar <i class="ph ph-arrow-right"></i></div></a><a class="opilc" href="close-deals.html" style="--pc:#0196CD1F"><div class="ic" style="background:#0196CD24;color:#00678C"><i class="ph-fill ph-handshake"></i></div><div class="st" style="color:#00678C">Pillar 4</div><h4>Close Deals</h4><p>Convert pipeline into revenue — faster.</p><div class="go" style="color:#00678C">Explore this pillar <i class="ph ph-arrow-right"></i></div></a></div>
 </div></section>
 
 <section class="final" id="start"><div class="wrap">
  <h2>See what position to win looks like for you.</h2>
  <p>Get a free GTM audit — we’ll show you the red flags and the plan, grounded in what actually works.</p>
- <div class="cta"><a class="btn p" style="background:#7C3AED" href="#top">Get your GTM audit →</a></div>
+ <div class="cta"><a class="btn p" href="https://swivelteam.com/gtm-audit">Get your GTM audit <i class="ph ph-arrow-right"></i></a></div>
 </div></section>
 
 <footer><div class="wrap">
- <a class="logo" target="_top" href="/"><span class="m">R</span><span>Rev<span>OS</span></span></a>
+ <a class="logo" href="index.html"><span class="m"><i class="ph-fill ph-sparkle"></i></span><span class="lk"><span class="wm">Rev<span>OS</span><span class="tm">™</span></span><span class="pb">Powered by Swivel</span></span></a>
  <div>Revenue made easy. A proven system, built for you — and yours to run.</div>
  <div class="fb">© 2026 Swivel · Product concept &amp; UI shown are illustrative; metrics use a demo tenant.</div>
 </div></footer>

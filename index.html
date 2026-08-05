@@ -4,141 +4,219 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>RevOS by Swivel — Revenue made easy. A proven system, built as AI, and yours to run.</title>
 <meta name="description" content="Predictable pipeline from a proven system — the four pillars of revenue, built and run as AI, then licensed to you to run yourself. Not random acts of AI — a proven system, kept live for a fraction of the build.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" href="MuseoSans_500.otf" as="font" type="font/otf" crossorigin>
+<link rel="preload" href="MuseoSans_700.otf" as="font" type="font/otf" crossorigin>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
 <style>
-:root{--ink:#0B0F1E;--ink2:#141A2E;--paper:#fff;--bg:#F5F7FC;--soft:#EEF1F8;--tx:#0F172A;--mut:#5A6478;--line:#E5E9F3;
- --brand:#4F46E5;--brand2:#06B6D4;--violet:#7C3AED;--good:#16A34A;--amber:#F59E0B;--red:#E11D48;
- --grad:linear-gradient(120deg,#6366F1,#06B6D4);}
+@font-face{font-family:'Museo Sans';src:url('MuseoSans-100.otf') format('opentype');font-weight:100;font-style:normal;font-display:swap}
+@font-face{font-family:'Museo Sans';src:url('MuseoSans-100Italic.otf') format('opentype');font-weight:100;font-style:italic;font-display:swap}
+@font-face{font-family:'Museo Sans';src:url('MuseoSans-300.otf') format('opentype');font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:'Museo Sans';src:url('MuseoSans-300Italic.otf') format('opentype');font-weight:300;font-style:italic;font-display:swap}
+@font-face{font-family:'Museo Sans';src:url('MuseoSans_500.otf') format('opentype');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Museo Sans';src:url('MuseoSans_500_Italic.otf') format('opentype');font-weight:500;font-style:italic;font-display:swap}
+@font-face{font-family:'Museo Sans';src:url('MuseoSans_700.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Museo Sans';src:url('MuseoSans-700Italic.otf') format('opentype');font-weight:700;font-style:italic;font-display:swap}
+@font-face{font-family:'Museo Sans';src:url('MuseoSans_900.otf') format('opentype');font-weight:900;font-style:normal;font-display:swap}
+@font-face{font-family:'Museo Sans';src:url('MuseoSans-900Italic.otf') format('opentype');font-weight:900;font-style:italic;font-display:swap}
+
+.ph-fill,.ph{line-height:1;display:inline-block;vertical-align:-.08em}
+
+:root{--ink:#0A0A0A;--ink2:#2E3238;--paper:#fff;--bg:#F7F8FA;--soft:#F0F2F6;--tx:#3D4443;--mut:#666873;--line:rgba(34,34,34,.1);
+ --brand:#0196CD;--brand2:#38AEB2;--violet:#0077A3;--good:#57B7A0;--amber:#82C88A;--red:#F53434;
+ --grad:linear-gradient(120deg,#82C88A,#0196CD);}
 *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--tx);background:#fff;-webkit-font-smoothing:antialiased;line-height:1.55}
-a{text-decoration:none;color:inherit}.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
-.btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;border-radius:11px;padding:13px 22px;cursor:pointer;border:1px solid transparent;transition:.18s}
-.btn.p{background:var(--brand);color:#fff;box-shadow:0 8px 22px rgba(79,70,229,.35)}.btn.p:hover{transform:translateY(-1px)}
-.btn.g{background:rgba(255,255,255,.06);color:#fff;border-color:rgba(255,255,255,.18)}.btn.g:hover{background:rgba(255,255,255,.12)}
-.btn.o{background:#fff;color:var(--tx);border-color:var(--line)}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)}
+body{font-family:'Museo Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--tx);background:#fff;-webkit-font-smoothing:antialiased;font-synthesis:none;line-height:1.55}
+a{text-decoration:none;color:inherit}.wrap{max-width:1200px;margin:0 auto;padding:0 64px}
+@media(max-width:809px){.hero .in{padding-left:30px;padding-right:30px}.wrap{padding:0 30px}section{padding:64px 0}}
+
+
+
+
 .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.chip{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:#cbd3e8;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:7px 13px}
-.nav{position:sticky;top:0;z-index:50;background:rgba(11,15,30,.72);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.07)}
-.nav .in{display:flex;align-items:center;gap:14px;height:66px}
-.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;color:#fff;letter-spacing:-.3px}
-.logo .m{width:30px;height:30px;border-radius:9px;background:var(--grad);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;box-shadow:0 6px 16px rgba(79,70,229,.45)}
-.logo span{color:#7DD3FC}.nav .links{display:flex;gap:26px;margin-left:26px}.nav .links a{font-size:14.5px;font-weight:500;color:#AEB7CE}.nav .links a:hover{color:#fff}
-.nav .act{margin-left:auto;display:flex;align-items:center;gap:14px}.nav .act a.li{font-size:14.5px;font-weight:600;color:#DCE2F0}
-.hero{position:relative;background:radial-gradient(1200px 600px at 70% -10%,rgba(79,70,229,.45),transparent 60%),radial-gradient(900px 500px at 10% 10%,rgba(6,182,212,.22),transparent 55%);background-color:#0B0F1E;color:#fff;overflow:hidden}
-.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 72%,#0B0F1E)}
-.hero .in{position:relative;z-index:2;padding:70px 0 40px;text-align:center}
-.hero h1{font-size:58px;line-height:1.04;font-weight:800;letter-spacing:-1.6px;margin:18px auto 0;max-width:940px}
-.hero p.sub{font-size:19px;line-height:1.55;color:#C3CBE0;max-width:760px;margin:22px auto 0}
+.chip{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:500;color:#cbd3e8;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:7px 13px}
+.nav{position:sticky;top:0;z-index:50;background:#0A0A0A;border-bottom:1px solid rgba(255,255,255,.07)}
+.nav .in{display:flex;align-items:center;gap:14px;height:72px}
+.nav .links{display:flex;gap:26px;margin-left:26px}.nav .links a{font-size:14.5px;font-weight:500;color:#AEB7CE}.nav .links a:hover{color:#fff}
+.nav .act{margin-left:auto;display:flex;align-items:center;gap:14px}.nav .act a.li{font-size:14.5px;font-weight:500;color:#DCE2F0}
+.hero{position:relative;background:radial-gradient(1200px 600px at 70% 14%,rgba(1,150,205,.45),transparent 60%),radial-gradient(900px 500px at 10% 30%,rgba(56,174,178,.22),transparent 55%);background-color:#0A0A0A;color:#fff;overflow:hidden}
+.hero:before{content:"";position:absolute;top:0;left:0;right:0;height:220px;z-index:1;background:linear-gradient(180deg,#0A0A0A 0,#0A0A0A 108px,transparent 100%)}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 72%,#0A0A0A)}
+.hero .in{position:relative;z-index:2;padding:88px 64px 40px;text-align:center}
+.hero h1{font-size:clamp(40px,5.4vw,72px);line-height:.94;font-weight:700;letter-spacing:-3.5px;margin:18px auto 0;max-width:940px}
+.hero p.sub{font-size:20px;line-height:1.55;color:#C3CBE0;max-width:980px;margin:22px auto 0}
 .hero .cta{display:flex;gap:14px;justify-content:center;margin-top:30px;flex-wrap:wrap}
-.hero .trust{margin-top:20px;font-size:13.5px;color:#8C97B4;display:flex;gap:18px;justify-content:center;flex-wrap:wrap}.hero .trust b{color:#c3cbe0;font-weight:600}
+.hero .trust{margin-top:20px;font-size:13.5px;color:#8C97B4;display:flex;gap:18px;justify-content:center;flex-wrap:wrap}.hero .trust b{color:#c3cbe0;font-weight:500}
 .shot{position:relative;z-index:2;max-width:1040px;margin:44px auto 0}
-.browser{border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,.14);box-shadow:0 40px 100px rgba(0,0,0,.55);background:#0E1220}
-.browser .bar{height:36px;background:#171C2E;display:flex;align-items:center;gap:7px;padding:0 14px}
-.browser .bar i{width:11px;height:11px;border-radius:50%}.browser .bar .u{margin-left:14px;font-size:12px;color:#8A93AD;background:#0E1220;border-radius:6px;padding:4px 12px;flex:1;max-width:320px}
+.browser{border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.14);box-shadow:0 40px 100px rgba(0,0,0,.55);background:#141414}
+.browser .bar{height:36px;background:#2E3238;display:flex;align-items:center;gap:7px;padding:0 14px}
+.browser .bar i{width:11px;height:11px;border-radius:50%}.browser .bar .u{margin-left:14px;font-size:12px;color:#8A93AD;background:#141414;border-radius:6px;padding:4px 12px;flex:1;max-width:320px}
 .browser img{display:block;width:100%}
 .glow{position:absolute;z-index:1;width:70%;height:200px;left:15%;top:60px;background:var(--grad);filter:blur(90px);opacity:.5;border-radius:50%}
-section{padding:84px 0}.sec-head{text-align:center;max-width:740px;margin:0 auto 48px}
-.sec-head h2{font-size:39px;font-weight:800;letter-spacing:-1px;line-height:1.1;margin-top:14px}.sec-head p{font-size:18px;color:var(--mut);margin-top:15px}
-.problem{background:var(--bg)}.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.pcard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px}
-.pcard .ic{width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800}
-.pcard h3{font-size:18px;font-weight:800;margin-top:16px}.pcard p{font-size:14.5px;color:var(--mut);margin-top:8px;line-height:1.6}
-.punch{text-align:center;margin-top:34px;font-size:20px;font-weight:800;color:var(--tx)}.punch span{color:var(--brand)}
-.cmp{background:#fff}.cmptbl{max-width:900px;margin:0 auto;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+section{padding:120px 0}.sec-head{text-align:center;max-width:740px;margin:0 auto 48px}
+.sec-head h2{font-size:54px;font-weight:700;letter-spacing:-2.5px;line-height:1.1;margin-top:14px}.sec-head p{font-size:20px;color:var(--mut);margin-top:15px}
+.problem{background:linear-gradient(rgba(0,152,205,.15) -5%,#fff 10%,#fff 90%,rgba(112,196,151,.15) 100%)}.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.pcard{background:#fff;border-radius:24px;box-shadow:rgba(0,0,0,.08) 0 10px 15px 0;padding:40px}
+.pcard .ic{width:60px;height:60px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:30px}
+.pcard h3{font-size:26px;line-height:31.2px;letter-spacing:-.6px;font-weight:700;margin-top:16px}.pcard p{font-size:16px;color:var(--mut);margin-top:8px;line-height:1.6}
+.punch{text-align:center;margin-top:34px;font-size:20px;font-weight:700;color:var(--tx)}.punch span{color:var(--brand)}
+.cmp{background:#fff}.cmptbl{max-width:900px;margin:0 auto;border-radius:24px;box-shadow:rgba(0,0,0,.08) 0 10px 15px 0;overflow:hidden}
 .cmprow{display:grid;grid-template-columns:1fr 150px 150px;align-items:center;border-bottom:1px solid var(--line)}
 .cmprow:last-child{border-bottom:none}.cmprow.h{background:var(--ink);color:#fff}
-.cmprow .c{padding:15px 20px;font-size:14.5px}.cmprow .c.crit{font-weight:600;color:#334155}.cmprow.h .c{font-weight:800;color:#fff;font-size:13px;text-align:center}
-.cmprow .c.mid{text-align:center}.cmprow .c.rev{text-align:center;background:#F5F6FE;font-weight:800}
-.yes{color:var(--good);font-weight:800}.no{color:#94A3B8;font-weight:800}.par{color:#B45309;font-weight:800}
+.cmprow .c{padding:15px 20px;font-size:14.5px}.cmprow .c.crit{font-weight:500;color:#334155}.cmprow.h .c{font-weight:700;color:#fff;font-size:13px;text-align:center}
+.cmprow .c.mid{text-align:center}.cmprow .c.rev{text-align:center;background:#E6F4FA;font-weight:700}
+.yes{color:var(--good);font-weight:700}.no{color:#94A3B8;font-weight:700}.par{color:#2CA7B7;font-weight:700}
 .cmprow.h .c.rev{background:var(--brand)}
 .pillars{background:var(--ink);color:#fff}.pillars .sec-head h2{color:#fff}.pillars .sec-head p{color:#C3CBE0}
 .pilgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.pil{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:22px;display:flex;gap:16px;align-items:flex-start;transition:.16s}
+.pil{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.16);border-radius:24px;padding:32px;display:flex;gap:16px;align-items:flex-start;transition:.16s}
 .pil:hover{border-color:rgba(255,255,255,.3);transform:translateY(-2px);background:rgba(255,255,255,.07);box-shadow:0 16px 34px rgba(0,0,0,.35)}
-.pil .n{width:44px;height:44px;flex:0 0 44px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:19px;font-weight:800;color:#fff}
-.pil h4{font-size:17px;font-weight:800}.pil p{font-size:14px;color:#B7C0D8;margin-top:6px;line-height:1.55}
+.pil .n{width:56px;height:56px;flex:0 0 56px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:28px;color:#fff}
+.pil h4{font-size:17px;font-weight:700}.pil p{font-size:14px;color:#B7C0D8;margin-top:6px;line-height:1.55}
 .pil .go{font-size:13px;font-weight:700;margin-top:9px;display:inline-flex;align-items:center;gap:5px}
 .bookend{margin-top:22px;text-align:center;font-size:15px;color:#C3CBE0}.bookend b{color:#fff}
 .feat{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center;margin-bottom:80px}.feat:last-child{margin-bottom:0}.feat.rev .txt{order:2}
-.feat .tag{font-size:12.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--brand)}
-.feat h3{font-size:29px;font-weight:800;letter-spacing:-.6px;margin-top:12px;line-height:1.14}.feat p{font-size:16px;color:var(--mut);margin-top:14px;line-height:1.6}
-.feat ul{list-style:none;margin-top:16px;display:flex;flex-direction:column;gap:10px}.feat li{display:flex;gap:11px;font-size:15px;color:#334155}.feat li .ck{color:var(--good);font-weight:800}
-.fshot{border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:0 24px 60px rgba(15,23,42,.14)}
-.fshot .bar{height:30px;background:#171C2E;display:flex;align-items:center;gap:6px;padding:0 12px}.fshot .bar i{width:9px;height:9px;border-radius:50%}.fshot img{display:block;width:100%}
-.rtb{background:linear-gradient(120deg,#0B0F1E,#161d38);color:#fff;text-align:center}
+.feat .tag{font-size:16px;line-height:24px;font-weight:700;letter-spacing:8px;text-transform:uppercase;color:#666873}
+.feat h3{font-size:36px;font-weight:700;letter-spacing:-1.5px;margin-top:12px;line-height:1.14}.feat p{font-size:16px;color:var(--mut);margin-top:14px;line-height:1.6}
+.feat ul{list-style:none;margin-top:16px;display:flex;flex-direction:column;gap:10px}.feat li{display:flex;gap:11px;font-size:15px;color:#334155}.feat li .ck{color:var(--good);font-weight:700}
+.fshot{border-radius:24px;overflow:hidden;border:1px solid var(--line);box-shadow:0 24px 60px rgba(15,23,42,.14)}
+.fshot .bar{height:30px;background:#2E3238;display:flex;align-items:center;gap:6px;padding:0 12px}.fshot .bar i{width:9px;height:9px;border-radius:50%}.fshot img{display:block;width:100%}
+.rtb{background:linear-gradient(120deg,#0A0A0A,#2E3238);color:#fff;text-align:center}
 .rtbstat{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:8px}
-.rtbstat .s{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:18px 26px;min-width:170px}
-.rtbstat .s b{display:block;font-size:34px;font-weight:800;letter-spacing:-1px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}.rtbstat .s span{font-size:13px;color:#AEB7CE}
-.model{background:var(--bg)}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.stp{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;position:relative}
-.stp .n{width:46px;height:46px;border-radius:12px;color:#fff;font-weight:800;font-size:20px;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px rgba(79,70,229,.3)}
-.stp h4{font-size:19px;font-weight:800;margin-top:14px}.stp .when{font-size:12.5px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;margin-top:4px}.stp p{font-size:14px;color:var(--mut);margin-top:10px;line-height:1.55}
-.modelnote{text-align:center;margin-top:26px;font-size:16px;color:var(--tx)}.modelnote b{color:var(--brand)}
+.rtbstat .s{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:18px 26px;min-width:170px}
+.rtbstat .s b{display:block;font-size:54px;line-height:48.6px;font-weight:700;letter-spacing:-1px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}.rtbstat .s span{font-size:13px;color:#AEB7CE}
+.model{background:linear-gradient(rgba(0,152,205,.15) -5%,#fff 10%,#fff 90%,rgba(112,196,151,.15) 100%)}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.stp{background:#fff;border-radius:24px;box-shadow:rgba(0,0,0,.08) 0 10px 15px 0;padding:40px;position:relative}
+.stp .n{width:56px;height:56px;border-radius:999px;color:#fff;font-weight:700;font-size:20px;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px rgba(1,150,205,.3)}
+.stp h4{font-size:19px;font-weight:700;margin-top:14px}.stp .when{font-size:15px;line-height:20px;font-weight:500;letter-spacing:0;text-transform:none;margin-top:6px;color:#666873}.stp p{font-size:14px;color:var(--mut);margin-top:10px;line-height:1.55}
+.modelnote{text-align:center;margin-top:26px;font-size:16px;color:var(--tx)}.modelnote b{color:#0077A3}
 .tiers{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:860px;margin:0 auto;align-items:stretch}
-.tier{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px;display:flex;flex-direction:column;gap:8px}
-.tier.hot{border:2px solid var(--brand);box-shadow:0 20px 50px rgba(79,70,229,.16);position:relative}
-.tier.hot .bdg{position:absolute;top:-12px;left:26px;background:var(--brand);color:#fff;font-size:11px;font-weight:800;padding:5px 12px;border-radius:999px;letter-spacing:.05em}
-.tier .tn{font-size:18px;font-weight:800}.tier .tp{font-size:34px;font-weight:800;letter-spacing:-1.4px;margin-top:4px}.tier .tp small{font-size:14px;color:var(--mut);font-weight:600;letter-spacing:0}
-.tier .td{font-size:14px;color:var(--mut);min-height:44px;line-height:1.5}.roi{display:inline-block;margin-top:4px;font-size:11px;font-weight:800;color:#0d7a3a;background:#E7F6ED;border-radius:999px;padding:4px 10px}
-.tier ul{list-style:none;display:flex;flex-direction:column;gap:9px;margin:8px 0 4px}.tier li{font-size:14px;color:#334155;display:flex;gap:8px;line-height:1.4}.tier li .ck{color:var(--good);font-weight:800}
-.tier .b{margin-top:auto;text-align:center;border-radius:11px;padding:12px;font-weight:800;font-size:14px}.tier .b.p{background:var(--brand);color:#fff}.tier .b.o{background:#fff;border:1px solid var(--line);color:var(--tx)}
+.tier{background:#fff;border-radius:24px;box-shadow:rgba(0,0,0,.08) 0 10px 15px 0;padding:40px;display:flex;flex-direction:column;gap:8px}
+.tier.hot{border:2px solid var(--brand);box-shadow:0 20px 50px rgba(1,150,205,.16);position:relative}
+.tier.hot .bdg{position:absolute;top:-12px;left:26px;background:#0077A3;color:#fff;font-size:11px;font-weight:700;padding:5px 12px;border-radius:999px;letter-spacing:.05em}
+.tier .tn{font-size:18px;font-weight:700}.tier .tp{font-size:34px;font-weight:700;letter-spacing:-1.4px;margin-top:4px}.tier .tp small{font-size:14px;color:var(--mut);font-weight:500;letter-spacing:0}
+.tier .td{font-size:14px;color:var(--mut);min-height:44px;line-height:1.5}.roi{display:inline-block;margin-top:4px;font-size:11px;font-weight:700;color:#0B7A5F;background:#E9F6F1;border-radius:999px;padding:4px 10px}
+.tier ul{list-style:none;display:flex;flex-direction:column;gap:9px;margin:8px 0 4px}.tier li{font-size:14px;color:#334155;display:flex;gap:8px;line-height:1.4}.tier li .ck{color:var(--good);font-weight:700}
+.tier .b{margin-top:auto;text-align:center;border-radius:999px;padding:12px 24px;font-weight:700;font-size:16px;box-shadow:rgba(0,0,0,.07) 0 .602187px 1.80656px -1.25px,rgba(0,0,0,.06) 0 2.28853px 6.8656px -2.5px,rgba(0,0,0,.03) 0 10px 30px -3.75px}.tier .b.p{background:#EBA343;color:#2E3238}.tier .b.o{background:#fff;color:var(--tx);box-shadow:rgba(0,0,0,.07) 0 .602187px 1.80656px -1.25px,rgba(0,0,0,.06) 0 2.28853px 6.8656px -2.5px,rgba(0,0,0,.03) 0 10px 30px -3.75px,inset 0 0 0 1px rgba(34,34,34,.1)}
 .pnote{text-align:center;color:var(--mut);font-size:14px;margin-top:24px}
-.faqs{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:12px}.faq{border:1px solid var(--line);border-radius:14px;background:#fff;padding:20px 22px}
-.faq h4{font-size:17px;font-weight:800}.faq p{font-size:15px;color:var(--mut);margin-top:10px;line-height:1.6}
-.final{background:radial-gradient(900px 400px at 50% 0%,rgba(79,70,229,.5),transparent 60%),#0B0F1E;color:#fff;text-align:center}
-.final h2{font-size:42px;font-weight:800;letter-spacing:-1.2px;line-height:1.08;max-width:800px;margin:0 auto}.final p{font-size:18px;color:#C3CBE0;margin-top:18px}.final .cta{margin-top:28px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-footer{background:#080B16;color:#8C97B4;padding:50px 0 36px}.fcols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}footer p.d{font-size:14px;color:#6D7794;max-width:300px;line-height:1.6;margin-top:12px}
+.faqs{max-width:820px;margin:0 auto;display:flex;flex-direction:column}.faq{background:none;padding:28px 0;border-bottom:1px solid rgba(34,34,34,.1)}.faq:last-child{border-bottom:0}
+.faq h4{font-size:22px;line-height:28.6px;letter-spacing:-.3px;font-weight:700;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}.faq p{font-size:18px;color:var(--mut);margin-top:10px;line-height:1.6}
+.final{background:radial-gradient(900px 400px at 50% 0%,rgba(1,150,205,.5),transparent 60%),#0A0A0A;color:#fff;text-align:center}
+.final h2{font-size:54px;font-weight:700;letter-spacing:-2.5px;line-height:.94;max-width:800px;margin:0 auto}.final p{font-size:18px;color:#C3CBE0;margin-top:18px}.final .cta{margin-top:28px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+footer{background:#000;color:#8C97B4;padding:50px 0 36px}.fcols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}footer p.d{font-size:14px;color:#7C8798;max-width:300px;line-height:1.6;margin-top:12px}
 footer h5{color:#DCE2F0;font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:12px}footer a{display:block;font-size:14px;color:#8C97B4;margin-bottom:9px}footer a:hover{color:#fff}
-.fbot{border-top:1px solid rgba(255,255,255,.08);margin-top:36px;padding-top:22px;font-size:12.5px;color:#5A6478;text-align:center}
-.hub{background:radial-gradient(1000px 520px at 50% 18%,rgba(79,70,229,.20),transparent 60%),#0B0F1E;color:#fff}
+.fbot{border-top:1px solid rgba(255,255,255,.08);margin-top:36px;padding-top:22px;font-size:12.5px;color:#7C8798;text-align:center}
+.hub{background:radial-gradient(1000px 520px at 50% 18%,rgba(1,150,205,.20),transparent 60%),#0A0A0A;color:#fff}
 .hub .sec-head h2{color:#fff}.hub .sec-head p{color:#C3CBE0}
 .hubstage{position:relative;width:100%;max-width:940px;margin:12px auto 0;aspect-ratio:940/540}
 .hubstage svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
-.hubstage svg line{stroke:#6E7BB0;stroke-width:1.5;opacity:.5}
-.hubcenter{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;width:174px;height:100px;border-radius:18px;background:linear-gradient(135deg,#6366F1,#06B6D4);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:27px;color:#fff;letter-spacing:-.5px;box-shadow:0 0 0 10px rgba(79,70,229,.12),0 22px 60px rgba(79,70,229,.55)}
+.hubstage svg line{stroke:#5C7E96;stroke-width:1.5;opacity:.5}
+.hubcenter{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:2;width:174px;height:100px;border-radius:24px;background:linear-gradient(135deg,#0196CD,#0077A3);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:27px;color:#fff;letter-spacing:-.5px;box-shadow:0 0 0 10px rgba(1,150,205,.12),0 22px 60px rgba(1,150,205,.55)}
 .hubnode{position:absolute;transform:translate(-50%,-50%);z-index:2}
-.hubc{display:inline-flex;align-items:center;gap:9px;background:#141A2E;border:1px solid rgba(255,255,255,.14);border-radius:11px;padding:8px 14px 8px 8px;box-shadow:0 8px 22px rgba(0,0,0,.4);white-space:nowrap}
-.hubc .b{width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:11.5px;flex:0 0 26px}
-.hubc .n{font-size:13.5px;font-weight:700;color:#E5E9FF}
+.hubc{display:inline-flex;align-items:center;gap:9px;background:#141B2C;border:1px solid rgba(255,255,255,.14);border-radius:11px;padding:8px 14px 8px 8px;box-shadow:0 8px 22px rgba(0,0,0,.4);white-space:nowrap}
+.hubc .b{width:26px;height:26px;border-radius:999px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:11.5px;flex:0 0 26px}
+.hubc .n{font-size:13.5px;font-weight:700;color:#E6F4FA}
 .hubcap{text-align:center;color:#AEB7CE;font-style:italic;font-size:14.5px;margin:22px auto 0;max-width:720px}
 .hubgrid{display:none}.hubmid{position:static;transform:none;margin:0 auto}
 .hubrow{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:20px}
-@media(max-width:900px){.nav .links{display:none}.hero h1{font-size:38px}.pgrid,.steps,.pilgrid,.tiers,.fcols,.rtbstat{grid-template-columns:1fr}.feat{grid-template-columns:1fr;gap:24px;margin-bottom:56px}.feat.rev .txt{order:0}.cmprow{grid-template-columns:1fr 90px 90px}.sec-head h2{font-size:30px}.final h2{font-size:30px}}
+@media(max-width:1100px){.nav .links{display:none}}
+@media(max-width:900px){.pgrid,.steps,.pilgrid,.tiers,.fcols,.rtbstat{grid-template-columns:1fr}.feat{grid-template-columns:1fr;gap:24px;margin-bottom:56px}.feat.rev .txt{order:0}.cmprow{grid-template-columns:1fr 90px 90px}.sec-head h2{font-size:30px}.final h2{font-size:30px}}
 @media(max-width:720px){.hubstage{display:none}.hubgrid{display:flex;flex-direction:column;align-items:center}}
+
+.btn{display:inline-flex;align-items:center;gap:0;font-weight:500;font-size:20px;line-height:24px;letter-spacing:-.6px;border-radius:999px;padding:18px 40px;border:0;cursor:pointer;box-shadow:rgba(0,0,0,.07) 0 .602187px 1.80656px -1.25px,rgba(0,0,0,.06) 0 2.28853px 6.8656px -2.5px,rgba(0,0,0,.03) 0 10px 30px -3.75px;transition:padding .28s cubic-bezier(.22,.61,.36,1)}
+.btn i.ph-fill,.btn i.ph{max-width:0;opacity:0;overflow:hidden;transition:max-width .28s cubic-bezier(.22,.61,.36,1),opacity .2s,margin-left .28s}
+.btn:hover i.ph-fill,.btn:hover i.ph{max-width:1.1em;opacity:1;margin-left:10px}
+.btn.p{background:#EBA343;color:#2E3238}
+.btn.g{background:rgba(255,255,255,.12);color:#fff}
+.btn.o{background:#fff;color:var(--tx);box-shadow:rgba(0,0,0,.07) 0 .602187px 1.80656px -1.25px,rgba(0,0,0,.06) 0 2.28853px 6.8656px -2.5px,rgba(0,0,0,.03) 0 10px 30px -3.75px,inset 0 0 0 1px rgba(34,34,34,.1)}
+.nav .btn{font-size:14px;line-height:16.8px;letter-spacing:-.3px;padding:8px 24px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:16px;line-height:24px;font-weight:700;letter-spacing:8px;text-transform:uppercase}
+
+.logo{display:flex;align-items:center;gap:12px;color:#fff}
+.logo .m{position:relative;width:36px;height:36px;flex:0 0 36px;border-radius:999px;background:conic-gradient(from 66deg at 38.5% 37.4%,#82C88A 93.6deg,#0196CD 219.6deg)}
+.logo .m::after{content:"";position:absolute;inset:9.5px;border-radius:999px;background:#0A0A0A}
+.logo .m::before{content:"";position:absolute;top:-2px;left:14px;width:8px;height:8px;border-radius:999px;background:#AAFFB3;box-shadow:0 0 10px rgba(170,255,179,.9)}
+.logo .lk{display:flex;flex-direction:column;gap:5px}
+.logo .wm{font-size:21px;line-height:21px;font-weight:700;letter-spacing:-.6px}
+.logo .wm span{background:linear-gradient(275deg,#82C88A 0%,#0196CD 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.logo .pb{font-size:9.5px;line-height:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#7C8798}
+
+.logo .m{position:relative;width:auto;height:auto;flex:0 0 auto;border-radius:0;background:none;font-size:34px;line-height:1;background-image:linear-gradient(275deg,#0196CD 0%,#82C88A 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 12px rgba(1,150,205,.45))}
+.logo .m::before,.logo .m::after{content:none}
+.logo .wm .tm{-webkit-text-fill-color:#7C8798;color:#7C8798;background:none;font-size:9px;font-weight:700;vertical-align:super;letter-spacing:0;margin-left:1px}
+
+.hero .in{display:grid;grid-template-columns:minmax(0,600px) minmax(0,1fr);align-items:start;gap:48px;padding:96px 64px 104px;text-align:left;overflow:visible}
+.hero .htx{position:relative;z-index:3;align-self:start;padding-top:64px}
+.hero h1{font-size:clamp(36px,4.2vw,56px);line-height:1.02;font-weight:700;letter-spacing:-2px;margin:0;max-width:none}
+.hero p.sub{font-size:19px;line-height:1.6;color:#C3CBE0;max-width:780px;margin:22px 0 0}
+.hero .cta{justify-content:flex-start;margin-top:34px}
+.hero .trust{justify-content:flex-start;gap:14px 22px;margin-top:26px}
+.hero .shot{position:relative;z-index:2;width:980px;max-width:none;margin:56px 0 0;perspective:1800px}
+.hero .shot .browser{max-height:560px;transform:rotateY(-15deg) rotateX(3deg) rotateZ(-1.2deg);transform-origin:left center;border-radius:20px;box-shadow:-40px 60px 120px rgba(0,0,0,.65),0 0 0 1px rgba(255,255,255,.09)}
+.hero .shot .glow{position:absolute;z-index:-1;left:2%;top:8%;width:80%;height:70%;background:var(--grad);filter:blur(110px);opacity:.42;border-radius:50%}
+@media(max-width:900px){
+ .hero .in{grid-template-columns:1fr;gap:36px;padding:96px 64px 100px}
+ .hero h1{max-width:620px}
+ .hero .shot{width:min(1000px,120%)}
+ .hero .shot .browser{max-height:560px;transform:rotateY(-9deg) rotateX(2deg)}
+}
+@media(max-width:809px){
+ .hero .in{padding:80px 30px 72px}
+ .hero .shot{width:100%;perspective:none}
+ .hero .shot .browser{max-height:none;transform:none;box-shadow:0 30px 70px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.09)}
+}
+
+.hero .trust{margin-top:30px;display:flex;flex-wrap:wrap;gap:10px;font-size:15px;color:#fff}
+.hero .trust span{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:9px 18px 9px 14px}
+.hero .trust span i{font-size:18px;color:#82C88A}
+.hero .trust b{color:#fff;font-weight:500;letter-spacing:-.2px}
+@media(min-width:1200px){.hero .in{grid-template-columns:minmax(0,820px) minmax(0,1fr)}}
+@media(min-width:1400px){.hero .in{grid-template-columns:minmax(0,880px) minmax(0,1fr)}.hero p.sub{max-width:820px}}
+
+.nav .wrap{max-width:1360px}
+@media(min-width:1500px){.nav .wrap{max-width:1500px}.hero .in{max-width:1500px}}
+@media(min-width:1200px){.hero .in{max-width:1440px;column-gap:32px}}
+.btn.gold{background:transparent;color:#EBA343;box-shadow:inset 0 0 0 1px #EBA343}
+.btn.gold:hover{background:rgba(235,163,67,.1)}
+.hero .in{min-height:calc(100svh - 73px);align-content:start}
+.hero .trust{margin-top:32px;display:flex;flex-wrap:wrap;gap:12px 30px;font-size:15px}
+.hero .trust span{background:none;border:0;border-radius:0;padding:0;display:inline-flex;align-items:center;gap:9px}
+.hero .trust span i{font-size:19px;color:#82C88A}
+.hero .trust b{color:#C3CBE0;font-weight:500;letter-spacing:-.2px}
+
 </style></head><body>
 
 <div class="nav"><div class="wrap in">
- <a class="logo" href="#top"><span class="m">R</span><span>Rev<span>OS</span></span></a>
- <div class="links"><a target="_top" href="/position-to-win">Position to Win</a><a target="_top" href="/drive-warm-leads">Drive Warm Leads</a><a target="_top" href="/set-meetings">Set Meetings</a><a target="_top" href="/close-deals">Close Deals</a><a href="#pricing">Pricing</a></div>
- <div class="act"><a class="li" href="#">Log in</a><a class="btn p" href="#start">Get your audit</a></div>
+ <a class="logo" href="#"><span class="m"><i class="ph-fill ph-sparkle"></i></span><span class="lk"><span class="wm">Rev<span>OS</span><span class="tm">™</span></span><span class="pb">Powered by Swivel</span></span></a>
+ <div class="links"><a href="position-to-win.html">Position to Win</a><a href="drive-warm-leads.html">Drive Warm Leads</a><a href="set-meetings.html">Set Meetings</a><a href="close-deals.html">Close Deals</a><a href="#pricing">Pricing</a></div>
+ <div class="act"><a class="li" href="https://swivelteam.com/login">Log in</a><a class="btn p" href="https://swivelteam.com/gtm-audit">Get your audit</a></div>
 </div></div>
 
 <header class="hero" id="top"><div class="wrap in">
- <span class="eyebrow" style="color:#a5b4fc">✦ &nbsp;By Swivel</span>
- <h1>Revenue made easy.<br><span class="grad-text">A proven system that works — built for you, and yours to run.</span></h1>
- <p class="sub">Swivel builds your complete revenue operating system — the four pillars, grounded in 300+ playbooks and $150M+ of pipeline — and proves 5–10× ROI. Humans do the strategy and quality; AI does the work in between. When the alternatives don’t work, this does.</p>
- <div class="cta"><a class="btn p" href="#start">Get your GTM audit →</a><a class="btn g" href="#system">See how it works</a></div>
- <div class="trust"><span>✓ <b>300+ proven playbooks</b></span><span>✓ <b>$150M+ pipeline generated</b></span><span>✓ <b>Yours to run — for a fraction</b></span></div>
+ <div class="htx">
+  <h1>Revenue made easy.<br><span class="grad-text">A proven system that works<br>— built for you, and yours to run.</span></h1>
+  <p class="sub">Swivel builds your complete revenue operating system — the four pillars, grounded in 300+ playbooks and $150M+ of pipeline — and proves 5–10× ROI. Humans do the strategy and quality; AI does the work in between.</p>
+  <div class="cta"><a class="btn p" href="https://swivelteam.com/gtm-audit">Get your GTM audit <i class="ph ph-arrow-right"></i></a><a class="btn gold" href="https://swivelteam.com/schedule-meeting-calendar">Schedule a Meeting</a></div>
+  <div class="trust"><span><i class="ph ph-check"></i> <b>300+ proven playbooks</b></span><span><i class="ph ph-check"></i> <b>$150M+ pipeline generated</b></span><span><i class="ph ph-check"></i> <b>Yours to run — for a fraction</b></span></div>
+ </div>
  <div class="shot"><div class="glow"></div><div class="browser"><div class="bar"><i style="background:#FF5F57"></i><i style="background:#FEBC2E"></i><i style="background:#28C840"></i><span class="u">app.revos.io/overview</span></div><img src="swivel-image-1.png" alt="RevOS overview"></div></div>
 </div></header>
 
 <section class="problem" id="problem"><div class="wrap">
- <div class="sec-head"><span class="eyebrow">The problem</span><h2>Most teams run on random acts of revenue.</h2><p>Not for lack of effort — for lack of a system. Work scatters, content talks about the company instead of the buyer, and the plan defaults to gut.</p></div>
+ <div class="sec-head"><span class="eyebrow">The problem</span><h2>Most teams run on<br><span class="grad-text">random acts of revenue.</span></h2><p>Not for lack of effort — for lack of a system. Work scatters, content talks about the company instead of the buyer, and the plan defaults to gut.</p></div>
  <div class="pgrid">
-  <div class="pcard"><div class="ic" style="background:#FDE9EE;color:#E11D48">✕</div><h3>Effort with no throughline</h3><p>Whatever’s loudest wins the week. Nothing compounds, and no one can say what’s actually working.</p></div>
-  <div class="pcard"><div class="ic" style="background:#EEE9FE;color:#7C3AED">✎</div><h3>Content that isn’t buyer-centric</h3><p>Polished busywork about the company, not the buyer — it doesn’t move anyone toward a decision.</p></div>
-  <div class="pcard"><div class="ic" style="background:#EEF0FE;color:#4F46E5">?</div><h3>No plan, no “so what”</h3><p>The numbers live in ten tabs with no summary and no next step — so the plan defaults to gut.</p></div>
+  <div class="pcard"><div class="ic" style="background:#FEECEC;color:#F53434"><i class="ph-fill ph-shuffle"></i></div><h3>Effort with no throughline</h3><p>Whatever’s loudest wins the week. Nothing compounds, and no one can say what’s actually working.</p></div>
+  <div class="pcard"><div class="ic" style="background:#E6F4FA;color:#0077A3"><i class="ph-fill ph-pen-nib"></i></div><h3>Content that isn’t buyer-centric</h3><p>Polished busywork about the company, not the buyer — it doesn’t move anyone toward a decision.</p></div>
+  <div class="pcard"><div class="ic" style="background:#E6F4FA;color:#0196CD"><i class="ph-fill ph-question"></i></div><h3>No plan, no “so what”</h3><p>The numbers live in ten tabs with no summary and no next step — so the plan defaults to gut.</p></div>
  </div>
 </div></section>
 
 <section id="ai"><div class="wrap">
  <div class="sec-head"><span class="eyebrow">The new trap</span><h2>And now — random acts of AI.</h2><p>Everyone’s reaching for Claude or ChatGPT to fix it themselves. But a pile of clever tactics still isn’t a system.</p></div>
  <div class="pgrid">
-  <div class="pcard"><div class="ic" style="background:#FDE9EE;color:#E11D48">⚡</div><h3>AI can do the wrong things faster</h3><p>Without a plan, targeting, and the right channels behind it, AI just accelerates whatever the system was already doing.</p></div>
-  <div class="pcard"><div class="ic" style="background:#FEF4E2;color:#B45309">◫</div><h3>Great tactics ≠ a system</h3><p>A sharp email here, a good ad there — if it’s not inside a system, it doesn’t compound.</p></div>
-  <div class="pcard"><div class="ic" style="background:#EEF0FE;color:#4F46E5">✦</div><h3>An echo chamber</h3><p>Claude reflects your own assumptions back — confidently, but without the expertise, judgment, or proven plan to know the right things to do.</p></div>
+  <div class="pcard"><div class="ic" style="background:#FEECEC;color:#F53434"><i class="ph-fill ph-lightning"></i></div><h3>AI can do the wrong things faster</h3><p>Without a plan, targeting, and the right channels behind it, AI just accelerates whatever the system was already doing.</p></div>
+  <div class="pcard"><div class="ic" style="background:#EAF7F0;color:#2CA7B7"><i class="ph-fill ph-puzzle-piece"></i></div><h3>Great tactics ≠ a system</h3><p>A sharp email here, a good ad there — if it’s not inside a system, it doesn’t compound.</p></div>
+  <div class="pcard"><div class="ic" style="background:#E6F4FA;color:#0196CD"><i class="ph-fill ph-sparkle"></i></div><h3>An echo chamber</h3><p>Claude reflects your own assumptions back — confidently, but without the expertise, judgment, or proven plan to know the right things to do.</p></div>
  </div>
  <div class="punch">You may be doing <span>random acts of AI.</span></div>
 </div></section>
@@ -146,39 +224,39 @@ footer h5{color:#DCE2F0;font-size:13px;font-weight:700;letter-spacing:.05em;text
 <section class="problem" id="vs"><div class="wrap">
  <div class="sec-head"><span class="eyebrow">The alternatives</span><h2>Four ways teams try to solve this</h2><p>Most teams cobble several of these together — and each still only gets part of the way. None adds up to a system that runs.</p></div>
  <div class="pgrid" style="grid-template-columns:1fr 1fr">
-  <div class="pcard"><div class="ic" style="background:#FDE9EE;color:#E11D48">✦</div><h3>Build your own</h3><p>Do it yourself with AI. But it’s an echo chamber — no expertise, judgment, or proven plan. It can confirm a direction, but it can’t tell you which one is right.</p></div>
-  <div class="pcard"><div class="ic" style="background:#FDE9EE;color:#E11D48">⧉</div><h3>Throw more people at it</h3><p>Hire more BDRs or reps against an unclear plan. Months of ramp, early wins are rare, and turnover resets the clock.</p></div>
-  <div class="pcard"><div class="ic" style="background:#FDE9EE;color:#E11D48">◎</div><h3>Find an advisor</h3><p>A strategy deck from a few interviews — then execution stalls. Advice without a system doesn’t move revenue.</p></div>
-  <div class="pcard"><div class="ic" style="background:#FDE9EE;color:#E11D48">◫</div><h3>Hire it out</h3><p>Hand it to an agency and point tools. You still wire it together yourself — siloed tactics, high CAC, and it vanishes when they leave.</p></div>
+  <div class="pcard"><div class="ic" style="background:#FEECEC;color:#F53434"><i class="ph-fill ph-wrench"></i></div><h3>Build your own</h3><p>Do it yourself with AI. But it’s an echo chamber — no expertise, judgment, or proven plan. It can confirm a direction, but it can’t tell you which one is right.</p></div>
+  <div class="pcard"><div class="ic" style="background:#FEECEC;color:#F53434"><i class="ph-fill ph-users-three"></i></div><h3>Throw more people at it</h3><p>Hire more BDRs or reps against an unclear plan. Months of ramp, early wins are rare, and turnover resets the clock.</p></div>
+  <div class="pcard"><div class="ic" style="background:#FEECEC;color:#F53434"><i class="ph-fill ph-presentation-chart"></i></div><h3>Find an advisor</h3><p>A strategy deck from a few interviews — then execution stalls. Advice without a system doesn’t move revenue.</p></div>
+  <div class="pcard"><div class="ic" style="background:#FEECEC;color:#F53434"><i class="ph-fill ph-buildings"></i></div><h3>Hire it out</h3><p>Hand it to an agency and point tools. You still wire it together yourself — siloed tactics, high CAC, and it vanishes when they leave.</p></div>
  </div>
- <div style="max-width:940px;margin:30px auto 0;background:var(--brand);color:#fff;border-radius:16px;padding:24px 30px;text-align:center;font-size:17px;line-height:1.5;box-shadow:0 16px 40px rgba(79,70,229,.22)"><b>Why RevOS:</b> the only option built to actually work — a proven system, built for you, driving 5–10× ROI, and yours to run.</div>
+ <div style="max-width:940px;margin:30px auto 0;background:#0077A3;color:#fff;border-radius:24px;padding:24px 30px;text-align:center;font-size:17px;line-height:1.5;box-shadow:0 16px 40px rgba(1,150,205,.22)"><b>Why RevOS:</b> the only option built to actually work — a proven system, built for you, driving 5–10× ROI, and yours to run.</div>
 </div></section>
 
 <section class="pillars" id="system"><div class="wrap">
- <div class="sec-head"><span class="eyebrow" style="color:#a5b4fc">The system</span><h2>One system. Four pillars, in order.</h2><p>Each pillar sets up the next — win the right accounts, fill the funnel, book the meetings, close the revenue. We build all four as one system, hands-on for ~12 months — human-in-the-loop throughout, powered by AI to move faster.</p></div>
+ <div class="sec-head"><span class="eyebrow" style="color:#8EC9FF">The system</span><h2>One system.<br><span class="grad-text">Four pillars, in order.</span></h2><p>Each pillar sets up the next — win the right accounts, fill the funnel, book the meetings, close the revenue. We build all four as one system, hands-on for ~12 months — human-in-the-loop throughout, powered by AI to move faster.</p></div>
  <div class="pilgrid">
-  <a class="pil" target="_top" href="/position-to-win"><div class="n" style="background:linear-gradient(135deg,#7C3AED,#A855F7)">◉</div><div><h4>Position to Win</h4><p>Sharpen ICP, messaging &amp; positioning so you win the right accounts.</p><span class="go" style="color:#C4B5FD">Explore this pillar →</span></div></a>
-  <a class="pil" target="_top" href="/drive-warm-leads"><div class="n" style="background:linear-gradient(135deg,#4F46E5,#06B6D4)">◔</div><div><h4>Drive Warm Leads</h4><p>The channels and content that bring in-market buyers to you.</p><span class="go" style="color:#93C5FD">Explore this pillar →</span></div></a>
-  <a class="pil" target="_top" href="/set-meetings"><div class="n" style="background:linear-gradient(135deg,#B45309,#F59E0B)">▤</div><div><h4>Set Meetings</h4><p>Outbound + speed-to-lead that turns interest into booked meetings.</p><span class="go" style="color:#FCD34D">Explore this pillar →</span></div></a>
-  <a class="pil" target="_top" href="/close-deals"><div class="n" style="background:linear-gradient(135deg,#0E7490,#06B6D4)">⬡</div><div><h4>Close Deals</h4><p>Enablement, battlecards &amp; velocity that convert pipeline to revenue.</p><span class="go" style="color:#67E8F9">Explore this pillar →</span></div></a>
+  <a class="pil" href="position-to-win.html"><div class="n" style="background:rgba(255,255,255,.07);color:#82C88A"><i class="ph-fill ph-crosshair"></i></div><div><h4>Position to Win</h4><p>Sharpen ICP, messaging &amp; positioning so you win the right accounts.</p><span class="go" style="color:#8EC9FF">Explore this pillar <i class="ph ph-arrow-right"></i></span></div></a>
+  <a class="pil" href="drive-warm-leads.html"><div class="n" style="background:rgba(255,255,255,.07);color:#42AFAC"><i class="ph-fill ph-funnel"></i></div><div><h4>Drive Warm Leads</h4><p>The channels and content that bring in-market buyers to you.</p><span class="go" style="color:#8EC9FF">Explore this pillar <i class="ph ph-arrow-right"></i></span></div></a>
+  <a class="pil" href="set-meetings.html"><div class="n" style="background:rgba(255,255,255,.07);color:#21A3BC"><i class="ph-fill ph-calendar-check"></i></div><div><h4>Set Meetings</h4><p>Outbound + speed-to-lead that turns interest into booked meetings.</p><span class="go" style="color:#82C88A">Explore this pillar <i class="ph ph-arrow-right"></i></span></div></a>
+  <a class="pil" href="close-deals.html"><div class="n" style="background:rgba(255,255,255,.07);color:#0196CD"><i class="ph-fill ph-handshake"></i></div><div><h4>Close Deals</h4><p>Enablement, battlecards &amp; velocity that convert pipeline to revenue.</p><span class="go" style="color:#AAFFB3">Explore this pillar <i class="ph ph-arrow-right"></i></span></div></a>
  </div>
- <div class="bookend"><b>Human-in-the-loop everywhere:</b> your Swivel experts steer and approve at every step — an AI-powered system that does the heavy lifting so you move faster. <a target="_top" href="/position-to-win" style="color:#a5b4fc;font-weight:700;white-space:nowrap">See the AI system, unwrapped →</a></div>
+ <div class="bookend"><b>Human-in-the-loop everywhere:</b> your Swivel experts steer and approve at every step — an AI-powered system that does the heavy lifting so you move faster. <a href="position-to-win.html" style="color:#8EC9FF;font-weight:700;white-space:nowrap">See the AI system, unwrapped <i class="ph ph-arrow-right"></i></a></div>
 </div></section>
 
 <section id="product"><div class="wrap">
  <div class="sec-head"><span class="eyebrow">The product</span><h2>The system, made real</h2><p>Not a prototype dressed up as a product — eight years of proven revenue work, now built as AI you can see.</p></div>
- <div class="feat "><div class="txt"><div class="tag">The plan</div><h3>Your whole RevOS — and the move for the next 30 days.</h3><p>Four pillars, each with a health status, its #1 red flag, and a plain-English plan. Not a dashboard to interpret — the next move, made obvious, with the confidence that it’s the right one.</p><ul><li><span class="ck">✓</span><span>Every pillar shows its top priority</span></li><li><span class="ck">✓</span><span>A 30-day plan, ranked by impact</span></li><li><span class="ck">✓</span><span>Confidence in what happens next</span></li></ul></div><div class="fshot"><div class="bar"><i style="background:#FF5F57"></i><i style="background:#FEBC2E"></i><i style="background:#28C840"></i></div><img src="swivel-image-1.png" alt="Your whole RevOS — and the move for the next 30 days."></div></div><div class="feat rev"><div class="fshot"><div class="bar"><i style="background:#FF5F57"></i><i style="background:#FEBC2E"></i><i style="background:#28C840"></i></div><img src="swivel-image-2.png" alt="A plan your team runs — human-in-the-loop, AI-powered."></div><div class="txt"><div class="tag">The system runs</div><h3>A plan your team runs — human-in-the-loop, AI-powered.</h3><p>RevOS drafts and ranks the moves by impact and routes them to your team in ClickUp. Your Swivel experts steer, approve, and check quality at every step — an AI-powered system that does the heavy lifting to increase efficiency, not full automation.</p><ul><li><span class="ck">✓</span><span>Human-in-the-loop at every step</span></li><li><span class="ck">✓</span><span>Every action owned by a real person</span></li><li><span class="ck">✓</span><span>The system working — not just advice</span></li></ul></div></div>
+ <div class="feat "><div class="txt"><div class="tag">The plan</div><h3>Your whole RevOS — and the move for the next 30 days.</h3><p>Four pillars, each with a health status, its #1 red flag, and a plain-English plan. Not a dashboard to interpret — the next move, made obvious, with the confidence that it’s the right one.</p><ul><li><span class="ck"><i class="ph ph-check"></i></span><span>Every pillar shows its top priority</span></li><li><span class="ck"><i class="ph ph-check"></i></span><span>A 30-day plan, ranked by impact</span></li><li><span class="ck"><i class="ph ph-check"></i></span><span>Confidence in what happens next</span></li></ul></div><div class="fshot"><div class="bar"><i style="background:#FF5F57"></i><i style="background:#FEBC2E"></i><i style="background:#28C840"></i></div><img src="swivel-image-1.png" alt="Your whole RevOS — and the move for the next 30 days."></div></div><div class="feat rev"><div class="fshot"><div class="bar"><i style="background:#FF5F57"></i><i style="background:#FEBC2E"></i><i style="background:#28C840"></i></div><img src="swivel-image-2.png" alt="A plan your team runs — human-in-the-loop, AI-powered."></div><div class="txt"><div class="tag">The system runs</div><h3>A plan your team runs — human-in-the-loop, AI-powered.</h3><p>RevOS drafts and ranks the moves by impact and routes them to your team in ClickUp. Your Swivel experts steer, approve, and check quality at every step — an AI-powered system that does the heavy lifting to increase efficiency, not full automation.</p><ul><li><span class="ck"><i class="ph ph-check"></i></span><span>Human-in-the-loop at every step</span></li><li><span class="ck"><i class="ph ph-check"></i></span><span>Every action owned by a real person</span></li><li><span class="ck"><i class="ph ph-check"></i></span><span>The system working — not just advice</span></li></ul></div></div>
 </div></section>
 
 <section class="hub" id="hub"><div class="wrap">
- <div class="sec-head"><span class="eyebrow" style="color:#a5b4fc">One hub</span><h2>RevOS sits at the center of your stack</h2><p>It reads from and acts inside the tools you already run — one place that ties them together. No rip-and-replace.</p></div>
- <div class="hubstage"><svg viewBox="0 0 940 540" preserveAspectRatio="none"><line x1="470" y1="270" x2="470" y2="65"/><line x1="470" y1="270" x2="739" y2="125"/><line x1="470" y1="270" x2="850" y2="270"/><line x1="470" y1="270" x2="739" y2="415"/><line x1="470" y1="270" x2="470" y2="475"/><line x1="470" y1="270" x2="201" y2="415"/><line x1="470" y1="270" x2="90" y2="270"/><line x1="470" y1="270" x2="201" y2="125"/></svg><div class="hubcenter">Rev<span style="color:#BFEFFF">OS</span></div><div class="hubnode" style="left:50.00%;top:12.04%"><div class="hubc"><span class="b" style="background:#FF7A59">H</span><span class="n">HubSpot</span></div></div><div class="hubnode" style="left:78.59%;top:23.16%"><div class="hubc"><span class="b" style="background:#7B68EE">C</span><span class="n">ClickUp</span></div></div><div class="hubnode" style="left:90.43%;top:50.00%"><div class="hubc"><span class="b" style="background:#34A853">G</span><span class="n">Google Ads</span></div></div><div class="hubnode" style="left:78.59%;top:76.84%"><div class="hubc"><span class="b" style="background:#1877F2">f</span><span class="n">Meta Ads</span></div></div><div class="hubnode" style="left:50.00%;top:87.96%"><div class="hubc"><span class="b" style="background:#0A66C2">in</span><span class="n">LinkedIn</span></div></div><div class="hubnode" style="left:21.41%;top:76.84%"><div class="hubc"><span class="b" style="background:#E8710A">GA</span><span class="n">GA4</span></div></div><div class="hubnode" style="left:9.57%;top:50.00%"><div class="hubc"><span class="b" style="background:#1A1A1A">Cl</span><span class="n">Clay</span></div></div><div class="hubnode" style="left:21.41%;top:23.16%"><div class="hubc"><span class="b" style="background:#0B996E">Br</span><span class="n">Brevo</span></div></div></div>
- <div class="hubgrid"><div class="hubcenter hubmid">Rev<span style="color:#BFEFFF">OS</span></div><div class="hubrow"><div class="hubc"><span class="b" style="background:#FF7A59">H</span><span class="n">HubSpot</span></div><div class="hubc"><span class="b" style="background:#7B68EE">C</span><span class="n">ClickUp</span></div><div class="hubc"><span class="b" style="background:#34A853">G</span><span class="n">Google Ads</span></div><div class="hubc"><span class="b" style="background:#1877F2">f</span><span class="n">Meta Ads</span></div><div class="hubc"><span class="b" style="background:#0A66C2">in</span><span class="n">LinkedIn</span></div><div class="hubc"><span class="b" style="background:#E8710A">GA</span><span class="n">GA4</span></div><div class="hubc"><span class="b" style="background:#1A1A1A">Cl</span><span class="n">Clay</span></div><div class="hubc"><span class="b" style="background:#0B996E">Br</span><span class="n">Brevo</span></div></div></div>
+ <div class="sec-head"><span class="eyebrow" style="color:#8EC9FF">One hub</span><h2>RevOS sits at the center of your stack</h2><p>It reads from and acts inside the tools you already run — one place that ties them together. No rip-and-replace.</p></div>
+ <div class="hubstage"><svg viewBox="0 0 940 540" preserveAspectRatio="none"><line x1="470" y1="270" x2="470" y2="65"/><line x1="470" y1="270" x2="739" y2="125"/><line x1="470" y1="270" x2="850" y2="270"/><line x1="470" y1="270" x2="739" y2="415"/><line x1="470" y1="270" x2="470" y2="475"/><line x1="470" y1="270" x2="201" y2="415"/><line x1="470" y1="270" x2="90" y2="270"/><line x1="470" y1="270" x2="201" y2="125"/></svg><div class="hubcenter">Rev<span style="color:#D6F0FA">OS</span></div><div class="hubnode" style="left:50.00%;top:12.04%"><div class="hubc"><span class="b" style="background:#FF7A59">H</span><span class="n">HubSpot</span></div></div><div class="hubnode" style="left:78.59%;top:23.16%"><div class="hubc"><span class="b" style="background:#7B68EE">C</span><span class="n">ClickUp</span></div></div><div class="hubnode" style="left:90.43%;top:50.00%"><div class="hubc"><span class="b" style="background:#34A853">G</span><span class="n">Google Ads</span></div></div><div class="hubnode" style="left:78.59%;top:76.84%"><div class="hubc"><span class="b" style="background:#1877F2">f</span><span class="n">Meta Ads</span></div></div><div class="hubnode" style="left:50.00%;top:87.96%"><div class="hubc"><span class="b" style="background:#0A66C2">in</span><span class="n">LinkedIn</span></div></div><div class="hubnode" style="left:21.41%;top:76.84%"><div class="hubc"><span class="b" style="background:#E8710A">GA</span><span class="n">GA4</span></div></div><div class="hubnode" style="left:9.57%;top:50.00%"><div class="hubc"><span class="b" style="background:#1A1A1A">Cl</span><span class="n">Clay</span></div></div><div class="hubnode" style="left:21.41%;top:23.16%"><div class="hubc"><span class="b" style="background:#0B996E">Br</span><span class="n">Brevo</span></div></div></div>
+ <div class="hubgrid"><div class="hubcenter hubmid">Rev<span style="color:#D6F0FA">OS</span></div><div class="hubrow"><div class="hubc"><span class="b" style="background:#FF7A59">H</span><span class="n">HubSpot</span></div><div class="hubc"><span class="b" style="background:#7B68EE">C</span><span class="n">ClickUp</span></div><div class="hubc"><span class="b" style="background:#34A853">G</span><span class="n">Google Ads</span></div><div class="hubc"><span class="b" style="background:#1877F2">f</span><span class="n">Meta Ads</span></div><div class="hubc"><span class="b" style="background:#0A66C2">in</span><span class="n">LinkedIn</span></div><div class="hubc"><span class="b" style="background:#E8710A">GA</span><span class="n">GA4</span></div><div class="hubc"><span class="b" style="background:#1A1A1A">Cl</span><span class="n">Clay</span></div><div class="hubc"><span class="b" style="background:#0B996E">Br</span><span class="n">Brevo</span></div></div></div>
  <div class="hubcap">The cockpit — one interface across every tool, so you’re not rebuilding connectors or living in ten tabs.</div>
 </div></section>
 
 <section class="rtb"><div class="wrap">
- <div class="sec-head"><span class="eyebrow" style="color:#a5b4fc">Why it works</span><h2 style="color:#fff">It’s not a library of playbooks. It’s the speed to yours.</h2><p>Your winning playbook is a living thing — built from your data, refined daily. 300+ proven playbooks and 8 years of pattern are how we get you to it faster than starting from scratch — including faster than Claude alone, which doesn’t have your data or your judgment.</p></div>
+ <div class="sec-head"><span class="eyebrow" style="color:#8EC9FF">Why it works</span><h2 style="color:#fff">It’s not a library of playbooks. It’s the speed to yours.</h2><p>Your winning playbook is a living thing — built from your data, refined daily. 300+ proven playbooks and 8 years of pattern are how we get you to it faster than starting from scratch — including faster than Claude alone, which doesn’t have your data or your judgment.</p></div>
  <div class="rtbstat">
   <div class="s"><b>300+</b><span>playbooks to start from — not to hand you</span></div>
   <div class="s"><b>8 yrs</b><span>of pattern across dozens of companies</span></div>
@@ -188,27 +266,27 @@ footer h5{color:#DCE2F0;font-size:13px;font-weight:700;letter-spacing:.05em;text
 </div></section>
 
 <section class="model" id="model"><div class="wrap">
- <div class="sec-head"><span class="eyebrow">How it works</span><h2>Build it with us. Then run it for a fraction.</h2><p>You’re not buying a one-off project or renting a team forever. We build and prove your revenue operating system, then hand you the controls to run it yourself — kept live and current, at a fraction of the build.</p></div>
+ <div class="sec-head"><span class="eyebrow">How it works</span><h2>Build it with us.<br><span class="grad-text">Then run it for a fraction.</span></h2><p>You’re not buying a one-off project or renting a team forever. We build and prove your revenue operating system, then hand you the controls to run it yourself — kept live and current, at a fraction of the build.</p></div>
  <div class="steps">
-  <div class="stp"><div class="n" style="background:#4F46E5">1</div><h4>Build &amp; prove</h4><div class="when" style="color:#4F46E5">~12 months</div><p>We build your AI revenue systems, strategy &amp; full funnel — and run them to a proven 5–10× ROI.</p></div>
-  <div class="stp"><div class="n" style="background:#06B6D4">2</div><h4>Take the controls</h4><div class="when" style="color:#0E7490">training &amp; handoff</div><p>We train your team to operate the proven system end to end — the plays, the tools, the cadence.</p></div>
-  <div class="stp"><div class="n" style="background:#7C3AED">3</div><h4>Run it on license</h4><div class="when" style="color:#7C3AED">$5K / mo</div><p>Your team runs it day-to-day; we keep it live, current &amp; supported — for a fraction of the build.</p></div>
+  <div class="stp"><div class="n" style="background:#0196CD">1</div><h4>Build &amp; prove</h4><div class="when">~12 months</div><p>We build your AI revenue systems, strategy &amp; full funnel — and run them to a proven 5–10× ROI.</p></div>
+  <div class="stp"><div class="n" style="background:linear-gradient(135deg,#0196CD,#0077A3)">2</div><h4>Take the controls</h4><div class="when">training &amp; handoff</div><p>We train your team to operate the proven system end to end — the plays, the tools, the cadence.</p></div>
+  <div class="stp"><div class="n" style="background:#0077A3">3</div><h4>Run it on license</h4><div class="when">$5K / mo</div><p>Your team runs it day-to-day; we keep it live, current &amp; supported — for a fraction of the build.</p></div>
  </div>
  <div class="modelnote"><b>A living license, not a locked box</b> — the proven system stays live and current for as long as it’s driving returns.</div>
 </div></section>
 
 <section id="pricing"><div class="wrap">
- <div class="sec-head"><span class="eyebrow">Pricing</span><h2>Build your RevOS. Then run it your way.</h2><p>Most teams start with a Custom Build — we build and run your AI revenue systems — then run it themselves once it’s proven.</p></div>
+ <div class="sec-head"><span class="eyebrow">Pricing</span><h2>Build your RevOS.<br><span class="grad-text">Then run it your way.</span></h2><p>Most teams start with a Custom Build — we build and run your AI revenue systems — then run it themselves once it’s proven.</p></div>
  <div class="tiers">
   <div class="tier hot"><div class="bdg">MOST TEAMS START HERE</div><div class="tn">Custom Build</div><div class="tp">$20–30K<small>/mo · ~12 mo</small></div><div class="roi">Targets 5–10× ROI</div><div class="td">We build and run your AI revenue systems, strategy &amp; full funnel — then you license it and run it yourself.</div>
-   <ul><li><span class="ck">✓</span>AI revenue systems, built for you</li><li><span class="ck">✓</span>Full-funnel, human-in-the-loop</li><li><span class="ck">✓</span>Grounded in 300+ playbooks</li><li><span class="ck">✓</span>Then license it &amp; run it yourself</li></ul><div class="b p">Get your audit</div></div>
+   <ul><li><span class="ck"><i class="ph ph-check"></i></span>AI revenue systems, built for you</li><li><span class="ck"><i class="ph ph-check"></i></span>Full-funnel, human-in-the-loop</li><li><span class="ck"><i class="ph ph-check"></i></span>Grounded in 300+ playbooks</li><li><span class="ck"><i class="ph ph-check"></i></span>Then license it &amp; run it yourself</li></ul><a class="b p" href="https://swivelteam.com/gtm-audit">Get your audit</a></div>
   <div class="tier"><div class="tn">Run it yourself</div><div class="tp">$5,000<small>/mo · license</small></div><div class="td">An operating license for the cockpit we built — the system + your proven playbook, kept live &amp; current. $10K/mo with consulting.</div>
-   <ul><li><span class="ck">✓</span>The full RevOS system, kept current</li><li><span class="ck">✓</span>Your proven playbook — not a template</li><li><span class="ck">✓</span>The cockpit, not just data connectors</li><li><span class="ck">✓</span>Ongoing support &amp; updates</li></ul><div class="b o">Graduate when ready</div></div>
+   <ul><li><span class="ck"><i class="ph ph-check"></i></span>The full RevOS system, kept current</li><li><span class="ck"><i class="ph ph-check"></i></span>Your proven playbook — not a template</li><li><span class="ck"><i class="ph ph-check"></i></span>The cockpit, not just data connectors</li><li><span class="ck"><i class="ph ph-check"></i></span>Ongoing support &amp; updates</li></ul><div class="b o">Graduate when ready</div></div>
  </div>
  <p class="pnote">An operating license for the system you proved — a fraction of the build, and less than a team. Also available: à-la-carte modules and a 3-month build + handoff.</p>
 </div></section>
 
-<section class="model" style="background:#fff" id="faq"><div class="wrap">
+<section class="model" style="background:linear-gradient(rgba(0,152,205,.15) -5%,#fff 12%,#fff 100%)" id="faq"><div class="wrap">
  <div class="sec-head"><span class="eyebrow">FAQ</span><h2>Questions, answered</h2></div>
  <div class="faqs">
   <div class="faq"><h4>Why not just do this with Claude ourselves?</h4><p>You can — and many teams try. But on your own, AI is an echo chamber: it reflects your assumptions back with confidence, one tactic at a time, without the expertise or judgment to know the right things to do. It doesn’t have your proven plan, our 300+ playbooks, the experts, or eight years of what works. RevOS is the difference between random acts of AI and a proven system that works.</p></div>
@@ -222,12 +300,12 @@ footer h5{color:#DCE2F0;font-size:13px;font-weight:700;letter-spacing:.05em;text
 <section class="final" id="start"><div class="wrap">
  <h2>Stop running on random acts of AI.</h2>
  <p>Get a proven revenue system — built for you, proven to 5–10× ROI, then run by you.</p>
- <div class="cta"><a class="btn p" href="#top">Get your GTM audit →</a><a class="btn g" href="#pricing">See pricing</a></div>
+ <div class="cta"><a class="btn p" href="https://swivelteam.com/gtm-audit">Get your GTM audit <i class="ph ph-arrow-right"></i></a><a class="btn g" href="#pricing">See pricing</a></div>
 </div></section>
 
 <footer><div class="wrap">
  <div class="fcols">
-  <div><a class="logo" href="#top"><span class="m">R</span><span>Rev<span>OS</span></span></a><p class="d">Revenue made easy. A proven system, built as AI — and yours to run.</p></div>
+  <div><a class="logo" href="#"><span class="m"><i class="ph-fill ph-sparkle"></i></span><span class="lk"><span class="wm">Rev<span>OS</span><span class="tm">™</span></span><span class="pb">Powered by Swivel</span></span></a><p class="d">Revenue made easy. A proven system, built as AI — and yours to run.</p></div>
   <div><h5>Product</h5><a href="#system">The system</a><a href="#vs">Compare</a><a href="#hub">One hub</a><a href="#pricing">Pricing</a></div>
   <div><h5>Company</h5><a href="#">About Swivel</a><a href="#faq">FAQ</a><a href="#start">Get your audit</a></div>
  </div>
