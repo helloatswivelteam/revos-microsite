@@ -190,7 +190,7 @@ footer .logo{justify-content:center;margin-bottom:12px}footer .fb{font-size:12px
 .hero .emb iframe{pointer-events:none}
 @media(max-width:809px){.emb .spot,.emb .spotcard{display:none}}
 @media(prefers-reduced-motion:reduce){.emb .spot:before{animation:none}}
-</style></head><body>
+</style><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TZPV8VD');</script></head><body><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZPV8VD" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="nav"><div class="wrap in">
  <a class="logo" href="index.html"><span class="m"><i class="ph-fill ph-sparkle"></i></span><span class="lk"><span class="wm">Rev<span>OS</span><span class="tm">™</span></span><span class="pb">Powered by Swivel</span></span></a>
  <div class="links"><a class="on" href="position-to-win.html">Position to Win</a><a class="" href="drive-warm-leads.html">Drive Warm Leads</a><a class="" href="set-meetings.html">Set Meetings</a><a class="" href="close-deals.html">Close Deals</a><a href="index.html#pricing">Pricing</a></div>
@@ -325,5 +325,26 @@ function init(){if(build()&&open<0){}}
 f.addEventListener('load',function(){setTimeout(init,500);});
 addEventListener('resize',function(){close();setTimeout(init,120);});
 setTimeout(init,800);setTimeout(function(){if(!btns.length)init();},1800);
+})();</script>
+<script src="https://cdn.jsdelivr.net/gh/helloatswivelteam/swivelscripts@main/utm_parameters.js"></script>
+<script>(function(){
+var KEYS=['utm_campaign','utm_content','utm_source','utm_keyword','utm_medium','utm_term','gclid','fbclid','li_fat_id'];
+function current(){
+ var out={},q=new URLSearchParams(location.search);
+ KEYS.forEach(function(k){if(q.has(k))out[k]=q.get(k);});
+ if(Object.keys(out).length)return out;
+ try{var s=sessionStorage.getItem('utmParams');if(s){var p=JSON.parse(s);KEYS.forEach(function(k){if(p[k])out[k]=p[k];});}}catch(e){}
+ return out;}
+function stamp(){
+ var p=current(),keys=Object.keys(p);if(!keys.length)return;
+ document.querySelectorAll('a[href]').forEach(function(a){
+  var h=a.getAttribute('href')||'';
+  if(h.indexOf('swivelteam.com')<0)return;
+  try{var u=new URL(a.href);
+   keys.forEach(function(k){if(!u.searchParams.has(k))u.searchParams.set(k,p[k]);});
+   a.href=u.toString();
+  }catch(e){}
+ });}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',stamp);else stamp();
 })();</script>
 </body></html>
