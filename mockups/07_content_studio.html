@@ -1,0 +1,277 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="icon" href="../favicon.svg" type="image/svg+xml"><link rel="icon" href="../favicon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="../favicon-180.png"><link rel="preload" href="../MuseoSans_500.otf" as="font" type="font/otf" crossorigin><link rel="preload" href="../MuseoSans_700.otf" as="font" type="font/otf" crossorigin><style>
+@font-face{font-family:'Museo Sans';src:url('../MuseoSans-300.otf') format('opentype');font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:'Museo Sans';src:url('../MuseoSans_500.otf') format('opentype');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Museo Sans';src:url('../MuseoSans_500_Italic.otf') format('opentype');font-weight:500;font-style:italic;font-display:swap}
+@font-face{font-family:'Museo Sans';src:url('../MuseoSans_700.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Museo Sans';src:url('../MuseoSans_900.otf') format('opentype');font-weight:900;font-style:normal;font-display:swap}
+</style><style>
+:root{
+  --bg:#F7F8FA; --panel:#FFFFFF; --ink:#0B1220; --muted:#666873; --line:#E5E8EE;
+  --brand:#0196CD; --brand2:#82C88A; --violet:#38AEB2;
+  --good:#0B7A5F; --warn:#EBA343; --bad:#F53434; --goodbg:#E9F6F1; --warnbg:#FCF2E2; --badbg:#FEECEC;
+  --side:#0A0A0A; --side2:#141414;
+  --c1:#0196CD; --c2:#82C88A; --c3:#38AEB2; --c4:#EBA343; --c5:#57B7A0; --c6:#F53434;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--ink);
+  font-family:'Museo Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased;font-synthesis:none;font-feature-settings:'cv02','cv03','cv04','ss01';}
+.app{display:grid;grid-template-columns:240px 1fr;min-height:100%;}
+/* sidebar */
+.side{background:var(--side);color:#C3CBE0;padding:22px 16px;display:flex;flex-direction:column;gap:6px;}
+.logo{display:flex;align-items:center;gap:10px;padding:4px 6px 20px;}
+.logo .mark{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,var(--brand),var(--brand2));
+  display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:17px;box-shadow:0 6px 16px rgba(79,70,229,.45);}
+.logo .name{font-weight:700;color:#fff;font-size:17px;letter-spacing:-.2px}
+.logo .name span{color:#AAFFB3}
+.navlbl{font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:#7C8798;margin:16px 8px 6px;font-weight:700}
+.nav{display:flex;align-items:center;gap:11px;padding:9px 11px;border-radius:9px;font-size:13.5px;font-weight:500;color:#AEB7CE;cursor:pointer}
+.nav .ic{width:17px;height:17px;opacity:.85}
+.nav.active{background:linear-gradient(90deg,rgba(1,150,205,.34),rgba(130,200,138,.16)));color:#fff;font-weight:700}
+.nav.active .ic{opacity:1}
+.side .foot{margin-top:auto;background:var(--side2);border:1px solid #262626;border-radius:12px;padding:13px}
+.side .foot .t{font-size:12px;color:#DCE2F0;font-weight:700}
+.side .foot .s{font-size:11px;color:#8C97B4;margin-top:3px;line-height:1.45}
+.side .foot .bar{height:6px;border-radius:6px;background:#262626;margin:9px 0 8px;overflow:hidden}
+.side .foot .bar i{display:block;height:100%;width:64%;background:linear-gradient(90deg,var(--brand),var(--brand2))}
+.side .foot a{display:block;text-align:center;background:#fff;color:#0A0A0A;font-weight:700;font-size:12px;border-radius:8px;padding:8px;text-decoration:none;margin-top:6px}
+/* main */
+.main{display:flex;flex-direction:column}
+.top{display:flex;align-items:center;gap:16px;padding:16px 28px;background:var(--panel);border-bottom:1px solid var(--line)}
+.top .crumb{font-size:12px;color:var(--muted)}
+.top h1{font-size:19px;font-weight:700;letter-spacing:-.3px;margin-top:2px}
+.top .search{margin-left:auto;background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:8px 13px;font-size:12.5px;color:var(--muted);min-width:230px;display:flex;gap:8px;align-items:center}
+.top .btn{background:var(--brand);color:#fff;border-radius:9px;padding:9px 15px;font-size:12.5px;font-weight:700}
+.top .av{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#38AEB2,#82C88A);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px}
+.wrap{padding:24px 28px;display:flex;flex-direction:column;gap:18px}
+/* pillar sub-tabs (nested modules) */
+.tabs{display:inline-flex;gap:4px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:5px;box-shadow:0 1px 2px rgba(16,24,40,.04);align-self:flex-start}
+.tab{display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;color:var(--muted);padding:8px 14px;border-radius:8px;cursor:pointer}
+.tab.on{background:var(--brand);color:#fff}
+.tab .mi{display:inline-flex}.tab .mi svg{width:15px;height:15px}
+/* generic */
+.row{display:flex;gap:18px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:0 1px 2px rgba(16,24,40,.04)}
+.card h3{font-size:13.5px;font-weight:700;letter-spacing:-.1px;display:flex;align-items:center;gap:8px}
+.card .sub{font-size:11.5px;color:var(--muted);margin-top:2px}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;padding:4px 9px;border-radius:999px}
+.pill.g{background:var(--goodbg);color:#0B7A5F}.pill.w{background:var(--warnbg);color:#a86a05}.pill.b{background:var(--badbg);color:#C81E1E}
+.pill.n{background:#F2F4F8;color:#3D4443}.pill.v{background:#E6F4FA;color:#0077A3}
+.tag{font-size:10.5px;font-weight:700;padding:3px 8px;border-radius:6px;background:#F2F4F8;color:#3D4443}
+.ktiles{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.ktile{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:0 1px 2px rgba(16,24,40,.04)}
+.ktile .lab{font-size:11.5px;color:var(--muted);font-weight:700;display:flex;align-items:center;gap:7px}
+.ktile .val{font-size:27px;font-weight:700;letter-spacing:-1px;margin-top:8px}
+.ktile .val small{font-size:14px;color:var(--muted);font-weight:700}
+.ktile .delta{font-size:11.5px;font-weight:700;margin-top:6px}
+.up{color:var(--good)}.dn{color:var(--bad)}
+.dot{width:9px;height:9px;border-radius:3px;display:inline-block}
+/* bars */
+.barrow{display:grid;grid-template-columns:110px 1fr 44px;align-items:center;gap:12px;margin:11px 0}
+.barrow .nm{font-size:12.5px;font-weight:700}
+.track{height:11px;background:#F2F4F8;border-radius:7px;overflow:hidden}
+.track i{display:block;height:100%;border-radius:7px}
+.barrow .vv{font-size:12.5px;font-weight:700;text-align:right}
+/* funnel */
+.funnel{display:flex;flex-direction:column;gap:9px}
+.fstage{display:grid;grid-template-columns:130px 1fr 70px;align-items:center;gap:12px}
+.fstage .fn{font-size:12px;font-weight:700;color:#3D4443}
+.fbar{height:34px;border-radius:9px;display:flex;align-items:center;padding-left:12px;color:#fff;font-weight:700;font-size:14px}
+.fstage .fp{font-size:11.5px;color:var(--muted);text-align:right}
+/* table */
+table{width:100%;border-collapse:collapse}
+th{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);font-weight:700}
+td{font-size:12.5px;padding:11px 10px;border-bottom:1px solid #F2F4F8;vertical-align:middle}
+tr:last-child td{border-bottom:none}
+.who{display:flex;align-items:center;gap:9px}
+.mini{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:10.5px}
+/* AI summary panel */
+.ai{background:linear-gradient(120deg,#F2F8FB, #EAF6F0);border:1px solid #CDE9F5;border-radius:14px;padding:16px 18px}
+.ai .hd{display:flex;align-items:center;gap:9px;font-weight:700;font-size:13px;color:#0077A3}
+.ai .spark{width:22px;height:22px;border-radius:7px;background:linear-gradient(135deg,var(--brand),var(--brand2));display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px}
+.ai p{font-size:12.8px;line-height:1.6;color:#3D4443;margin-top:9px}
+.ai b{color:#0B1220}
+/* chat */
+.chat{display:flex;flex-direction:column;gap:14px}
+.msg{display:flex;gap:11px;max-width:82%}
+.msg .ava{width:30px;height:30px;border-radius:8px;flex:0 0 30px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:12px}
+.msg .bub{border-radius:13px;padding:12px 15px;font-size:13px;line-height:1.55}
+.msg.u{margin-left:auto;flex-direction:row-reverse}
+.msg.u .ava{background:linear-gradient(135deg,#38AEB2,#82C88A)}
+.msg.u .bub{background:var(--brand);color:#fff;border-bottom-right-radius:4px}
+.msg.a .ava{background:linear-gradient(135deg,var(--brand),var(--brand2))}
+.msg.a .bub{background:#fff;border:1px solid var(--line);border-bottom-left-radius:4px}
+.msg.a .bub b{color:#0B1220}
+.chip{display:inline-block;font-size:11.5px;font-weight:700;color:#0077A3;background:#E6F4FA;border:1px solid #CDE9F5;border-radius:999px;padding:7px 12px;margin:5px 6px 0 0}
+.composer{margin-top:6px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:11px 14px;display:flex;align-items:center;gap:10px;color:var(--muted);font-size:12.5px}
+.composer .snd{margin-left:auto;background:var(--brand);color:#fff;border-radius:8px;padding:7px 13px;font-weight:700;font-size:12px}
+/* plan */
+.plan{display:flex;flex-direction:column;gap:13px}
+.pcard{border:1px solid var(--line);border-radius:13px;padding:15px;background:#fff;display:grid;grid-template-columns:34px 1fr 150px;gap:14px;align-items:start}
+.pnum{width:34px;height:34px;border-radius:10px;background:#E6F4FA;color:var(--brand);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+.pcard .ttl{font-size:14px;font-weight:700}
+.pcard .desc{font-size:12.3px;color:#3D4443;line-height:1.55;margin-top:4px}
+.pmeta{display:flex;gap:8px;margin-top:9px;flex-wrap:wrap}
+.pacts{display:flex;flex-direction:column;gap:7px}
+.pbtn{border-radius:8px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;border:1px solid var(--line)}
+.pbtn.y{background:var(--good);color:#fff;border-color:var(--good)}
+.pbtn.a{background:#fff;color:#3D4443}
+.pbtn.n{background:#fff;color:var(--muted)}
+/* onboarding / steps */
+.steps{display:flex;gap:10px;margin-bottom:4px}
+.step{flex:1;background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 15px;display:flex;gap:11px;align-items:center}
+.step .n{width:26px;height:26px;border-radius:50%;background:#F2F4F8;color:var(--muted);font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center}
+.step.done .n{background:var(--good);color:#fff}
+.step.now{border-color:var(--brand);box-shadow:0 0 0 3px #E6F4FA}
+.step.now .n{background:var(--brand);color:#fff}
+.step .st{font-size:12.5px;font-weight:700}
+.step .ss{font-size:11px;color:var(--muted)}
+.conn{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.connx{border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;align-items:center;gap:12px}
+.connx .ci{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:15px}
+.connx .cn{font-size:13px;font-weight:700}.connx .cs{font-size:11px;color:var(--muted)}
+.connx .cb{margin-left:auto;font-size:11.5px;font-weight:700;padding:7px 12px;border-radius:8px}
+.drop{border:1.5px dashed #C3CBE0;border-radius:12px;padding:20px;text-align:center;color:var(--muted);font-size:12.5px;background:#FBFCFD}
+.ctx{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #F2F4F8;font-size:12.5px}
+.gauge{position:relative;width:150px;height:150px;margin:0 auto}
+/* pricing */
+.tiers{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:stretch}
+.tier{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:6px}
+.tier.hot{border:2px solid var(--brand);box-shadow:0 14px 34px rgba(79,70,229,.16);position:relative}
+.tier.hot .badge{position:absolute;top:-11px;left:20px;background:var(--brand);color:#fff;font-size:10.5px;font-weight:700;padding:4px 11px;border-radius:999px;letter-spacing:.04em}
+.tier .tn{font-size:15px;font-weight:700}
+.tier .tp{font-size:26px;font-weight:700;letter-spacing:-1px;margin-top:6px}
+.tier .tp small{font-size:12.5px;color:var(--muted);font-weight:700}
+.tier .td{font-size:11.8px;color:var(--muted);line-height:1.5;min-height:48px}
+.tier ul{list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:6px}
+.tier li{font-size:12px;color:#3D4443;display:flex;gap:8px;line-height:1.4}
+.tier li .ck{color:var(--good);font-weight:700}
+.tier .cta{margin-top:auto;text-align:center;border-radius:10px;padding:11px;font-weight:700;font-size:12.5px}
+.tier .cta.p{background:var(--brand);color:#fff}
+.tier .cta.o{background:#fff;border:1px solid var(--line);color:#0B1220}
+.note{font-size:11.5px;color:var(--muted);line-height:1.55}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);font-weight:700;align-items:center}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.grid2{display:grid;grid-template-columns:1.4fr 1fr;gap:18px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.hl{background:#FCF2E2;border-radius:4px;padding:0 3px}
+.mi{display:inline-flex;align-items:center;justify-content:center;vertical-align:-3px}
+.mi svg{width:16px;height:16px;display:block}
+.card h3 .mi{margin-right:1px}
+.nav .ic{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px}
+.nav .ic svg{width:18px;height:18px}
+.top .search .mi svg{width:15px;height:15px}
+.spark .mi svg{width:13px;height:13px}
+.pnum .mi svg{width:15px;height:15px}
+.ai .hd .mi svg{width:15px;height:15px}
+</style><link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css"><style>
+.logo{align-items:flex-start!important}
+.logo .mark{width:auto!important;height:auto!important;border-radius:0!important;background-color:transparent!important;box-shadow:none!important;font-size:30px;line-height:1;background-image:linear-gradient(275deg,#0196CD 0%,#82C88A 100%)!important;-webkit-background-clip:text!important;background-clip:text!important;color:transparent!important;-webkit-text-fill-color:transparent}
+.side .nav.active{background:linear-gradient(90deg,rgba(1,150,205,.34),rgba(130,200,138,.16))!important;color:#fff!important}
+.side .nav.active .ic{opacity:1}
+.logo .name{display:flex;flex-direction:column;gap:4px;line-height:1}
+.logo .name .wm{font-size:17px;font-weight:700;letter-spacing:-.4px;color:#fff}
+.logo .name .wm span{background:linear-gradient(275deg,#82C88A 0%,#0196CD 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.logo .name .wm .tm{font-size:8px;font-weight:700;vertical-align:super;color:#7C8798;-webkit-text-fill-color:#7C8798;background:none;margin-left:1px}
+.logo .name .pb{font-size:8px;font-weight:700;letter-spacing:2.4px;text-transform:uppercase;color:#7C8798}
+</style><style>
+body.live .side .nav[role=link]{position:relative}
+body.live .side .nav[role=link]:after{content:"";position:absolute;inset:0;border-radius:9px;box-shadow:0 0 0 1px rgba(130,200,138,.5),0 0 14px rgba(130,200,138,.3);animation:navGlow 2.6s ease-in-out infinite;animation-delay:calc(var(--i,0) * .16s);pointer-events:none}
+body.live .side .nav[role=link]:hover:after{box-shadow:0 0 0 1.5px #82C88A,0 0 22px rgba(130,200,138,.55);animation:none}
+@keyframes navGlow{0%,100%{opacity:.28}50%{opacity:.95}}
+body.live .side .nav:not([role=link]){opacity:.38}
+body.live .side .nav:not([role=link]):hover{background:none}
+@media(prefers-reduced-motion:reduce){body.live .side .nav[role=link]:after{animation:none;opacity:.7}}
+</style></head>
+<body><div class="app">
+<aside class="side">
+  <div class="logo"><div class="mark"><i class="ph-fill ph-sparkle"></i></div><div class="name"><span class="wm">Rev<span>OS</span><span class="tm">™</span></span><span class="pb">Powered by Swivel</span></div></div>
+  <div class="navlbl">Diagnose</div>
+<div class="nav"><span class="ic"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg></span></span>Overview</div>
+<div class="nav"><span class="ic"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><line x1="12" y1="1.5" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22.5" y2="12"/><circle cx="12" cy="12" r="2.1" fill="currentColor" stroke="none"/></svg></span></span>Position to Win</div>
+<div class="nav"><span class="ic"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5 h18 l-7 8 v6 l-4 2 v-8 Z"/></svg></span></span>Drive Warm Leads</div>
+<div class="nav"><span class="ic"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="8" y1="2.5" x2="8" y2="6"/><line x1="16" y1="2.5" x2="16" y2="6"/><path d="M8 13.5h3"/></svg></span></span>Set Meetings</div>
+<div class="nav"><span class="ic"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7.5" width="18" height="12.5" rx="2"/><path d="M8 7.5V5.5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="3" y1="12.5" x2="21" y2="12.5"/><path d="M11 12.5h2"/></svg></span></span>Close Deals</div>
+<div class="navlbl">Decide</div>
+<div class="nav"><span class="ic"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg></span></span>30-Day Plan</div>
+<div class="navlbl">Act</div>
+<div class="nav"><span class="ic"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 L22 20 H2 Z"/><line x1="12" y1="9.5" x2="12" y2="14"/><circle cx="12" cy="17.2" r="1.05" fill="currentColor" stroke="none"/></svg></span></span>Action Center</div>
+<div class="nav active"><span class="ic"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20 h6"/><path d="M14.5 4.5 l4 4 L9 18 l-5 1 1-5 Z"/></svg></span></span>Content Studio</div>
+<div class="nav"><span class="ic"><span class="mi"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2 L14 9.5 L21.5 12 L14 14.5 L12 22 L10 14.5 L2.5 12 L10 9.5 Z"/></svg></span></span>Ask RevOS</div>
+<div class="nav"><span class="ic"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12.5" rx="1.5"/><path d="M12 16.5v4M8 20.5h8"/><path d="M7 11.5l3-3 2.2 2.2L16 7"/></svg></span></span>Client Snapshot</div>
+<div class="navlbl">Setup</div>
+<div class="nav"><span class="ic"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M19.4 13a7.5 7.5 0 000-2l2-1.5-2-3.4-2.3 1a7.5 7.5 0 00-1.8-1L14.9 2h-3.8l-.4 2.6a7.5 7.5 0 00-1.8 1l-2.3-1-2 3.4 2 1.5a7.5 7.5 0 000 2l-2 1.5 2 3.4 2.3-1a7.5 7.5 0 001.8 1l.4 2.6h3.8l.4-2.6a7.5 7.5 0 001.8-1l2.3 1 2-3.4z"/></svg></span></span>Settings</div>
+  <div class="foot">
+    <div class="t">Northstar Software</div>
+    <div class="s">Custom Build · month 8 of 12</div>
+    <div class="bar"><i></i></div>
+    <a href="#"><span class="mi"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2 L14 9.5 L21.5 12 L14 14.5 L12 22 L10 14.5 L2.5 12 L10 9.5 Z"/></svg></span> Ask RevOS</a>
+  </div>
+</aside>
+<main class="main">
+  <div class="top">
+    <div><div class="crumb">Northstar Software</div><h1>Content Studio</h1></div>
+    <div class="search"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="16" y1="16" x2="21" y2="21"/></svg></span> Ask anything about Northstar’s pipeline…</div>
+    <div class="btn"><span class="mi"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2 L14 9.5 L21.5 12 L14 14.5 L12 22 L10 14.5 L2.5 12 L10 9.5 Z"/></svg></span> Ask RevOS</div>
+    <div class="av">DS</div>
+  </div>
+  <div class="wrap">
+<div class="ai">
+  <div class="hd"><div class="spark"><span class="mi"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2 L14 9.5 L21.5 12 L14 14.5 L12 22 L10 14.5 L2.5 12 L10 9.5 Z"/></svg></span></div>Content Studio — idea → draft → design, tied to your plan</div>
+  <p>This piece traces back to <b>Plan initiative #2: “Create a finance-buyer content asset.”</b> RevOS drafts in your voice, using your positioning and the objections it heard in your call recordings.</p>
+</div>
+<div class="grid2">
+<div style="display:flex;flex-direction:column;gap:18px">
+  <div class="card">
+    <h3>① Pick a target</h3>
+    <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap">
+      <span class="pill v" style="padding:8px 13px">Persona: Finance / Ops leader ✓</span>
+      <span class="pill n" style="padding:8px 13px">Channel: Gated guide + LP</span>
+      <span class="pill n" style="padding:8px 13px">Stage: Consideration</span>
+    </div>
+  </div>
+  <div class="card">
+    <h3>② Generated ideas <span class="pill g" style="margin-left:auto">5 ready</span></h3>
+    <div style="margin-top:10px">
+      <div class="ctx" style="align-items:flex-start"><span style="color:#0077A3;font-weight:700">A</span><div><b>“The Hidden Cost of a Missed Lease Date”</b><div style="font-size:11px;color:#666873">Loss-aversion angle · matches 3 objections from June demo calls</div></div><span class="pill g" style="margin-left:auto">Top pick</span></div>
+      <div class="ctx" style="align-items:flex-start"><span style="color:#0077A3;font-weight:700">B</span><div><b>“CFO's Guide to Multi-Location Lease Risk”</b><div style="font-size:11px;color:#666873">Authority angle · strong for Tier-1 finance titles</div></div></div>
+      <div class="ctx" style="align-items:flex-start;border:none"><span style="color:#0077A3;font-weight:700">C</span><div><b>“5 Numbers Every Ops Leader Should Track”</b><div style="font-size:11px;color:#666873">Listicle · higher top-of-funnel reach</div></div></div>
+    </div>
+  </div>
+  <div class="card">
+    <h3>③ Design</h3>
+    <div style="display:flex;gap:12px;margin-top:12px">
+      <div style="flex:1;border:1px solid var(--line);border-radius:10px;overflow:hidden">
+        <div style="height:70px;background:linear-gradient(135deg,#0196CD,#82C88A)"></div>
+        <div style="padding:9px"><div style="height:7px;width:80%;background:#DCE2F0;border-radius:3px"></div><div style="height:7px;width:55%;background:#F2F4F8;border-radius:3px;margin-top:6px"></div></div>
+      </div>
+      <div style="flex:1;border:1px solid var(--line);border-radius:10px;overflow:hidden">
+        <div style="height:70px;background:linear-gradient(135deg,#38AEB2,#0196CD)"></div>
+        <div style="padding:9px"><div style="height:7px;width:70%;background:#DCE2F0;border-radius:3px"></div><div style="height:7px;width:60%;background:#F2F4F8;border-radius:3px;margin-top:6px"></div></div>
+      </div>
+      <div style="flex:1;border:1.5px dashed #C3CBE0;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#94A3B8;font-size:20px"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div>
+    </div>
+  </div>
+</div>
+<div class="card" style="padding:0;overflow:hidden">
+  <div style="padding:15px 18px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px">
+    <h3 style="margin:0"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20 h6"/><path d="M14.5 4.5 l4 4 L9 18 l-5 1 1-5 Z"/></svg></span> Draft — “The Hidden Cost of a Missed Lease Date”</h3>
+    <span class="pill g" style="margin-left:auto">On-brand voice</span>
+  </div>
+  <div style="padding:18px 20px;font-size:12.8px;line-height:1.7;color:#3D4443">
+    <div style="font-size:17px;font-weight:700;color:#0B1220;letter-spacing:-.3px">The Hidden Cost of a Missed Lease Date</div>
+    <div style="color:#666873;font-size:12px;margin:4px 0 12px">A guide for finance &amp; operations leaders managing 10+ locations</div>
+    <p>For a multi-location brand, a single overlooked renewal option or CAM reconciliation isn't a clerical slip — it's a five- or six-figure hit that lands quarters later, when it's too late to fix.</p>
+    <p style="margin-top:10px">Most teams track leases in a patchwork of spreadsheets and inboxes. That works at five locations. At fifty, the critical dates hide in the gaps between systems — and the people who'd catch them are the ones you can least afford to lose to admin work…</p>
+    <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+      <span class="chip">Regenerate section</span><span class="chip">Make it shorter</span><span class="chip">More data-driven</span><span class="chip">✓ Approve &amp; export</span>
+    </div>
+  </div>
+  <div style="padding:12px 18px;border-top:1px solid var(--line);background:#FBFCFD" class="note">Sources woven in: your positioning doc · 3 objections from June demo calls · 2 industry stats (cited).</div>
+</div>
+</div></div>
+</main></div><script>window.__revosRoutes={"Overview":"02_command_center.html","Position to Win":"11_reputation_seo.html","Drive Warm Leads":"03_channel_intel.html","Set Meetings":"10_team_activity.html","Close Deals":"09_sales_enablement.html","30-Day Plan":"06_30_day_plan.html","Action Center":"04_action_center.html","Content Studio":"07_content_studio.html","Ask RevOS":"05_ask_revos.html","Client Snapshot":"17_client_snapshot.html","Data Integrity":"12_data_integrity.html","Calling Ops":"14_calling_ops.html","Ad Performance":"13_ad_performance.html","Outreach & Sequences":"15_outreach_sequences.html","SQL Attribution":"16_sql_attribution.html","Upgrade":"08_pricing.html","Pricing":"08_pricing.html"};(function(){if(/[?&]live/.test(location.search))document.body.classList.add("live");var _i=0;document.querySelectorAll(".side .nav").forEach(function(n){var t=(n.textContent||"").trim();var to=window.__revosRoutes[t];if(!to){n.style.cursor="default";return;}n.setAttribute("role","link");n.setAttribute("tabindex","0");n.style.cursor="pointer";n.style.setProperty("--i",_i++);function go(){location.href=to+location.search;}n.addEventListener("click",go);n.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();go();}});});})();</script><style>
+.bkchip{position:fixed;left:18px;bottom:18px;z-index:9999;display:inline-flex;align-items:center;gap:8px;font-family:'Museo Sans',sans-serif;font-size:13px;font-weight:700;color:#fff;background:rgba(10,10,10,.9);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:10px 18px;text-decoration:none;box-shadow:0 12px 30px rgba(0,0,0,.4);transition:.18s}
+.bkchip:hover{background:#0A0A0A;border-color:#82C88A}
+</style>
+<a class="bkchip" href="gallery.html"><i class="ph-fill ph-squares-four"></i> All screens</a></body></html>

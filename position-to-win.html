@@ -1,5 +1,6 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="icon" href="favicon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="favicon-180.png">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Position to Win — RevOS by Swivel</title>
 <link rel="preload" href="MuseoSans_500.otf" as="font" type="font/otf" crossorigin>
@@ -138,11 +139,62 @@ footer .logo{justify-content:center;margin-bottom:12px}footer .fb{font-size:12px
 .hero .trust span i{font-size:19px;color:#82C88A}
 .hero .trust b{color:#C3CBE0;font-weight:500;letter-spacing:-.2px}
 
+
+.navtgl{display:none;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);color:#fff;width:44px;height:44px;border-radius:999px;align-items:center;justify-content:center;font-size:22px;cursor:pointer;padding:0}
+.navtgl:hover{background:rgba(255,255,255,.14)}
+.navpanel{display:none;position:absolute;left:0;right:0;top:100%;background:#0A0A0A;border-bottom:1px solid rgba(255,255,255,.09);padding:8px 30px 26px;flex-direction:column;box-shadow:0 26px 60px rgba(0,0,0,.55);z-index:60}
+.navpanel a{font-size:17px;font-weight:500;color:#DCE2F0;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.07);display:block}
+.navpanel a.on{color:#fff}
+.navpanel .pcta{display:flex;flex-direction:column;gap:12px;margin-top:20px}
+.navpanel .pcta a{border:0;padding:16px 28px;text-align:center;justify-content:center;font-size:17px}
+.nav.open .navpanel{display:flex}
+@media(max-width:1100px){.navtgl{display:inline-flex}}
+@media(max-width:640px){.nav .act a.li,.nav .act .btn{display:none}}
+@media(max-width:900px){
+ #vs .pgrid{grid-template-columns:1fr!important}
+ .feat .txt,.feat.rev .txt{order:2}
+ .feat>div:not(.txt){order:1}
+}
+@media(max-width:640px){.rtbstat{grid-template-columns:1fr}.cmprow{grid-template-columns:1fr 74px 74px}.cmprow .c{padding:13px 14px;font-size:13.5px}}
+
+@media(max-width:900px){
+ .integ .intgrid{grid-template-columns:1fr 1fr}
+ .hero h1{letter-spacing:-.03em}
+ .sec-head h2,.final h2,.rtb .sec-head h2{letter-spacing:-.03em}
+ .feat h3{font-size:27px;letter-spacing:-.02em;line-height:1.2}
+ .faq h4{letter-spacing:-.01em}
+ .tier .tp,.stp h4,.pcard h3,.layer h4{letter-spacing:-.02em}
+}
+@media(max-width:560px){.integ .intgrid{grid-template-columns:1fr}}
+
+.emb{position:relative;overflow:hidden;background:#F7F8FA;width:100%}
+.emb iframe{position:absolute;top:0;left:0;border:0;transform-origin:top left;display:block}
+.fshot .emb{pointer-events:none}
+.hero .shot .browser{transition:transform .5s cubic-bezier(.22,.61,.36,1),box-shadow .5s cubic-bezier(.22,.61,.36,1)}
+.hero .shot:hover .browser{transform:none;box-shadow:-10px 40px 110px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.12)}
+.embhint{display:inline-flex;align-items:center;gap:9px;margin-top:26px;font-size:13.5px;font-weight:500;color:#DCE2F0;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:9px 17px;transition:opacity .3s}
+.hero .in:hover .embhint{opacity:.55}
+@media(max-width:809px){.embhint{display:none}}
+
+
+.emb .spot{position:absolute;z-index:6;width:28px;height:28px;border-radius:999px;border:0;padding:0;cursor:pointer;display:flex;align-items:center;justify-content:center;background:#0A0A0A;color:#82C88A;font-size:15px;box-shadow:0 0 0 2px rgba(130,200,138,.55),0 6px 18px rgba(0,0,0,.4);transition:transform .18s,box-shadow .18s,background .18s}
+.emb .spot:before{content:"";position:absolute;inset:-2px;border-radius:999px;box-shadow:0 0 0 2px rgba(130,200,138,.45);animation:spotPulse 2.4s ease-out infinite}
+.emb .spot:hover{transform:scale(1.14);box-shadow:0 0 0 2px #82C88A,0 8px 22px rgba(0,0,0,.5)}
+.emb .spot[aria-expanded=true]{background:#82C88A;color:#0A0A0A}
+.emb .spot[aria-expanded=true]:before{animation:none;box-shadow:none}
+@keyframes spotPulse{0%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(1.85)}}
+.emb .spotcard{position:absolute;z-index:7;width:290px;background:#0A0A0A;border:1px solid rgba(130,200,138,.34);border-radius:16px;padding:16px 18px;box-shadow:0 22px 54px rgba(0,0,0,.55);opacity:0;pointer-events:none;transition:opacity .22s}
+.emb .spotcard.on{opacity:1;pointer-events:auto}
+.emb .spotcard h6{margin:0 0 6px;font-size:14.5px;font-weight:700;letter-spacing:-.3px;color:#fff}
+.emb .spotcard p{margin:0;font-size:13px;line-height:1.55;color:#AEB7CE;text-wrap:pretty}
+.hero .emb iframe{pointer-events:none}
+@media(max-width:809px){.emb .spot,.emb .spotcard{display:none}}
+@media(prefers-reduced-motion:reduce){.emb .spot:before{animation:none}}
 </style></head><body>
 <div class="nav"><div class="wrap in">
  <a class="logo" href="index.html"><span class="m"><i class="ph-fill ph-sparkle"></i></span><span class="lk"><span class="wm">Rev<span>OS</span><span class="tm">™</span></span><span class="pb">Powered by Swivel</span></span></a>
  <div class="links"><a class="on" href="position-to-win.html">Position to Win</a><a class="" href="drive-warm-leads.html">Drive Warm Leads</a><a class="" href="set-meetings.html">Set Meetings</a><a class="" href="close-deals.html">Close Deals</a><a href="index.html#pricing">Pricing</a></div>
- <div class="act"><a class="li" href="https://swivelteam.com/login" target="_blank" rel="noopener">Log In</a><a class="btn p" href="https://swivelteam.com/gtm-audit" target="_blank" rel="noopener">Get Your Audit</a></div>
+ <div class="act"><a class="li" href="https://swivelteam.com/login" target="_blank" rel="noopener">Log In</a><a class="btn p" href="https://swivelteam.com/gtm-audit" target="_blank" rel="noopener">Get Your Audit</a><a class="btn gold" href="https://swivelteam.com/schedule-meeting-calendar" target="_blank" rel="noopener">Schedule a Meeting</a><button class="navtgl" type="button" aria-label="Open menu" aria-expanded="false"><i class="ph ph-list"></i></button></div><div class="navpanel"><a class="on" href="position-to-win.html">Position to Win</a><a class="" href="drive-warm-leads.html">Drive Warm Leads</a><a class="" href="set-meetings.html">Set Meetings</a><a class="" href="close-deals.html">Close Deals</a><a href="index.html#pricing">Pricing</a><a href="https://swivelteam.com/login" target="_blank" rel="noopener">Log In</a><div class="pcta"><a class="btn p" href="https://swivelteam.com/gtm-audit" target="_blank" rel="noopener">Get Your Audit</a><a class="btn gold" href="https://swivelteam.com/schedule-meeting-calendar" target="_blank" rel="noopener">Schedule a Meeting</a></div></div>
 </div></div>
 
 <header class="hero" id="top" style="background:radial-gradient(1200px 600px at 70% 14%,#82C88A33,transparent 60%),radial-gradient(900px 500px at 10% 30%,#82C88A33,transparent 55%),#0A0A0A"><div class="wrap in">
@@ -150,7 +202,7 @@ footer .logo{justify-content:center;margin-bottom:12px}footer .fb{font-size:12px
  <p class="sub">Sharpen your ICP, positioning, and reputation so the market sees you as the obvious choice. RevOS reads how you show up — in search, in AI answers, and in the reviews buyers check — and builds the positioning that wins.</p>
  <div class="cta"><a class="btn p" href="https://swivelteam.com/gtm-audit" target="_blank" rel="noopener">Get Your Audit <i class="ph ph-arrow-right"></i></a><a class="btn g" href="#system">See the AI System</a></div>
  <div class="trust"><span><i class="ph ph-check"></i> <b>Win right-fit accounts</b></span><span><i class="ph ph-check"></i> <b>Rank in search & AI answers</b></span><span><i class="ph ph-check"></i> <b>A reputation that closes</b></span></div>
- <div class="shot"><div class="glow" style="background:linear-gradient(275deg,#57B7A0 0%,#AAFFB3 100%)"></div><div class="browser"><div class="bar"><i style="background:#FF5F57"></i><i style="background:#FEBC2E"></i><i style="background:#28C840"></i></div><img src="swivel-image-3.png"></div></div>
+ <div class="shot"><div class="browser"><div class="bar"><i style="background:#FF5F57"></i><i style="background:#FEBC2E"></i><i style="background:#28C840"></i></div><div class="emb" data-cap="520"><iframe src="mockups/11_reputation_seo.html" title="RevOS Position to Win" scrolling="no"></iframe></div><div class="embhint"><i class="ph-fill ph-monitor-play"></i> A look inside RevOS</div></div></div>
 </div></header>
 
 <section class="problem"><div class="wrap">
@@ -182,7 +234,7 @@ footer .logo{justify-content:center;margin-bottom:12px}footer .fb{font-size:12px
 
 <section><div class="wrap">
  <div class="sec-head"><span class="eyebrow" style="color:#666873">The product</span><h2>Position to Win, made real</h2></div>
- <div class="feat "><div class="txt"><div class="tag" style="color:#666873">Inside the product</div><h3>Position to Win</h3><p>reputation, organic rank movement & the pages AI is citing</p></div><div><div class="fshot"><div class="bar"><i style="background:#FF5F57"></i><i style="background:#FEBC2E"></i><i style="background:#28C840"></i></div><img src="swivel-image-3.png"></div><div class="fcap">Position to Win — reputation, organic rank movement & the pages AI is citing</div></div></div>
+ <div class="feat "><div class="txt"><div class="tag" style="color:#666873">Inside the product</div><h3>Position to Win</h3><p>reputation, organic rank movement & the pages AI is citing</p></div><div><div class="fshot"><div class="bar"><i style="background:#FF5F57"></i><i style="background:#FEBC2E"></i><i style="background:#28C840"></i></div><div class="emb" data-crop="700"><iframe src="mockups/11_reputation_seo.html" title="RevOS Position to Win" scrolling="no" loading="lazy"></iframe></div></div><div class="fcap">Position to Win — reputation, organic rank movement & the pages AI is citing</div></div></div>
 </div></section>
 
 <section class="out"><div class="wrap">
@@ -204,6 +256,74 @@ footer .logo{justify-content:center;margin-bottom:12px}footer .fb{font-size:12px
 <footer><div class="wrap">
  <a class="logo" href="index.html"><span class="m"><i class="ph-fill ph-sparkle"></i></span><span class="lk"><span class="wm">Rev<span>OS</span><span class="tm">™</span></span><span class="pb">Powered by Swivel</span></span></a>
  <div>Revenue made easy. A proven system, built for you — and yours to run.</div>
+ <div style="margin-top:6px"><a href="mockups/gallery.html" style="font-size:13.5px;font-weight:700;color:#82C88A">All Product Screens →</a></div>
  <div class="fb">© 2026 Swivel · Product concept &amp; UI shown are illustrative; metrics use a demo tenant.</div>
 </div></footer>
-<script>(function(){function h(){try{parent.postMessage({type:"framer-embed-height",height:document.documentElement.scrollHeight},"*")}catch(e){}}window.addEventListener("load",h);if(window.ResizeObserver){new ResizeObserver(h).observe(document.body)}window.addEventListener("resize",h)})();</script></body></html>
+<script>(function(){function h(){try{parent.postMessage({type:"framer-embed-height",height:document.documentElement.scrollHeight},"*")}catch(e){}}window.addEventListener("load",h);if(window.ResizeObserver){new ResizeObserver(h).observe(document.body)}window.addEventListener("resize",h)})();</script><script>(function(){var n=document.querySelector('.nav');if(!n)return;var b=n.querySelector('.navtgl');if(!b)return;var ic=b.querySelector('i');
+function set(o){n.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');ic.className=o?'ph ph-x':'ph ph-list';}
+b.addEventListener('click',function(){set(!n.classList.contains('open'));});
+n.querySelectorAll('.navpanel a').forEach(function(a){a.addEventListener('click',function(){set(false);});});
+addEventListener('resize',function(){if(innerWidth>1100)set(false);});})();</script>
+<script>(function(){
+function fit(){document.querySelectorAll('.emb').forEach(function(e){
+ var f=e.querySelector('iframe');if(!f)return;
+ var cw=e.clientWidth;
+ if(e.dataset.crop){
+  var REF=1100,OFF=236,eff=Math.max(400,Math.min(720,cw/0.78));
+  f.style.width=REF+'px';f.style.height='920px';
+  var s=cw/eff;
+  f.style.transform='scale('+s+') translate(-'+OFF+'px,0)';
+  e.style.height=Math.round(Math.min(920*s,cw*0.66))+'px';
+ }else{
+  var w=innerWidth<700?1000:innerWidth<1100?1100:1440;
+  f.style.width=w+'px';f.style.height='960px';
+  var s2=cw/w;f.style.transform='scale('+s2+')';
+  var cap=parseFloat(e.dataset.cap||0),h=Math.round(960*s2);
+  e.style.height=(cap?Math.min(h,cap):h)+'px';
+ }});}
+addEventListener('resize',fit);addEventListener('load',fit);
+document.querySelectorAll('.emb iframe').forEach(function(f){f.addEventListener('load',fit);});
+fit();setTimeout(fit,400);setTimeout(fit,1400);
+})();</script>
+
+<script>window.__spots=[{"sel":".ktile","i":0,"t":"Online reputation","b":"Review scores from every site a buyer checks, pulled daily and read together. RevOS surfaces the reviews that keep raising the same objection, so you know what to fix — not just what you scored."},{"sel":".ktile","i":1,"t":"Total reviews","b":"Volume carries as much weight as the score. RevOS tracks the pace you are adding reviews and tells your team which customers to ask, and when."},{"sel":".ktile","i":2,"t":"Avg organic rank","b":"Where you actually sit for the terms your buyers search, checked weekly instead of once a quarter. Movement here is the earliest signal that positioning is landing."},{"sel":".ktile","i":3,"t":"AI-assisted sessions","b":"Visits arriving from ChatGPT, Perplexity, and AI Overviews. It is the fastest-growing way buyers find vendors, and most companies have no way to see it."},{"sel":".ai","i":0,"t":"The read","b":"Every screen ends with the interpretation, in plain language: what the numbers mean and the one move that follows. This is the part a CEO reads."}];(function(){
+var host=document.querySelector('.hero .emb');if(!host)return;
+var f=host.querySelector('iframe'),card,open=-1,btns=[];
+function scale(){return parseFloat((f.style.transform.match(/scale\(([\d.]+)\)/)||[0,1])[1]);}
+function build(){
+ var d=f.contentDocument;if(!d||!d.body)return false;
+ btns.forEach(function(b){b.remove();});btns=[];
+ if(!card){card=document.createElement('div');card.className='spotcard';card.innerHTML='<h6></h6><p></p>';host.appendChild(card);}
+ var s=scale(),made=0;
+ window.__spots.forEach(function(sp,n){
+  var els=d.querySelectorAll(sp.sel),el=els[sp.i];if(!el)return;
+  var r=el.getBoundingClientRect(),top=r.top*s,left=r.left*s,w=r.width*s;
+  if(top<6||top>host.clientHeight-34)return;
+  var b=document.createElement('button');
+  b.className='spot';b.type='button';b.setAttribute('aria-expanded','false');
+  b.setAttribute('aria-label','About '+sp.t);b.textContent='+';
+  b.style.top=(top+8)+'px';b.style.left=Math.min(left+w-36,host.clientWidth-36)+'px';
+  b.addEventListener('click',function(e){e.stopPropagation();sel(n,b);});
+  host.appendChild(b);btns.push(b);made++;
+ });
+ return made>0;}
+function sel(n,b){
+ if(open===n){close();return;}
+ open=n;btns.forEach(function(x){x.setAttribute('aria-expanded','false');});
+ b.setAttribute('aria-expanded','true');
+ var sp=window.__spots[n];
+ card.querySelector('h6').textContent=sp.t;card.querySelector('p').textContent=sp.b;
+ card.classList.add('on');
+ var bt=parseFloat(b.style.top),bl=parseFloat(b.style.left);
+ var cw=290,ch=card.offsetHeight||120;
+ var left=bl+34;if(left+cw>host.clientWidth-8)left=bl-cw-6;if(left<8)left=8;
+ var top=bt;if(top+ch>host.clientHeight-8)top=Math.max(8,host.clientHeight-ch-8);
+ card.style.left=left+'px';card.style.top=top+'px';}
+function close(){open=-1;card.classList.remove('on');btns.forEach(function(x){x.setAttribute('aria-expanded','false');});}
+host.addEventListener('click',function(e){if(e.target===host)close();});
+function init(){if(build()&&open<0){}}
+f.addEventListener('load',function(){setTimeout(init,500);});
+addEventListener('resize',function(){close();setTimeout(init,120);});
+setTimeout(init,800);setTimeout(function(){if(!btns.length)init();},1800);
+})();</script>
+</body></html>

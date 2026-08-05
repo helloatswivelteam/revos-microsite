@@ -1,0 +1,74 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><link rel="icon" href="../favicon.svg" type="image/svg+xml"><link rel="icon" href="../favicon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="../favicon-180.png">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>RevOS product mockups</title>
+<link rel="preload" href="../MuseoSans_500.otf" as="font" type="font/otf" crossorigin>
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+<style>
+@font-face{font-family:'Museo Sans';src:url('../MuseoSans_500.otf') format('opentype');font-weight:500;font-display:swap}
+@font-face{font-family:'Museo Sans';src:url('../MuseoSans_700.otf') format('opentype');font-weight:700;font-display:swap}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0A0A0A;color:#DCE2F0;font-family:'Museo Sans',-apple-system,sans-serif;font-weight:500;font-synthesis:none;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1360px;margin:0 auto;padding:0 40px}
+header{padding:56px 0 34px;border-bottom:1px solid rgba(255,255,255,.08)}
+.logo{display:flex;align-items:flex-start;gap:12px}
+.logo .m{font-size:32px;line-height:1;background-image:linear-gradient(275deg,#0196CD 0%,#82C88A 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.logo .wm{font-size:20px;font-weight:700;letter-spacing:-.5px;color:#fff}
+.logo .wm span{background:linear-gradient(275deg,#82C88A 0%,#0196CD 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.logo .pb{display:block;font-size:9px;font-weight:700;letter-spacing:2.6px;text-transform:uppercase;color:#7C8798;margin-top:4px}
+.back{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700;color:#AEB7CE;margin-top:26px;padding:9px 17px;border:1px solid rgba(255,255,255,.16);border-radius:999px;transition:.18s}
+.back:hover{color:#fff;border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.05)}
+h1{font-size:38px;font-weight:700;letter-spacing:-1.4px;color:#fff;margin-top:20px}
+.lede{font-size:17px;line-height:1.6;color:#AEB7CE;max-width:640px;margin-top:12px}
+h2{font-size:15px;font-weight:700;letter-spacing:-.2px;color:#fff;margin:0 0 4px}
+.grouplbl{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#7C8798;margin:52px 0 18px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:20px;overflow:hidden;transition:.18s}
+.card:hover{border-color:rgba(255,255,255,.3);transform:translateY(-3px);box-shadow:0 20px 44px rgba(0,0,0,.45)}
+.thumb{position:relative;overflow:hidden;background:#F7F8FA;border-bottom:1px solid rgba(255,255,255,.1)}
+.thumb iframe{position:absolute;top:0;left:0;width:1440px;height:920px;border:0;transform-origin:top left;pointer-events:none}
+.meta{padding:16px 18px 18px;display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.meta .file{font-size:11.5px;color:#7C8798;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+footer{padding:64px 0 80px;font-size:13.5px;color:#7C8798;line-height:1.7}
+footer b{color:#DCE2F0;font-weight:700}
+@media(max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:680px){.grid{grid-template-columns:1fr}.wrap{padding:0 24px}}
+</style></head>
+<body>
+<header><div class="wrap">
+ <div class="logo"><span class="m"><i class="ph-fill ph-sparkle"></i></span><span><span class="wm">Rev<span>OS</span></span><span class="pb">Powered by Swivel</span></span></div>
+ <a class="back" href="../index.html"><i class="ph-fill ph-arrow-left"></i> Back to the RevOS site</a><h1>Product mockups</h1>
+ <p class="lede">Every RevOS screen, in one place. These are the source files the microsite, deck, and ads all pull from — edit a screen here and it updates everywhere it appears.</p>
+</div></header>
+<div class="wrap">
+ <div class="grouplbl">Diagnose</div>
+ <div class="grid" id="g1"></div>
+ <div class="grouplbl">Decide</div>
+ <div class="grid" id="g2"></div>
+ <div class="grouplbl">Act</div>
+ <div class="grid" id="g3"></div>
+ <div class="grouplbl">Account &amp; setup</div>
+ <div class="grid" id="g4"></div>
+</div>
+<footer><div class="wrap">
+ <b>One source of truth.</b> These files live in <code>mockups/</code> at the repo root. The microsite embeds them live, so a change here ships with the next deploy — no screenshots to re-export.
+</div></footer>
+<script>
+var groups={g1:[['02_command_center.html','Overview'],['11_reputation_seo.html','Position to Win'],['03_channel_intel.html','Drive Warm Leads'],['10_team_activity.html','Set Meetings'],['09_sales_enablement.html','Close Deals'],['17_client_snapshot.html','Client Snapshot']],
+g2:[['06_30_day_plan.html','30-Day Plan'],['16_sql_attribution.html','SQL Attribution'],['13_ad_performance.html','Ad Performance']],
+g3:[['04_action_center.html','Action Center'],['07_content_studio.html','Content Studio'],['14_calling_ops.html','Calling Ops'],['15_outreach_sequences.html','Outreach & Sequences'],['05_ask_revos.html','Ask RevOS']],
+g4:[['01_onboarding.html','Onboarding'],['08_pricing.html','Plans & Pricing'],['12_data_integrity.html','Data Integrity']]};
+Object.keys(groups).forEach(function(k){
+ document.getElementById(k).innerHTML=groups[k].map(function(p){
+  return '<a class="card" href="'+p[0]+'"><div class="thumb"><iframe src="'+p[0]+'" scrolling="no" loading="lazy" title="'+p[1]+'"></iframe></div>'+
+   '<div class="meta"><h2>'+p[1]+'</h2><span class="file">'+p[0].replace('.html','')+'</span></div></a>';
+ }).join('');
+});
+function fit(){document.querySelectorAll('.thumb').forEach(function(t){
+ var f=t.querySelector('iframe'),s=t.clientWidth/1440;
+ f.style.transform='scale('+s+')';t.style.height=Math.round(920*s)+'px';});}
+addEventListener('resize',fit);addEventListener('load',fit);fit();setTimeout(fit,400);
+</script>
+</body></html>

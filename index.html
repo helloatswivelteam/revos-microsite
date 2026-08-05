@@ -1,6 +1,7 @@
 <!doctype html><html lang="en"><head>
 <meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="icon" href="favicon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="favicon-180.png">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>RevOS by Swivel — Revenue made easy. A proven system, built as AI, and yours to run.</title>
 <meta name="description" content="Predictable pipeline from a proven system — the four pillars of revenue, built and run as AI, then licensed to you to run yourself. Not random acts of AI — a proven system, kept live for a fraction of the build.">
@@ -195,22 +196,55 @@ footer h5{color:#DCE2F0;font-size:13px;font-weight:700;letter-spacing:.05em;text
 @keyframes hubSpinRev{to{transform:rotate(-360deg)}}
 @media(max-width:820px){.hubnode{--r:240px}}
 @media(prefers-reduced-motion:reduce){.hubring,.hubnode .hubc{animation:none}}
+
+.navtgl{display:none;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);color:#fff;width:44px;height:44px;border-radius:999px;align-items:center;justify-content:center;font-size:22px;cursor:pointer;padding:0}
+.navtgl:hover{background:rgba(255,255,255,.14)}
+.navpanel{display:none;position:absolute;left:0;right:0;top:100%;background:#0A0A0A;border-bottom:1px solid rgba(255,255,255,.09);padding:8px 30px 26px;flex-direction:column;box-shadow:0 26px 60px rgba(0,0,0,.55);z-index:60}
+.navpanel a{font-size:17px;font-weight:500;color:#DCE2F0;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.07);display:block}
+.navpanel a.on{color:#fff}
+.navpanel .pcta{display:flex;flex-direction:column;gap:12px;margin-top:20px}
+.navpanel .pcta a{border:0;padding:16px 28px;text-align:center;justify-content:center;font-size:17px}
+.nav.open .navpanel{display:flex}
+@media(max-width:1100px){.navtgl{display:inline-flex}}
+@media(max-width:640px){.nav .act a.li,.nav .act .btn{display:none}}
+@media(max-width:900px){
+ #vs .pgrid{grid-template-columns:1fr!important}
+ .feat .txt,.feat.rev .txt{order:2}
+ .feat>div:not(.txt){order:1}
+}
+@media(max-width:640px){.rtbstat{grid-template-columns:1fr}.cmprow{grid-template-columns:1fr 74px 74px}.cmprow .c{padding:13px 14px;font-size:13.5px}}
+
+@media(max-width:900px){
+ .integ .intgrid{grid-template-columns:1fr 1fr}
+ .hero h1{letter-spacing:-.03em}
+ .sec-head h2,.final h2,.rtb .sec-head h2{letter-spacing:-.03em}
+ .feat h3{font-size:27px;letter-spacing:-.02em;line-height:1.2}
+ .faq h4{letter-spacing:-.01em}
+ .tier .tp,.stp h4,.pcard h3,.layer h4{letter-spacing:-.02em}
+}
+@media(max-width:560px){.integ .intgrid{grid-template-columns:1fr}}
+
+.emb{position:relative;overflow:hidden;background:#F7F8FA;width:100%}
+.emb iframe{position:absolute;top:0;left:0;border:0;transform-origin:top left;display:block}
+.fshot .emb{pointer-events:none}
+.hero .shot .browser{transition:transform .5s cubic-bezier(.22,.61,.36,1),box-shadow .5s cubic-bezier(.22,.61,.36,1)}
+.hero .shot:hover .browser{transform:none;box-shadow:-10px 40px 110px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.12)}
 </style></head><body>
 
 <div class="nav"><div class="wrap in">
  <a class="logo" href="#"><span class="m"><i class="ph-fill ph-sparkle"></i></span><span class="lk"><span class="wm">Rev<span>OS</span><span class="tm">™</span></span><span class="pb">Powered by Swivel</span></span></a>
  <div class="links"><a href="position-to-win.html">Position to Win</a><a href="drive-warm-leads.html">Drive Warm Leads</a><a href="set-meetings.html">Set Meetings</a><a href="close-deals.html">Close Deals</a><a href="#pricing">Pricing</a></div>
- <div class="act"><a class="li" href="https://swivelteam.com/login" target="_blank" rel="noopener">Log In</a><a class="btn p" href="https://swivelteam.com/gtm-audit" target="_blank" rel="noopener">Get Your Audit</a></div>
+ <div class="act"><a class="li" href="https://swivelteam.com/login" target="_blank" rel="noopener">Log In</a><a class="btn p" href="https://swivelteam.com/gtm-audit" target="_blank" rel="noopener">Get Your Audit</a><a class="btn gold" href="https://swivelteam.com/schedule-meeting-calendar" target="_blank" rel="noopener">Schedule a Meeting</a><button class="navtgl" type="button" aria-label="Open menu" aria-expanded="false"><i class="ph ph-list"></i></button></div><div class="navpanel"><a class="" href="position-to-win.html">Position to Win</a><a class="" href="drive-warm-leads.html">Drive Warm Leads</a><a class="" href="set-meetings.html">Set Meetings</a><a class="" href="close-deals.html">Close Deals</a><a href="#pricing">Pricing</a><a href="https://swivelteam.com/login" target="_blank" rel="noopener">Log In</a><div class="pcta"><a class="btn p" href="https://swivelteam.com/gtm-audit" target="_blank" rel="noopener">Get Your Audit</a><a class="btn gold" href="https://swivelteam.com/schedule-meeting-calendar" target="_blank" rel="noopener">Schedule a Meeting</a></div></div>
 </div></div>
 
 <header class="hero" id="top"><div class="wrap in">
  <div class="htx">
   <h1>Revenue made easy.<br><span class="grad-text">A proven system that works<br>— built for you, and yours to run.</span></h1>
-  <p class="sub">Swivel builds your complete revenue operating system — the four pillars, grounded in 300+ playbooks and $150M+ of pipeline — and proves 5–10× ROI. Humans do the strategy and quality; AI does the work in between.</p>
+  <p class="sub">Swivel builds your complete revenue operating system — the four pillars, grounded in 300+ playbooks and $150M+ of pipeline — and proves 10× ROI. Humans do the strategy and quality; AI does the work in between.</p>
   <div class="cta"><a class="btn p" href="https://swivelteam.com/gtm-audit" target="_blank" rel="noopener">Get Your GTM Audit <i class="ph ph-arrow-right"></i></a><a class="btn gold" href="https://swivelteam.com/schedule-meeting-calendar" target="_blank" rel="noopener">Schedule a Meeting</a></div>
   <div class="trust"><span><i class="ph ph-check"></i> <b>300+ proven playbooks</b></span><span><i class="ph ph-check"></i> <b>$150M+ pipeline generated</b></span><span><i class="ph ph-check"></i> <b>Yours to run — for a fraction</b></span></div>
  </div>
- <div class="shot"><div class="glow"></div><div class="browser"><div class="bar"><i style="background:#FF5F57"></i><i style="background:#FEBC2E"></i><i style="background:#28C840"></i><span class="u">app.revos.io/overview</span></div><img src="swivel-image-1.png" alt="RevOS overview"></div></div>
+ <div class="shot"><div class="glow"></div><div class="browser"><div class="bar"><i style="background:#FF5F57"></i><i style="background:#FEBC2E"></i><i style="background:#28C840"></i><span class="u">app.revos.io/overview</span></div><div class="emb" data-cap="520"><iframe src="mockups/02_command_center.html?live=1" title="RevOS Overview" scrolling="no"></iframe></div></div></div>
 </div></header>
 
 <section class="problem" id="problem"><div class="wrap">
@@ -240,7 +274,7 @@ footer h5{color:#DCE2F0;font-size:13px;font-weight:700;letter-spacing:.05em;text
   <div class="pcard"><div class="ic" style="background:#FEECEC;color:#F53434"><i class="ph-fill ph-presentation-chart"></i></div><h3>Find an advisor</h3><p>A strategy deck from a few interviews — then execution stalls. Advice without a system doesn’t move revenue.</p></div>
   <div class="pcard"><div class="ic" style="background:#FEECEC;color:#F53434"><i class="ph-fill ph-buildings"></i></div><h3>Hire it out</h3><p>Hand it to an agency and point tools. You still wire it together yourself — siloed tactics, high CAC, and it vanishes when they leave.</p></div>
  </div>
- <div style="max-width:940px;margin:30px auto 0;background:#0077A3;color:#fff;border-radius:24px;padding:24px 30px;text-align:center;font-size:17px;line-height:1.5;box-shadow:0 16px 40px rgba(1,150,205,.22)"><b>Why RevOS:</b> the only option built to actually work — a proven system, built for you, driving 5–10× ROI, and yours to run.</div>
+ <div style="max-width:940px;margin:30px auto 0;background:#0077A3;color:#fff;border-radius:24px;padding:24px 30px;text-align:center;font-size:17px;line-height:1.5;box-shadow:0 16px 40px rgba(1,150,205,.22)"><b>Why RevOS:</b> the only option built to actually work — a proven system, built for you, driving 10× ROI, and yours to run.</div>
 </div></section>
 
 <section class="pillars" id="system"><div class="wrap">
@@ -256,7 +290,7 @@ footer h5{color:#DCE2F0;font-size:13px;font-weight:700;letter-spacing:.05em;text
 
 <section id="product"><div class="wrap">
  <div class="sec-head"><span class="eyebrow">The product</span><h2>The system, made real</h2><p>Not a prototype dressed up as a product — eight years of proven revenue work, now built as AI you can see.</p></div>
- <div class="feat "><div class="txt"><div class="tag">The plan</div><h3>Your whole RevOS — and the move for the next 30 days.</h3><p>Four pillars, each with a health status, its #1 red flag, and a plain-English plan. Not a dashboard to interpret — the next move, made obvious, with the confidence that it’s the right one.</p><ul><li><span class="ck"><i class="ph ph-check"></i></span><span>Every pillar shows its top priority</span></li><li><span class="ck"><i class="ph ph-check"></i></span><span>A 30-day plan, ranked by impact</span></li><li><span class="ck"><i class="ph ph-check"></i></span><span>Confidence in what happens next</span></li></ul></div><div class="fshot"><div class="bar"><i style="background:#FF5F57"></i><i style="background:#FEBC2E"></i><i style="background:#28C840"></i></div><img src="swivel-image-1.png" alt="Your whole RevOS — and the move for the next 30 days."></div></div><div class="feat rev"><div class="fshot"><div class="bar"><i style="background:#FF5F57"></i><i style="background:#FEBC2E"></i><i style="background:#28C840"></i></div><img src="swivel-image-2.png" alt="A plan your team runs — human-in-the-loop, AI-powered."></div><div class="txt"><div class="tag">The system runs</div><h3>A plan your team runs — human-in-the-loop, AI-powered.</h3><p>RevOS drafts and ranks the moves by impact and routes them to your team in ClickUp. Your Swivel experts steer, approve, and check quality at every step — an AI-powered system that does the heavy lifting to increase efficiency, not full automation.</p><ul><li><span class="ck"><i class="ph ph-check"></i></span><span>Human-in-the-loop at every step</span></li><li><span class="ck"><i class="ph ph-check"></i></span><span>Every action owned by a real person</span></li><li><span class="ck"><i class="ph ph-check"></i></span><span>The system working — not just advice</span></li></ul></div></div>
+ <div class="feat "><div class="txt"><div class="tag">The plan</div><h3>Your whole RevOS — and the move for the next 30 days.</h3><p>Four pillars, each with a health status, its #1 red flag, and a plain-English plan. Not a dashboard to interpret — the next move, made obvious, with the confidence that it’s the right one.</p><ul><li><span class="ck"><i class="ph ph-check"></i></span><span>Every pillar shows its top priority</span></li><li><span class="ck"><i class="ph ph-check"></i></span><span>A 30-day plan, ranked by impact</span></li><li><span class="ck"><i class="ph ph-check"></i></span><span>Confidence in what happens next</span></li></ul></div><div class="fshot"><div class="bar"><i style="background:#FF5F57"></i><i style="background:#FEBC2E"></i><i style="background:#28C840"></i></div><div class="emb" data-crop="700"><iframe src="mockups/06_30_day_plan.html" title="RevOS 30-Day Plan" scrolling="no" loading="lazy"></iframe></div></div></div><div class="feat rev"><div class="fshot"><div class="bar"><i style="background:#FF5F57"></i><i style="background:#FEBC2E"></i><i style="background:#28C840"></i></div><div class="emb" data-crop="700"><iframe src="mockups/04_action_center.html" title="RevOS Action Center" scrolling="no" loading="lazy"></iframe></div></div><div class="txt"><div class="tag">The system runs</div><h3>A plan your team runs — human-in-the-loop, AI-powered.</h3><p>RevOS drafts and ranks the moves by impact and routes them to your team in ClickUp. Your Swivel experts steer, approve, and check quality at every step — an AI-powered system that does the heavy lifting to increase efficiency, not full automation.</p><ul><li><span class="ck"><i class="ph ph-check"></i></span><span>Human-in-the-loop at every step</span></li><li><span class="ck"><i class="ph ph-check"></i></span><span>Every action owned by a real person</span></li><li><span class="ck"><i class="ph ph-check"></i></span><span>The system working — not just advice</span></li></ul></div></div>
 </div></section>
 
 <section class="hub" id="hub"><div class="wrap">
@@ -279,7 +313,7 @@ footer h5{color:#DCE2F0;font-size:13px;font-weight:700;letter-spacing:.05em;text
 <section class="model" id="model"><div class="wrap">
  <div class="sec-head"><span class="eyebrow">How it works</span><h2>Build it with us.<br><span class="grad-text">Then run it for a fraction.</span></h2><p>You’re not buying a one-off project or renting a team forever. We build and prove your revenue operating system, then hand you the controls to run it yourself — kept live and current, at a fraction of the build.</p></div>
  <div class="steps">
-  <div class="stp"><div class="n" style="background:#0196CD">1</div><h4>Build &amp; prove</h4><div class="when">~12 months</div><p>We build your AI revenue systems, strategy &amp; full funnel — and run them to a proven 5–10× ROI.</p></div>
+  <div class="stp"><div class="n" style="background:#0196CD">1</div><h4>Build &amp; prove</h4><div class="when">~12 months</div><p>We build your AI revenue systems, strategy &amp; full funnel — and run them to a proven 10× ROI.</p></div>
   <div class="stp"><div class="n" style="background:linear-gradient(135deg,#0196CD,#0077A3)">2</div><h4>Take the controls</h4><div class="when">training &amp; handoff</div><p>We train your team to operate the proven system end to end — the plays, the tools, the cadence.</p></div>
   <div class="stp"><div class="n" style="background:#0077A3">3</div><h4>Run it on license</h4><div class="when">$5K / mo</div><p>Your team runs it day-to-day; we keep it live, current &amp; supported — for a fraction of the build.</p></div>
  </div>
@@ -289,12 +323,12 @@ footer h5{color:#DCE2F0;font-size:13px;font-weight:700;letter-spacing:.05em;text
 <section id="pricing"><div class="wrap">
  <div class="sec-head"><span class="eyebrow">Pricing</span><h2>Build your RevOS.<br><span class="grad-text">Then run it your way.</span></h2><p>Most teams start with a Custom Build — we build and run your AI revenue systems — then run it themselves once it’s proven.</p></div>
  <div class="tiers">
-  <div class="tier hot"><div class="bdg">MOST TEAMS START HERE</div><div class="tn">Custom Build</div><div class="tp">$20–30K<small>/mo · ~12 mo</small></div><div class="roi">Targets 5–10× ROI</div><div class="td">We build and run your AI revenue systems, strategy &amp; full funnel — then you license it and run it yourself.</div>
-   <ul><li><span class="ck"><i class="ph ph-check"></i></span>AI revenue systems, built for you</li><li><span class="ck"><i class="ph ph-check"></i></span>Full-funnel, human-in-the-loop</li><li><span class="ck"><i class="ph ph-check"></i></span>Grounded in 300+ playbooks</li><li><span class="ck"><i class="ph ph-check"></i></span>Then license it &amp; run it yourself</li></ul><a class="b p" href="https://swivelteam.com/gtm-audit" target="_blank" rel="noopener">Get Your Audit</a></div>
+  <div class="tier hot"><div class="bdg">MOST TEAMS START HERE</div><div class="tn">Custom Build</div><div class="tp">$20–30K<small>/mo · ~12 mo</small></div><div class="roi">Targets 10× ROI</div><div class="td">We build and run your AI revenue systems, strategy &amp; full funnel — then you license it and run it yourself.</div>
+   <ul><li><span class="ck"><i class="ph ph-check"></i></span>AI revenue systems, built for you</li><li><span class="ck"><i class="ph ph-check"></i></span>Full-funnel, human-in-the-loop</li><li><span class="ck"><i class="ph ph-check"></i></span>Grounded in 300+ playbooks</li><li><span class="ck"><i class="ph ph-check"></i></span>Then license it &amp; run it yourself</li></ul><a class="b p" href="https://swivelteam.com/schedule-meeting-calendar" target="_blank" rel="noopener">Schedule a Meeting</a></div>
   <div class="tier"><div class="tn">Run it yourself</div><div class="tp">$5,000<small>/mo · license</small></div><div class="td">An operating license for the cockpit we built — the system + your proven playbook, kept live &amp; current. $10K/mo with consulting.</div>
    <ul><li><span class="ck"><i class="ph ph-check"></i></span>The full RevOS system, kept current</li><li><span class="ck"><i class="ph ph-check"></i></span>Your proven playbook — not a template</li><li><span class="ck"><i class="ph ph-check"></i></span>The cockpit, not just data connectors</li><li><span class="ck"><i class="ph ph-check"></i></span>Ongoing support &amp; updates</li></ul><div class="b o">Graduate When Ready</div></div>
  </div>
- <p class="pnote">An operating license for the system you proved — a fraction of the build, and less than a team. Also available: à-la-carte modules and a 3-month build + handoff.</p>
+ <p class="pnote">An operating license for the system you proved — a fraction of the build, and less than a team.</p>
 </div></section>
 
 <section class="model" style="background:linear-gradient(rgba(0,152,205,.15) -5%,#fff 12%,#fff 100%)" id="faq"><div class="wrap">
@@ -310,16 +344,42 @@ footer h5{color:#DCE2F0;font-size:13px;font-weight:700;letter-spacing:.05em;text
 
 <section class="final" id="start"><div class="wrap">
  <h2>Stop running on random acts of AI.</h2>
- <p>Get a proven revenue system — built for you, proven to 5–10× ROI, then run by you.</p>
+ <p>Get a proven revenue system — built for you, proven to 10× ROI, then run by you.</p>
  <div class="cta"><a class="btn p" href="https://swivelteam.com/gtm-audit" target="_blank" rel="noopener">Get Your GTM Audit <i class="ph ph-arrow-right"></i></a><a class="btn gold" href="https://swivelteam.com/schedule-meeting-calendar" target="_blank" rel="noopener">Schedule a Meeting</a></div>
 </div></section>
 
 <footer><div class="wrap">
  <div class="fcols">
   <div><a class="logo" href="#"><span class="m"><i class="ph-fill ph-sparkle"></i></span><span class="lk"><span class="wm">Rev<span>OS</span><span class="tm">™</span></span><span class="pb">Powered by Swivel</span></span></a><p class="d">Revenue made easy. A proven system, built as AI — and yours to run.</p></div>
-  <div><h5>Product</h5><a href="#system">The System</a><a href="#vs">Compare</a><a href="#hub">One hub</a><a href="#pricing">Pricing</a></div>
+  <div><h5>Product</h5><a href="mockups/gallery.html">All Product Screens</a><a href="#system">The System</a><a href="#vs">Compare</a><a href="#hub">One hub</a><a href="#pricing">Pricing</a></div>
   <div><h5>Company</h5><a href="#">About Swivel</a><a href="#faq">FAQ</a><a href="https://swivelteam.com/gtm-audit" target="_blank" rel="noopener">Get Your Audit</a></div>
  </div>
  <div class="fbot">© 2026 Swivel. RevOS is a product of Swivel. Product concept &amp; UI shown are illustrative; metrics use a demo tenant.</div>
 </div></footer>
-<script>(function(){function h(){try{parent.postMessage({type:"framer-embed-height",height:document.documentElement.scrollHeight},"*")}catch(e){}}window.addEventListener("load",h);if(window.ResizeObserver){new ResizeObserver(h).observe(document.body)}window.addEventListener("resize",h)})();</script></body></html>
+<script>(function(){function h(){try{parent.postMessage({type:"framer-embed-height",height:document.documentElement.scrollHeight},"*")}catch(e){}}window.addEventListener("load",h);if(window.ResizeObserver){new ResizeObserver(h).observe(document.body)}window.addEventListener("resize",h)})();</script><script>(function(){var n=document.querySelector('.nav');if(!n)return;var b=n.querySelector('.navtgl');if(!b)return;var ic=b.querySelector('i');
+function set(o){n.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');ic.className=o?'ph ph-x':'ph ph-list';}
+b.addEventListener('click',function(){set(!n.classList.contains('open'));});
+n.querySelectorAll('.navpanel a').forEach(function(a){a.addEventListener('click',function(){set(false);});});
+addEventListener('resize',function(){if(innerWidth>1100)set(false);});})();</script>
+<script>(function(){
+function fit(){document.querySelectorAll('.emb').forEach(function(e){
+ var f=e.querySelector('iframe');if(!f)return;
+ var cw=e.clientWidth;
+ if(e.dataset.crop){
+  var REF=1100,OFF=236,eff=Math.max(400,Math.min(720,cw/0.78));
+  f.style.width=REF+'px';f.style.height='920px';
+  var s=cw/eff;
+  f.style.transform='scale('+s+') translate(-'+OFF+'px,0)';
+  e.style.height=Math.round(Math.min(920*s,cw*0.66))+'px';
+ }else{
+  var w=innerWidth<700?1000:innerWidth<1100?1100:1440;
+  f.style.width=w+'px';f.style.height='960px';
+  var s2=cw/w;f.style.transform='scale('+s2+')';
+  var cap=parseFloat(e.dataset.cap||0),h=Math.round(960*s2);
+  e.style.height=(cap?Math.min(h,cap):h)+'px';
+ }});}
+addEventListener('resize',fit);addEventListener('load',fit);
+document.querySelectorAll('.emb iframe').forEach(function(f){f.addEventListener('load',fit);});
+fit();setTimeout(fit,400);setTimeout(fit,1400);
+})();</script>
+</body></html>

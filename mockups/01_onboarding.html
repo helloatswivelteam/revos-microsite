@@ -1,0 +1,283 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="icon" href="../favicon.svg" type="image/svg+xml"><link rel="icon" href="../favicon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="../favicon-180.png"><link rel="preload" href="../MuseoSans_500.otf" as="font" type="font/otf" crossorigin><link rel="preload" href="../MuseoSans_700.otf" as="font" type="font/otf" crossorigin><style>
+@font-face{font-family:'Museo Sans';src:url('../MuseoSans-300.otf') format('opentype');font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:'Museo Sans';src:url('../MuseoSans_500.otf') format('opentype');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Museo Sans';src:url('../MuseoSans_500_Italic.otf') format('opentype');font-weight:500;font-style:italic;font-display:swap}
+@font-face{font-family:'Museo Sans';src:url('../MuseoSans_700.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Museo Sans';src:url('../MuseoSans_900.otf') format('opentype');font-weight:900;font-style:normal;font-display:swap}
+</style><style>
+:root{
+  --bg:#F7F8FA; --panel:#FFFFFF; --ink:#0B1220; --muted:#666873; --line:#E5E8EE;
+  --brand:#0196CD; --brand2:#82C88A; --violet:#38AEB2;
+  --good:#0B7A5F; --warn:#EBA343; --bad:#F53434; --goodbg:#E9F6F1; --warnbg:#FCF2E2; --badbg:#FEECEC;
+  --side:#0A0A0A; --side2:#141414;
+  --c1:#0196CD; --c2:#82C88A; --c3:#38AEB2; --c4:#EBA343; --c5:#57B7A0; --c6:#F53434;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--ink);
+  font-family:'Museo Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased;font-synthesis:none;font-feature-settings:'cv02','cv03','cv04','ss01';}
+.app{display:grid;grid-template-columns:240px 1fr;min-height:100%;}
+/* sidebar */
+.side{background:var(--side);color:#C3CBE0;padding:22px 16px;display:flex;flex-direction:column;gap:6px;}
+.logo{display:flex;align-items:center;gap:10px;padding:4px 6px 20px;}
+.logo .mark{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,var(--brand),var(--brand2));
+  display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:17px;box-shadow:0 6px 16px rgba(79,70,229,.45);}
+.logo .name{font-weight:700;color:#fff;font-size:17px;letter-spacing:-.2px}
+.logo .name span{color:#AAFFB3}
+.navlbl{font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:#7C8798;margin:16px 8px 6px;font-weight:700}
+.nav{display:flex;align-items:center;gap:11px;padding:9px 11px;border-radius:9px;font-size:13.5px;font-weight:500;color:#AEB7CE;cursor:pointer}
+.nav .ic{width:17px;height:17px;opacity:.85}
+.nav.active{background:linear-gradient(90deg,rgba(1,150,205,.34),rgba(130,200,138,.16)));color:#fff;font-weight:700}
+.nav.active .ic{opacity:1}
+.side .foot{margin-top:auto;background:var(--side2);border:1px solid #262626;border-radius:12px;padding:13px}
+.side .foot .t{font-size:12px;color:#DCE2F0;font-weight:700}
+.side .foot .s{font-size:11px;color:#8C97B4;margin-top:3px;line-height:1.45}
+.side .foot .bar{height:6px;border-radius:6px;background:#262626;margin:9px 0 8px;overflow:hidden}
+.side .foot .bar i{display:block;height:100%;width:64%;background:linear-gradient(90deg,var(--brand),var(--brand2))}
+.side .foot a{display:block;text-align:center;background:#fff;color:#0A0A0A;font-weight:700;font-size:12px;border-radius:8px;padding:8px;text-decoration:none;margin-top:6px}
+/* main */
+.main{display:flex;flex-direction:column}
+.top{display:flex;align-items:center;gap:16px;padding:16px 28px;background:var(--panel);border-bottom:1px solid var(--line)}
+.top .crumb{font-size:12px;color:var(--muted)}
+.top h1{font-size:19px;font-weight:700;letter-spacing:-.3px;margin-top:2px}
+.top .search{margin-left:auto;background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:8px 13px;font-size:12.5px;color:var(--muted);min-width:230px;display:flex;gap:8px;align-items:center}
+.top .btn{background:var(--brand);color:#fff;border-radius:9px;padding:9px 15px;font-size:12.5px;font-weight:700}
+.top .av{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#38AEB2,#82C88A);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px}
+.wrap{padding:24px 28px;display:flex;flex-direction:column;gap:18px}
+/* pillar sub-tabs (nested modules) */
+.tabs{display:inline-flex;gap:4px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:5px;box-shadow:0 1px 2px rgba(16,24,40,.04);align-self:flex-start}
+.tab{display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;color:var(--muted);padding:8px 14px;border-radius:8px;cursor:pointer}
+.tab.on{background:var(--brand);color:#fff}
+.tab .mi{display:inline-flex}.tab .mi svg{width:15px;height:15px}
+/* generic */
+.row{display:flex;gap:18px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:0 1px 2px rgba(16,24,40,.04)}
+.card h3{font-size:13.5px;font-weight:700;letter-spacing:-.1px;display:flex;align-items:center;gap:8px}
+.card .sub{font-size:11.5px;color:var(--muted);margin-top:2px}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;padding:4px 9px;border-radius:999px}
+.pill.g{background:var(--goodbg);color:#0B7A5F}.pill.w{background:var(--warnbg);color:#a86a05}.pill.b{background:var(--badbg);color:#C81E1E}
+.pill.n{background:#F2F4F8;color:#3D4443}.pill.v{background:#E6F4FA;color:#0077A3}
+.tag{font-size:10.5px;font-weight:700;padding:3px 8px;border-radius:6px;background:#F2F4F8;color:#3D4443}
+.ktiles{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.ktile{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:0 1px 2px rgba(16,24,40,.04)}
+.ktile .lab{font-size:11.5px;color:var(--muted);font-weight:700;display:flex;align-items:center;gap:7px}
+.ktile .val{font-size:27px;font-weight:700;letter-spacing:-1px;margin-top:8px}
+.ktile .val small{font-size:14px;color:var(--muted);font-weight:700}
+.ktile .delta{font-size:11.5px;font-weight:700;margin-top:6px}
+.up{color:var(--good)}.dn{color:var(--bad)}
+.dot{width:9px;height:9px;border-radius:3px;display:inline-block}
+/* bars */
+.barrow{display:grid;grid-template-columns:110px 1fr 44px;align-items:center;gap:12px;margin:11px 0}
+.barrow .nm{font-size:12.5px;font-weight:700}
+.track{height:11px;background:#F2F4F8;border-radius:7px;overflow:hidden}
+.track i{display:block;height:100%;border-radius:7px}
+.barrow .vv{font-size:12.5px;font-weight:700;text-align:right}
+/* funnel */
+.funnel{display:flex;flex-direction:column;gap:9px}
+.fstage{display:grid;grid-template-columns:130px 1fr 70px;align-items:center;gap:12px}
+.fstage .fn{font-size:12px;font-weight:700;color:#3D4443}
+.fbar{height:34px;border-radius:9px;display:flex;align-items:center;padding-left:12px;color:#fff;font-weight:700;font-size:14px}
+.fstage .fp{font-size:11.5px;color:var(--muted);text-align:right}
+/* table */
+table{width:100%;border-collapse:collapse}
+th{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);font-weight:700}
+td{font-size:12.5px;padding:11px 10px;border-bottom:1px solid #F2F4F8;vertical-align:middle}
+tr:last-child td{border-bottom:none}
+.who{display:flex;align-items:center;gap:9px}
+.mini{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:10.5px}
+/* AI summary panel */
+.ai{background:linear-gradient(120deg,#F2F8FB, #EAF6F0);border:1px solid #CDE9F5;border-radius:14px;padding:16px 18px}
+.ai .hd{display:flex;align-items:center;gap:9px;font-weight:700;font-size:13px;color:#0077A3}
+.ai .spark{width:22px;height:22px;border-radius:7px;background:linear-gradient(135deg,var(--brand),var(--brand2));display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px}
+.ai p{font-size:12.8px;line-height:1.6;color:#3D4443;margin-top:9px}
+.ai b{color:#0B1220}
+/* chat */
+.chat{display:flex;flex-direction:column;gap:14px}
+.msg{display:flex;gap:11px;max-width:82%}
+.msg .ava{width:30px;height:30px;border-radius:8px;flex:0 0 30px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:12px}
+.msg .bub{border-radius:13px;padding:12px 15px;font-size:13px;line-height:1.55}
+.msg.u{margin-left:auto;flex-direction:row-reverse}
+.msg.u .ava{background:linear-gradient(135deg,#38AEB2,#82C88A)}
+.msg.u .bub{background:var(--brand);color:#fff;border-bottom-right-radius:4px}
+.msg.a .ava{background:linear-gradient(135deg,var(--brand),var(--brand2))}
+.msg.a .bub{background:#fff;border:1px solid var(--line);border-bottom-left-radius:4px}
+.msg.a .bub b{color:#0B1220}
+.chip{display:inline-block;font-size:11.5px;font-weight:700;color:#0077A3;background:#E6F4FA;border:1px solid #CDE9F5;border-radius:999px;padding:7px 12px;margin:5px 6px 0 0}
+.composer{margin-top:6px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:11px 14px;display:flex;align-items:center;gap:10px;color:var(--muted);font-size:12.5px}
+.composer .snd{margin-left:auto;background:var(--brand);color:#fff;border-radius:8px;padding:7px 13px;font-weight:700;font-size:12px}
+/* plan */
+.plan{display:flex;flex-direction:column;gap:13px}
+.pcard{border:1px solid var(--line);border-radius:13px;padding:15px;background:#fff;display:grid;grid-template-columns:34px 1fr 150px;gap:14px;align-items:start}
+.pnum{width:34px;height:34px;border-radius:10px;background:#E6F4FA;color:var(--brand);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+.pcard .ttl{font-size:14px;font-weight:700}
+.pcard .desc{font-size:12.3px;color:#3D4443;line-height:1.55;margin-top:4px}
+.pmeta{display:flex;gap:8px;margin-top:9px;flex-wrap:wrap}
+.pacts{display:flex;flex-direction:column;gap:7px}
+.pbtn{border-radius:8px;padding:8px 10px;font-size:12px;font-weight:700;text-align:center;border:1px solid var(--line)}
+.pbtn.y{background:var(--good);color:#fff;border-color:var(--good)}
+.pbtn.a{background:#fff;color:#3D4443}
+.pbtn.n{background:#fff;color:var(--muted)}
+/* onboarding / steps */
+.steps{display:flex;gap:10px;margin-bottom:4px}
+.step{flex:1;background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 15px;display:flex;gap:11px;align-items:center}
+.step .n{width:26px;height:26px;border-radius:50%;background:#F2F4F8;color:var(--muted);font-weight:700;font-size:12px;display:flex;align-items:center;justify-content:center}
+.step.done .n{background:var(--good);color:#fff}
+.step.now{border-color:var(--brand);box-shadow:0 0 0 3px #E6F4FA}
+.step.now .n{background:var(--brand);color:#fff}
+.step .st{font-size:12.5px;font-weight:700}
+.step .ss{font-size:11px;color:var(--muted)}
+.conn{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.connx{border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;align-items:center;gap:12px}
+.connx .ci{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:15px}
+.connx .cn{font-size:13px;font-weight:700}.connx .cs{font-size:11px;color:var(--muted)}
+.connx .cb{margin-left:auto;font-size:11.5px;font-weight:700;padding:7px 12px;border-radius:8px}
+.drop{border:1.5px dashed #C3CBE0;border-radius:12px;padding:20px;text-align:center;color:var(--muted);font-size:12.5px;background:#FBFCFD}
+.ctx{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #F2F4F8;font-size:12.5px}
+.gauge{position:relative;width:150px;height:150px;margin:0 auto}
+/* pricing */
+.tiers{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:stretch}
+.tier{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:6px}
+.tier.hot{border:2px solid var(--brand);box-shadow:0 14px 34px rgba(79,70,229,.16);position:relative}
+.tier.hot .badge{position:absolute;top:-11px;left:20px;background:var(--brand);color:#fff;font-size:10.5px;font-weight:700;padding:4px 11px;border-radius:999px;letter-spacing:.04em}
+.tier .tn{font-size:15px;font-weight:700}
+.tier .tp{font-size:26px;font-weight:700;letter-spacing:-1px;margin-top:6px}
+.tier .tp small{font-size:12.5px;color:var(--muted);font-weight:700}
+.tier .td{font-size:11.8px;color:var(--muted);line-height:1.5;min-height:48px}
+.tier ul{list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:6px}
+.tier li{font-size:12px;color:#3D4443;display:flex;gap:8px;line-height:1.4}
+.tier li .ck{color:var(--good);font-weight:700}
+.tier .cta{margin-top:auto;text-align:center;border-radius:10px;padding:11px;font-weight:700;font-size:12.5px}
+.tier .cta.p{background:var(--brand);color:#fff}
+.tier .cta.o{background:#fff;border:1px solid var(--line);color:#0B1220}
+.note{font-size:11.5px;color:var(--muted);line-height:1.55}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:11.5px;color:var(--muted);font-weight:700;align-items:center}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.grid2{display:grid;grid-template-columns:1.4fr 1fr;gap:18px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.hl{background:#FCF2E2;border-radius:4px;padding:0 3px}
+.mi{display:inline-flex;align-items:center;justify-content:center;vertical-align:-3px}
+.mi svg{width:16px;height:16px;display:block}
+.card h3 .mi{margin-right:1px}
+.nav .ic{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px}
+.nav .ic svg{width:18px;height:18px}
+.top .search .mi svg{width:15px;height:15px}
+.spark .mi svg{width:13px;height:13px}
+.pnum .mi svg{width:15px;height:15px}
+.ai .hd .mi svg{width:15px;height:15px}
+</style><link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css"><style>
+.logo{align-items:flex-start!important}
+.logo .mark{width:auto!important;height:auto!important;border-radius:0!important;background-color:transparent!important;box-shadow:none!important;font-size:30px;line-height:1;background-image:linear-gradient(275deg,#0196CD 0%,#82C88A 100%)!important;-webkit-background-clip:text!important;background-clip:text!important;color:transparent!important;-webkit-text-fill-color:transparent}
+.side .nav.active{background:linear-gradient(90deg,rgba(1,150,205,.34),rgba(130,200,138,.16))!important;color:#fff!important}
+.side .nav.active .ic{opacity:1}
+.logo .name{display:flex;flex-direction:column;gap:4px;line-height:1}
+.logo .name .wm{font-size:17px;font-weight:700;letter-spacing:-.4px;color:#fff}
+.logo .name .wm span{background:linear-gradient(275deg,#82C88A 0%,#0196CD 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.logo .name .wm .tm{font-size:8px;font-weight:700;vertical-align:super;color:#7C8798;-webkit-text-fill-color:#7C8798;background:none;margin-left:1px}
+.logo .name .pb{font-size:8px;font-weight:700;letter-spacing:2.4px;text-transform:uppercase;color:#7C8798}
+</style><style>
+body.live .side .nav[role=link]{position:relative}
+body.live .side .nav[role=link]:after{content:"";position:absolute;inset:0;border-radius:9px;box-shadow:0 0 0 1px rgba(130,200,138,.5),0 0 14px rgba(130,200,138,.3);animation:navGlow 2.6s ease-in-out infinite;animation-delay:calc(var(--i,0) * .16s);pointer-events:none}
+body.live .side .nav[role=link]:hover:after{box-shadow:0 0 0 1.5px #82C88A,0 0 22px rgba(130,200,138,.55);animation:none}
+@keyframes navGlow{0%,100%{opacity:.28}50%{opacity:.95}}
+body.live .side .nav:not([role=link]){opacity:.38}
+body.live .side .nav:not([role=link]):hover{background:none}
+@media(prefers-reduced-motion:reduce){body.live .side .nav[role=link]:after{animation:none;opacity:.7}}
+</style></head>
+<body><div class="app">
+<aside class="side">
+  <div class="logo"><div class="mark"><i class="ph-fill ph-sparkle"></i></div><div class="name"><span class="wm">Rev<span>OS</span><span class="tm">™</span></span><span class="pb">Powered by Swivel</span></div></div>
+  <div class="navlbl">Diagnose</div>
+<div class="nav active"><span class="ic"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg></span></span>Overview</div>
+<div class="nav"><span class="ic"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><line x1="12" y1="1.5" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22.5" y2="12"/><circle cx="12" cy="12" r="2.1" fill="currentColor" stroke="none"/></svg></span></span>Position to Win</div>
+<div class="nav"><span class="ic"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5 h18 l-7 8 v6 l-4 2 v-8 Z"/></svg></span></span>Drive Warm Leads</div>
+<div class="nav"><span class="ic"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="8" y1="2.5" x2="8" y2="6"/><line x1="16" y1="2.5" x2="16" y2="6"/><path d="M8 13.5h3"/></svg></span></span>Set Meetings</div>
+<div class="nav"><span class="ic"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7.5" width="18" height="12.5" rx="2"/><path d="M8 7.5V5.5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="3" y1="12.5" x2="21" y2="12.5"/><path d="M11 12.5h2"/></svg></span></span>Close Deals</div>
+<div class="navlbl">Decide</div>
+<div class="nav"><span class="ic"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg></span></span>30-Day Plan</div>
+<div class="navlbl">Act</div>
+<div class="nav"><span class="ic"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 L22 20 H2 Z"/><line x1="12" y1="9.5" x2="12" y2="14"/><circle cx="12" cy="17.2" r="1.05" fill="currentColor" stroke="none"/></svg></span></span>Action Center</div>
+<div class="nav"><span class="ic"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20 h6"/><path d="M14.5 4.5 l4 4 L9 18 l-5 1 1-5 Z"/></svg></span></span>Content Studio</div>
+<div class="nav"><span class="ic"><span class="mi"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2 L14 9.5 L21.5 12 L14 14.5 L12 22 L10 14.5 L2.5 12 L10 9.5 Z"/></svg></span></span>Ask RevOS</div>
+<div class="nav"><span class="ic"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12.5" rx="1.5"/><path d="M12 16.5v4M8 20.5h8"/><path d="M7 11.5l3-3 2.2 2.2L16 7"/></svg></span></span>Client Snapshot</div>
+<div class="navlbl">Setup</div>
+<div class="nav"><span class="ic"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M19.4 13a7.5 7.5 0 000-2l2-1.5-2-3.4-2.3 1a7.5 7.5 0 00-1.8-1L14.9 2h-3.8l-.4 2.6a7.5 7.5 0 00-1.8 1l-2.3-1-2 3.4 2 1.5a7.5 7.5 0 000 2l-2 1.5 2 3.4 2.3-1a7.5 7.5 0 001.8 1l.4 2.6h3.8l.4-2.6a7.5 7.5 0 001.8-1l2.3 1 2-3.4z"/></svg></span></span>Settings</div>
+  <div class="foot">
+    <div class="t">Northstar Software</div>
+    <div class="s">Custom Build · month 8 of 12</div>
+    <div class="bar"><i></i></div>
+    <a href="#"><span class="mi"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2 L14 9.5 L21.5 12 L14 14.5 L12 22 L10 14.5 L2.5 12 L10 9.5 Z"/></svg></span> Ask RevOS</a>
+  </div>
+</aside>
+<main class="main">
+  <div class="top">
+    <div><div class="crumb">Getting started</div><h1>Set up your RevOS</h1></div>
+    <div class="search"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="16" y1="16" x2="21" y2="21"/></svg></span> Ask anything about Northstar’s pipeline…</div>
+    <div class="btn"><span class="mi"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2 L14 9.5 L21.5 12 L14 14.5 L12 22 L10 14.5 L2.5 12 L10 9.5 Z"/></svg></span> Skip for now</div>
+    <div class="av">DS</div>
+  </div>
+  <div class="wrap">
+<div class="ai" style="background:linear-gradient(120deg,#E6F4FA,#EAF6F0)">
+  <div class="hd"><div class="spark"><span class="mi"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2 L14 9.5 L21.5 12 L14 14.5 L12 22 L10 14.5 L2.5 12 L10 9.5 Z"/></svg></span></div>Welcome, Dana — let's build your operating picture</div>
+  <p>RevOS gets smarter with context. The more it knows about <b>who you sell to</b> and <b>what you've tried</b>, the sharper your dashboard, action center, and 30-day plan. This takes about 8 minutes — you can skip and come back.</p>
+</div>
+<div class="steps">
+  <div class="step done"><div class="n">✓</div><div><div class="st">Create account</div><div class="ss">Free plan active</div></div></div>
+  <div class="step done"><div class="n">✓</div><div><div class="st">Connect data</div><div class="ss">HubSpot linked</div></div></div>
+  <div class="step now"><div class="n">3</div><div><div class="st">Add context</div><div class="ss">In progress</div></div></div>
+  <div class="step"><div class="n">4</div><div><div class="st">Get your plan</div><div class="ss">Unlocks next</div></div></div>
+</div>
+<div class="grid2">
+  <div style="display:flex;flex-direction:column;gap:18px">
+    <div class="card">
+      <h3><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.2"/><circle cx="5" cy="17" r="2.2"/><circle cx="19" cy="17" r="2.2"/><line x1="11" y1="6.7" x2="6" y2="15"/><line x1="13" y1="6.7" x2="18" y2="15"/><line x1="7.2" y1="17" x2="16.8" y2="17"/></svg></span> Connect your sources</h3>
+      <div class="sub">RevOS reads performance — it never sends on your behalf without approval.</div>
+      <div class="conn" style="margin-top:14px">
+        <div class="connx"><div class="ci" style="background:#FF7A59">H</div><div><div class="cn">HubSpot CRM</div><div class="cs">4,812 contacts · synced</div></div><div class="cb pill g">Connected</div></div>
+        <div class="connx"><div class="ci" style="background:#1877F2">f</div><div><div class="cn">Meta Ads</div><div class="cs">Lead + click ads</div></div><div class="cb pill g">Connected</div></div>
+        <div class="connx"><div class="ci" style="background:#34A853">G</div><div><div class="cn">Google Ads</div><div class="cs">Search + display</div></div><div class="cb" style="background:#E6F4FA;color:#0077A3">Connect</div></div>
+        <div class="connx"><div class="ci" style="background:#0A66C2">in</div><div><div class="cn">LinkedIn</div><div class="cs">SDR + paid</div></div><div class="cb" style="background:#E6F4FA;color:#0077A3">Connect</div></div>
+      </div>
+    </div>
+    <div class="card">
+      <h3><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16 V4.5"/><path d="M7 9 l5-5 5 5"/><path d="M4.5 20 h15"/></svg></span> Upload context documents</h3>
+      <div class="sub">Value prop, ICP definitions, pitch decks, past campaigns, call recordings.</div>
+      <div class="drop" style="margin-top:12px">Drag files here or <b style="color:#0077A3">browse</b><br><span style="font-size:11px">PDF, DOCX, PPTX, MP4 · up to 200MB</span></div>
+      <div style="margin-top:6px">
+        <div class="ctx"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2.5 h7 l5 5 v14 H6 Z"/><path d="M13 2.5 v5 h5"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="15" y2="17"/></svg></span> Northstar_Positioning_2026.pdf <span class="pill g" style="margin-left:auto">Parsed</span></div>
+        <div class="ctx"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="3" y1="9.5" x2="21" y2="9.5"/><line x1="9" y1="9.5" x2="9" y2="20"/></svg></span> ICP_Tiers_and_Personas.xlsx <span class="pill g" style="margin-left:auto">Parsed</span></div>
+        <div class="ctx"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><line x1="8.5" y1="5" x2="8.5" y2="19"/><line x1="15.5" y1="5" x2="15.5" y2="19"/></svg></span> Demo_Recording_June.mp4 <span class="pill w" style="margin-left:auto">Processing</span></div>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:18px">
+    <div class="card" style="text-align:center">
+      <h3 style="justify-content:center">Context strength</h3>
+      <div class="gauge" style="margin-top:8px">
+        <svg width="150" height="150" viewBox="0 0 150 150">
+          <circle cx="75" cy="75" r="62" fill="none" stroke="#F2F4F8" stroke-width="16"/>
+          <circle cx="75" cy="75" r="62" fill="none" stroke="url(#g1)" stroke-width="16" stroke-linecap="round"
+            stroke-dasharray="389" stroke-dashoffset="140" transform="rotate(-90 75 75)"/>
+          <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0196CD"/><stop offset="1" stop-color="#82C88A"/></linearGradient></defs>
+          <text x="75" y="72" text-anchor="middle" font-size="34" font-weight="800" fill="#0B1220">64%</text>
+          <text x="75" y="94" text-anchor="middle" font-size="11" font-weight="600" fill="#666873">Good</text>
+        </svg>
+      </div>
+      <p class="note" style="margin-top:6px">Add your <b>buyer personas</b> and one <b>recent win/loss</b> to reach “Strong” and unlock sharper recommendations.</p>
+    </div>
+    <div class="card">
+      <h3><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20 h6"/><path d="M14.5 4.5 l4 4 L9 18 l-5 1 1-5 Z"/></svg></span> Tell RevOS about your business</h3>
+      <div class="sub">3 quick prompts — shapes every recommendation.</div>
+      <div style="margin-top:12px;display:flex;flex-direction:column;gap:10px">
+        <div style="border:1px solid var(--line);border-radius:10px;padding:11px 13px"><div style="font-size:11px;color:#666873;font-weight:700">WHO IS YOUR IDEAL CUSTOMER?</div><div style="font-size:12.5px;margin-top:4px;color:#3D4443">Ops &amp; finance leaders at multi-location retail &amp; restaurant brands (10–150 locations).</div></div>
+        <div style="border:1px solid var(--line);border-radius:10px;padding:11px 13px"><div style="font-size:11px;color:#666873;font-weight:700">WHAT'S YOUR CORE VALUE PROP?</div><div style="font-size:12.5px;margin-top:4px;color:#3D4443">One system to manage every lease &amp; location obligation — never miss a critical date.</div></div>
+        <div style="border:1px dashed #C3CBE0;border-radius:10px;padding:11px 13px;color:#94A3B8;font-size:12.5px"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span> What's your #1 growth goal this quarter?</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</main></div><script>window.__revosRoutes={"Overview":"02_command_center.html","Position to Win":"11_reputation_seo.html","Drive Warm Leads":"03_channel_intel.html","Set Meetings":"10_team_activity.html","Close Deals":"09_sales_enablement.html","30-Day Plan":"06_30_day_plan.html","Action Center":"04_action_center.html","Content Studio":"07_content_studio.html","Ask RevOS":"05_ask_revos.html","Client Snapshot":"17_client_snapshot.html","Data Integrity":"12_data_integrity.html","Calling Ops":"14_calling_ops.html","Ad Performance":"13_ad_performance.html","Outreach & Sequences":"15_outreach_sequences.html","SQL Attribution":"16_sql_attribution.html","Upgrade":"08_pricing.html","Pricing":"08_pricing.html"};(function(){if(/[?&]live/.test(location.search))document.body.classList.add("live");var _i=0;document.querySelectorAll(".side .nav").forEach(function(n){var t=(n.textContent||"").trim();var to=window.__revosRoutes[t];if(!to){n.style.cursor="default";return;}n.setAttribute("role","link");n.setAttribute("tabindex","0");n.style.cursor="pointer";n.style.setProperty("--i",_i++);function go(){location.href=to+location.search;}n.addEventListener("click",go);n.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();go();}});});})();</script><style>
+.bkchip{position:fixed;left:18px;bottom:18px;z-index:9999;display:inline-flex;align-items:center;gap:8px;font-family:'Museo Sans',sans-serif;font-size:13px;font-weight:700;color:#fff;background:rgba(10,10,10,.9);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:10px 18px;text-decoration:none;box-shadow:0 12px 30px rgba(0,0,0,.4);transition:.18s}
+.bkchip:hover{background:#0A0A0A;border-color:#82C88A}
+</style>
+<a class="bkchip" href="gallery.html"><i class="ph-fill ph-squares-four"></i> All screens</a></body></html>
